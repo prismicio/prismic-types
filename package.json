@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "build": "siroc build",
+    "dev": "siroc build --watch",
     "release": "yarn build && yarn test && standard-version && git push --follow-tags && yarn build && npm publish",
     "release:dry": "standard-version --dry-run",
     "release:alpha": "yarn build && yarn test && standard-version --release-as minor --prerelease alpha && git push --follow-tags && yarn build && npm publish --tag alpha",
