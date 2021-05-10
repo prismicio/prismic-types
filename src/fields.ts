@@ -25,7 +25,7 @@ export interface ImageField {
 	[key: string]: unknown;
 }
 
-export enum LinkType {
+enum LinkType {
 	Any = "Any",
 	Document = "Document",
 	Media = "Media",
@@ -36,15 +36,15 @@ type RawEmptyLinkField<Type extends LinkType = LinkType> = {
 	link_type: Type;
 };
 
-type RawRelationField<TypeEnum = string, LangEnum = string> = {
+type RawLinkToDocumentField<TypeEnum = string, LangEnum = string> = {
 	link_type: LinkType.Document;
 	id: string;
 	type: TypeEnum;
 	tags: string[];
-	slug: string;
+	slug?: string;
 	lang: LangEnum;
 	uid: string;
-	isBroken: boolean;
+	isBroken?: boolean;
 };
 
 type RawLinkToWebField = {
@@ -63,11 +63,11 @@ type RawLinkToMediaField = {
 };
 
 export type RelationField<TypeEnum = string, LangEnum = string> =
-	| RawRelationField<TypeEnum, LangEnum>
+	| RawLinkToDocumentField<TypeEnum, LangEnum>
 	| RawEmptyLinkField<LinkType.Document>;
 
 export type LinkField<TypeEnum = string, LangEnum = string> =
-	| RawRelationField<TypeEnum, LangEnum>
+	| RawLinkToDocumentField<TypeEnum, LangEnum>
 	| RawLinkToWebField
 	| RawLinkToMediaField
 	| RawEmptyLinkField<LinkType.Any>;
@@ -76,21 +76,16 @@ export type LinkToMediaField =
 	| RawLinkToMediaField
 	| RawEmptyLinkField<LinkType.Media>;
 
-export type DateField = `${string}-${string}-${string}` | null;
+export type DateField = string | null;
 
-// TODO: WIP
 export type TimestampField = string | null;
 
-// TODO: WIP
-export type ColorField = string | null;
+export type ColorField = `#${string}` | null;
 
-// TODO: WIP
 export type NumberField = number | null;
 
-// TODO: WIP
 export type KeyTextField = string | null;
 
-// TODO: WIP
 export type SelectField<Enum = string> = Enum | null;
 
 export type BooleanField = boolean;
@@ -131,7 +126,7 @@ export type GeoPointField =
 	  }
 	| EmptyObjectField;
 
-export type AnyField =
+export type AnyRegularField =
 	| TitleField
 	| RichTextField
 	| ImageField
@@ -148,4 +143,4 @@ export type AnyField =
 	| EmbedField
 	| GeoPointField;
 
-export type GroupField = AnyField[];
+export type GroupField = AnyRegularField[];
