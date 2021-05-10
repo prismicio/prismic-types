@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/prismicio/prismic-types/compare/v0.0.1...v0.0.2) (2021-05-10)
+
+
+### Features
+
+* **document:** add prismic document header and document ([924f324](https://github.com/prismicio/prismic-types/commit/924f324716c09559efb5a32b790600243db92f61))
+* **fields:** expose filled link fields ([86846e6](https://github.com/prismicio/prismic-types/commit/86846e696d1d7bbe53a35254596e838ec063589b))
+
 ### 0.0.1 (2021-05-10)
 
 
