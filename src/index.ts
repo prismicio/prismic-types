@@ -1,9 +1,14 @@
+export { LinkType } from "./fields";
+
 export type {
 	RichTextSpan,
 	RichTextBlock,
 	TitleField,
 	RichTextField,
 	ImageField,
+	FilledRelationField,
+	FilledLinkToWebField,
+	FilledLinkToMediaField,
 	RelationField,
 	LinkField,
 	LinkToMediaField,

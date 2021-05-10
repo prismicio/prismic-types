@@ -25,34 +25,35 @@ export interface ImageField {
 	[key: string]: unknown;
 }
 
-enum LinkType {
+export enum LinkType {
 	Any = "Any",
 	Document = "Document",
 	Media = "Media",
 	Web = "Web"
 }
 
-type RawEmptyLinkField<Type extends LinkType = LinkType> = {
+type EmptyLinkField<Type extends LinkType = LinkType> = {
 	link_type: Type;
 };
 
-type RawLinkToDocumentField<TypeEnum = string, LangEnum = string> = {
+export type FilledRelationField<TypeEnum = string, LangEnum = string> = {
 	link_type: LinkType.Document;
 	id: string;
+	uid: string;
 	type: TypeEnum;
 	tags: string[];
-	slug?: string;
 	lang: LangEnum;
-	uid: string;
+	url?: string;
+	slug?: string;
 	isBroken?: boolean;
 };
 
-type RawLinkToWebField = {
-	link_type: LinkType.Document;
+export type FilledLinkToWebField = {
+	link_type: LinkType.Web;
 	url: string;
 };
 
-type RawLinkToMediaField = {
+export type FilledLinkToMediaField = {
 	link_type: LinkType.Media;
 	name: string;
 	kind: string;
@@ -63,18 +64,18 @@ type RawLinkToMediaField = {
 };
 
 export type RelationField<TypeEnum = string, LangEnum = string> =
-	| RawLinkToDocumentField<TypeEnum, LangEnum>
-	| RawEmptyLinkField<LinkType.Document>;
+	| FilledRelationField<TypeEnum, LangEnum>
+	| EmptyLinkField<LinkType.Document>;
 
 export type LinkField<TypeEnum = string, LangEnum = string> =
-	| RawLinkToDocumentField<TypeEnum, LangEnum>
-	| RawLinkToWebField
-	| RawLinkToMediaField
-	| RawEmptyLinkField<LinkType.Any>;
+	| FilledRelationField<TypeEnum, LangEnum>
+	| FilledLinkToWebField
+	| FilledLinkToMediaField
+	| EmptyLinkField<LinkType.Any>;
 
 export type LinkToMediaField =
-	| RawLinkToMediaField
-	| RawEmptyLinkField<LinkType.Media>;
+	| FilledLinkToMediaField
+	| EmptyLinkField<LinkType.Media>;
 
 export type DateField = string | null;
 
@@ -90,7 +91,7 @@ export type SelectField<Enum = string> = Enum | null;
 
 export type BooleanField = boolean;
 
-export enum EmbedType {
+enum EmbedType {
 	Link = "link",
 	Rich = "rich"
 }
