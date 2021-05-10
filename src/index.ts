@@ -1,3 +1,5 @@
+export type { PrismicDocumentHeader, PrismicDocument } from "./document";
+
 export { LinkType } from "./fields";
 
 export type {
