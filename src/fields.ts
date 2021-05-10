@@ -144,3 +144,21 @@ export type AnyRegularField =
 	| GeoPointField;
 
 export type GroupField = AnyRegularField[];
+
+// TODO: Might be prone to change really soon with variations!
+export interface Slice<
+	SliceType = string,
+	PrimaryFields extends { [key: string]: AnyRegularField } = {
+		[key: string]: AnyRegularField;
+	},
+	ItemsFields extends { [key: string]: AnyRegularField } = {
+		[key: string]: AnyRegularField;
+	}
+> {
+	slice_type: SliceType;
+	slice_label: string | null;
+	primary: PrimaryFields;
+	items: ItemsFields[];
+}
+
+export type SliceZone<Slices extends Slice = Slice> = Slices[];

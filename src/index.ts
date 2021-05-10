@@ -1,4 +1,6 @@
 export type {
+	RichTextSpan,
+	RichTextBlock,
 	TitleField,
 	RichTextField,
 	ImageField,
@@ -14,5 +16,8 @@ export type {
 	BooleanField,
 	EmbedField,
 	GeoPointField,
-	GroupField
+	AnyRegularField,
+	GroupField,
+	Slice,
+	SliceZone
 } from "./fields";
