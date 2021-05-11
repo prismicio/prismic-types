@@ -32,7 +32,7 @@ export enum LinkType {
 	Web = "Web"
 }
 
-type EmptyLinkField<Type extends LinkType = LinkType> = {
+export type EmptyLinkField<Type extends LinkType = LinkType> = {
 	link_type: Type;
 };
 
@@ -91,7 +91,7 @@ export type SelectField<Enum = string> = Enum | null;
 
 export type BooleanField = boolean;
 
-enum EmbedType {
+export enum EmbedType {
 	Link = "link",
 	Rich = "rich"
 }
