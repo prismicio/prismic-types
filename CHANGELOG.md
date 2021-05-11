@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/prismicio/prismic-types/compare/v0.0.2...v0.0.3) (2021-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename link exports for consistency
+
+### Features
+
+* add graphql support ([080b640](https://github.com/prismicio/prismic-types/commit/080b6405d707d7a9efe39c5980263c333cbb95eb))
+* export embed types and empty link field type ([6039947](https://github.com/prismicio/prismic-types/commit/603994749643d0b2d7c0332a244d9333993731eb))
+
+
+### Refactor
+
+* rename link exports for consistency ([35338fd](https://github.com/prismicio/prismic-types/commit/35338fd93e78560937a8c0d6a481f0e95f69dfeb))
+
 ### [0.0.2](https://github.com/prismicio/prismic-types/compare/v0.0.1...v0.0.2) (2021-05-10)
 
 
