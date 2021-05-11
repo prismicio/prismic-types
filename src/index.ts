@@ -1,19 +1,23 @@
 export type { PrismicDocumentHeader, PrismicDocument } from "./document";
 
-export { LinkType } from "./fields";
+export { LinkType, EmbedType } from "./fields";
 
 export type {
+	// Primary
 	RichTextSpan,
 	RichTextBlock,
 	TitleField,
 	RichTextField,
 	ImageField,
-	FilledRelationField,
+	// Links
+	EmptyLinkField,
+	FilledLinkToDocumentField,
 	FilledLinkToWebField,
 	FilledLinkToMediaField,
 	RelationField,
 	LinkField,
 	LinkToMediaField,
+	// Simple
 	DateField,
 	TimestampField,
 	ColorField,
@@ -23,8 +27,10 @@ export type {
 	BooleanField,
 	EmbedField,
 	GeoPointField,
-	AnyRegularField,
+	// Complex
 	GroupField,
 	Slice,
-	SliceZone
+	SliceZone,
+	// Misc
+	AnyRegularField
 } from "./fields";

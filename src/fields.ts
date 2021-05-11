@@ -36,7 +36,10 @@ export type EmptyLinkField<Type extends LinkType = LinkType> = {
 	link_type: Type;
 };
 
-export interface FilledRelationField<TypeEnum = string, LangEnum = string> {
+export interface FilledLinkToDocumentField<
+	TypeEnum = string,
+	LangEnum = string
+> {
 	link_type: LinkType.Document;
 	id: string;
 	uid?: string;
@@ -51,6 +54,7 @@ export interface FilledRelationField<TypeEnum = string, LangEnum = string> {
 export interface FilledLinkToWebField {
 	link_type: LinkType.Web;
 	url: string;
+	target?: string;
 }
 
 export interface FilledLinkToMediaField {
@@ -59,16 +63,16 @@ export interface FilledLinkToMediaField {
 	kind: string;
 	url: string;
 	size: string;
-	height: string | null;
-	width: string | null;
+	height?: string | null;
+	width?: string | null;
 }
 
 export type RelationField<TypeEnum = string, LangEnum = string> =
-	| FilledRelationField<TypeEnum, LangEnum>
+	| FilledLinkToDocumentField<TypeEnum, LangEnum>
 	| EmptyLinkField<LinkType.Document>;
 
 export type LinkField<TypeEnum = string, LangEnum = string> =
-	| FilledRelationField<TypeEnum, LangEnum>
+	| FilledLinkToDocumentField<TypeEnum, LangEnum>
 	| FilledLinkToWebField
 	| FilledLinkToMediaField
 	| EmptyLinkField<LinkType.Any>;
