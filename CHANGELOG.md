@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/prismicio/prismic-types/compare/v0.0.3...v0.0.4) (2021-05-17)
+
+
+### Bug Fixes
+
+* **document:** alternate language typing ([bce6ceb](https://github.com/prismicio/prismic-types/commit/bce6ceb6f0a8f6ff3aaea288aa87c687e69f6d95))
+
+
+### Chore
+
+* **deps:** maintain dependencies ([c113013](https://github.com/prismicio/prismic-types/commit/c113013ba5519462e16d2f9a67ff8344771de7b3))
+
+
+### Documentation
+
+* update readme and issue template ([f9bb134](https://github.com/prismicio/prismic-types/commit/f9bb13422b39ce4126acdec2ccce0cf30b01023f))
+
 ### [0.0.3](https://github.com/prismicio/prismic-types/compare/v0.0.2...v0.0.3) (2021-05-11)
 
 
