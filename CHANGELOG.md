@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/prismicio/prismic-types/compare/v0.0.4...v0.0.5) (2021-05-18)
+
+
+### Features
+
+* use less strict type for link types ([6365216](https://github.com/prismicio/prismic-types/commit/636521654d5e0de06c35026c4c9f8f1edf86412c))
+
+
+### Chore
+
+* **config:** run lcov reporter for codecov collection ([6760c57](https://github.com/prismicio/prismic-types/commit/6760c57cda9d9682a27fcf2b887ddc91fea8facc))
+* **config:** setup tests ([b0942e9](https://github.com/prismicio/prismic-types/commit/b0942e932c78f3ed528ed46b766e406df051015f))
+* **config:** update coverage reporters ([3d456c3](https://github.com/prismicio/prismic-types/commit/3d456c30895d4bbb8e05dee78a7501929f3f33e2))
+
 ### [0.0.4](https://github.com/prismicio/prismic-types/compare/v0.0.3...v0.0.4) (2021-05-17)
 
 
