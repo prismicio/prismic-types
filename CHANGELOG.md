@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/prismicio/prismic-types/compare/v0.0.5...v0.0.6) (2021-05-20)
+
+
+### Bug Fixes
+
+* use less strict typing for link type ([d9e02e3](https://github.com/prismicio/prismic-types/commit/d9e02e33ca924fc44028901b8ea566f062fddfed))
+
+
+### Chore
+
+* update template ([84190de](https://github.com/prismicio/prismic-types/commit/84190dea774bb33eacb18b293c757ff106fdb750))
+* **config:** update .eslintignore ([17b9be4](https://github.com/prismicio/prismic-types/commit/17b9be4680ecfa5f7927c8c8e21b8bb0d97cd363))
+
 ### [0.0.5](https://github.com/prismicio/prismic-types/compare/v0.0.4...v0.0.5) (2021-05-18)
 
 
