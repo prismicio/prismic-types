@@ -8,16 +8,16 @@ export enum LinkType {
 export type EmptyLinkField = null;
 
 export interface FilledMinimalLinkToDocumentField {
-	_linkType: "Link.document";
+	_linkType: LinkType.Document | string;
 }
 
 export interface FilledMinimalLinkToWebField {
-	_linkType: "Link.web";
+	_linkType: LinkType.Web | string;
 	url: string;
 }
 
 export interface FilledMinimalLinkToMediaField {
-	_linkType: "Link.file" | "Link.image";
+	_linkType: LinkType.File | LinkType.Image | string;
 	url: string;
 }
 
