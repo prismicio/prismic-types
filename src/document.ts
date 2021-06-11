@@ -23,7 +23,7 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 }
 
 export interface PrismicDocument<
-	DataInterface = { [key: string]: AnyRegularField | GroupField | SliceZone },
+	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
 	TypeEnum = string,
 	LangEnum = string
 > extends PrismicDocumentHeader<TypeEnum, LangEnum> {

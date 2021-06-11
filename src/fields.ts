@@ -1,4 +1,4 @@
-type EmptyObjectField = { [key: string]: never };
+type EmptyObjectField = Record<string, never>;
 
 export interface RichTextSpan {
 	start: number;
@@ -17,12 +17,11 @@ export type TitleField = [RichTextBlock];
 
 export type RichTextField = RichTextBlock[];
 
-export interface ImageField {
+export interface ImageField extends Record<string, unknown> {
 	dimensions: { width: number; height: number } | null;
 	alt: string | null;
 	copyright: string | null;
 	url: string | null;
-	[key: string]: unknown;
 }
 
 export enum LinkType {
@@ -153,12 +152,14 @@ export type GroupField = AnyRegularField[];
 // TODO: Might be prone to change really soon with variations!
 export interface Slice<
 	SliceType = string,
-	PrimaryFields extends { [key: string]: AnyRegularField } = {
-		[key: string]: AnyRegularField;
-	},
-	ItemsFields extends { [key: string]: AnyRegularField } = {
-		[key: string]: AnyRegularField;
-	}
+	PrimaryFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+	ItemsFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>
 > {
 	slice_type: SliceType;
 	slice_label: string | null;
