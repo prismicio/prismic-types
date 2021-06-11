@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/prismicio/prismic-types/compare/v0.0.7...v0.0.8) (2021-06-11)
+
+
+### Features
+
+* allow GroupField generic value ([006fbe0](https://github.com/prismicio/prismic-types/commit/006fbe05ebfd231e6fbcc30210d93711d6ae4bb4))
+
+
+### Chore
+
+* typo on config ([ada239a](https://github.com/prismicio/prismic-types/commit/ada239a26f0a12201b6eaeafbc733ccfa30dc466))
+
+
+### Refactor
+
+* use Record over object literal syntax ([b8fa931](https://github.com/prismicio/prismic-types/commit/b8fa9316e5991c56ac403d4de53f21707e937d47))
+
 ### [0.0.7](https://github.com/prismicio/prismic-types/compare/v0.0.6...v0.0.7) (2021-05-27)
 
 
