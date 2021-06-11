@@ -147,7 +147,12 @@ export type AnyRegularField =
 	| EmbedField
 	| GeoPointField;
 
-export type GroupField = AnyRegularField[];
+export type GroupField<
+	Fields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>
+> = Fields[];
 
 // TODO: Might be prone to change really soon with variations!
 export interface Slice<
