@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/prismicio/prismic-types/compare/v0.0.8...v0.0.9) (2021-06-15)
+
+
+### Bug Fixes
+
+* rich text span definition ([e43ac1f](https://github.com/prismicio/prismic-types/commit/e43ac1f0fb6f6c6f3022aecb958a2b9aca91457c))
+
+
+### Chore
+
+* **deps:** maintain dependencies ([3077caf](https://github.com/prismicio/prismic-types/commit/3077cafaabce591c3f9ec14e6b792c479c82cd10))
+
 ### [0.0.8](https://github.com/prismicio/prismic-types/compare/v0.0.7...v0.0.8) (2021-06-11)
 
 
