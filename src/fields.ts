@@ -4,7 +4,7 @@ export interface RichTextSpan {
 	start: number;
 	end: number;
 	type: string;
-	text: string;
+	data?: LinkField | string;
 }
 
 export interface RichTextBlock {
