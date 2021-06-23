@@ -25,7 +25,7 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 export interface PrismicDocument<
 	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
 	TypeEnum = string,
-	LangEnum = string
+	LangEnum = string,
 > extends PrismicDocumentHeader<TypeEnum, LangEnum> {
 	data: DataInterface;
 }
