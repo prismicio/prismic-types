@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/prismicio/prismic-types/compare/v0.0.9...v0.0.10) (2021-06-23)
+
+
+### Features
+
+* update richtext types ([c9a2f59](https://github.com/prismicio/prismic-types/commit/c9a2f598bb98aea458336aa4ff6391935c8642b9))
+
+
+### Chore
+
+* **deps:** maintain dependencies ([ddeac23](https://github.com/prismicio/prismic-types/commit/ddeac23be81f7c1817279bdd500306b6c735fac6))
+* prefer npm as a package manager ([b028ec8](https://github.com/prismicio/prismic-types/commit/b028ec813fc353074ad09eb5aa89934eeec2d2e5))
+* update prettier config ([f8449ef](https://github.com/prismicio/prismic-types/commit/f8449ef8c353fa36f203b950fb8b3e41efce6117))
+
 ### [0.0.9](https://github.com/prismicio/prismic-types/compare/v0.0.8...v0.0.9) (2021-06-15)
 
 
