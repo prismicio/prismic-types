@@ -2,7 +2,7 @@ export enum LinkType {
 	Document = "Link.document",
 	File = "Link.file",
 	Image = "Link.image",
-	Web = "Link.web"
+	Web = "Link.web",
 }
 
 export type EmptyLinkField = null;
@@ -22,13 +22,13 @@ export interface FilledMinimalLinkToMediaField {
 }
 
 export type RelationField<
-	ExtendedLinkToDocumentField extends FilledMinimalLinkToWebField = FilledMinimalLinkToWebField
+	ExtendedLinkToDocumentField extends FilledMinimalLinkToWebField = FilledMinimalLinkToWebField,
 > = ExtendedLinkToDocumentField | EmptyLinkField;
 
 export type LinkField<
 	ExtendedLinkToDocumentField extends FilledMinimalLinkToDocumentField = FilledMinimalLinkToDocumentField,
 	ExtendedLinkToWebField extends FilledMinimalLinkToWebField = FilledMinimalLinkToWebField,
-	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField
+	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField,
 > =
 	| ExtendedLinkToDocumentField
 	| ExtendedLinkToWebField
@@ -36,5 +36,5 @@ export type LinkField<
 	| EmptyLinkField;
 
 export type LinkToMediaField<
-	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField
+	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField,
 > = ExtendedLinkToMediaField | EmptyLinkField;

@@ -1,13 +1,43 @@
 export type { PrismicDocumentHeader, PrismicDocument } from "./document";
 
-export { LinkType, EmbedType } from "./fields";
+export { RichTextNodeType, LinkType, EmbedType } from "./fields";
 
 export type {
-	// Primary
-	RichTextSpan,
-	RichTextBlock,
+	// RichText & Title
 	TitleField,
 	RichTextField,
+	// RichText & Title (block nodes)
+	RTTextNodeBase,
+	RTHeading1Node,
+	RTHeading2Node,
+	RTHeading3Node,
+	RTHeading4Node,
+	RTHeading5Node,
+	RTHeading6Node,
+	RTParagraphNode,
+	RTPreformattedNode,
+	RTListItemNode,
+	RTOListItemNode,
+	// RichText & Title (span nodes)
+	RTSpanNodeBase,
+	RTStrongNode,
+	RTEmNode,
+	RTLabelNode,
+	// RichText & Title (media nodes)
+	RTImageNode,
+	RTEmbedNode,
+	// RichText & Title (link nodes)
+	RTLinkNode,
+	// RichText & Title (serialization related nodes)
+	RTListNode,
+	RTOListNode,
+	RTSpanNode,
+	// RichText & Title (helpers)
+	RTNode,
+	RTTextNode,
+	RTBlockNode,
+	RTInlineNode,
+	// Image
 	ImageField,
 	// Links
 	EmptyLinkField,
@@ -32,5 +62,5 @@ export type {
 	Slice,
 	SliceZone,
 	// Misc
-	AnyRegularField
+	AnyRegularField,
 } from "./fields";

@@ -1,21 +1,197 @@
 type EmptyObjectField = Record<string, never>;
 
-export interface RichTextSpan {
+// RichText & Title
+export const enum RichTextNodeType {
+	heading1 = "heading1",
+	heading2 = "heading2",
+	heading3 = "heading3",
+	heading4 = "heading4",
+	heading5 = "heading5",
+	heading6 = "heading6",
+	paragraph = "paragraph",
+	preformatted = "preformatted",
+	strong = "strong",
+	em = "em",
+	listItem = "list-item",
+	oListItem = "o-list-item",
+	list = "group-list-item",
+	oList = "group-o-list-item",
+	image = "image",
+	embed = "embed",
+	hyperlink = "hyperlink",
+	label = "label",
+	span = "span",
+}
+
+// Text nodes
+
+/**
+ * @internal
+ */
+export interface RTTextNodeBase {
+	text: string;
+	spans: RTInlineNode[];
+}
+
+export interface RTHeading1Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading1;
+}
+export interface RTHeading2Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading2;
+}
+export interface RTHeading3Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading3;
+}
+export interface RTHeading4Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading4;
+}
+export interface RTHeading5Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading5;
+}
+export interface RTHeading6Node extends RTTextNodeBase {
+	type: RichTextNodeType.heading6;
+}
+export interface RTParagraphNode extends RTTextNodeBase {
+	type: RichTextNodeType.paragraph;
+}
+export interface RTPreformattedNode extends RTTextNodeBase {
+	type: RichTextNodeType.preformatted;
+}
+export interface RTListItemNode extends RTTextNodeBase {
+	type: RichTextNodeType.listItem;
+}
+export interface RTOListItemNode extends RTTextNodeBase {
+	type: RichTextNodeType.oListItem;
+}
+
+// Span nodes
+
+/**
+ * @internal
+ */
+export interface RTSpanNodeBase {
 	start: number;
 	end: number;
-	type: string;
-	data?: LinkField | string;
 }
 
-export interface RichTextBlock {
-	type: string;
-	text: string;
-	spans: RichTextSpan[];
+export interface RTStrongNode extends RTSpanNodeBase {
+	type: RichTextNodeType.strong;
+}
+export interface RTEmNode extends RTSpanNodeBase {
+	type: RichTextNodeType.em;
+}
+export interface RTLabelNode extends RTSpanNodeBase {
+	type: RichTextNodeType.label;
+	data: {
+		label: string;
+	};
 }
 
-export type TitleField = [RichTextBlock];
+// Media nodes
+export type RTImageNode = {
+	type: RichTextNodeType.image;
+	url: string;
+	alt: string;
+	copyright: string | null;
+	dimensions: {
+		width: number;
+		height: number;
+	};
+};
+export type RTEmbedNode = {
+	type: RichTextNodeType.embed;
+	oembed: Record<string, string | number | null> & {
+		html: string;
+	};
+};
 
-export type RichTextField = RichTextBlock[];
+// Link nodes
+export interface RTLinkNode extends RTSpanNodeBase {
+	type: RichTextNodeType.hyperlink;
+	data:
+		| FilledLinkToDocumentField
+		| FilledLinkToWebField
+		| FilledLinkToMediaField;
+}
+
+// Serialization related nodes
+export interface RTListNode {
+	type: RichTextNodeType.list;
+	items: RTListItemNode[];
+}
+export interface RTOListNode {
+	type: RichTextNodeType.oList;
+	items: RTOListItemNode[];
+}
+export interface RTSpanNode extends RTSpanNodeBase {
+	type: RichTextNodeType.span;
+	data: {
+		label: string;
+	};
+}
+
+// Helpers
+export type RTNode =
+	| RTHeading1Node
+	| RTHeading2Node
+	| RTHeading3Node
+	| RTHeading4Node
+	| RTHeading5Node
+	| RTHeading6Node
+	| RTParagraphNode
+	| RTPreformattedNode
+	| RTListItemNode
+	| RTOListItemNode
+	| RTImageNode
+	| RTEmbedNode;
+
+export type RTTextNode =
+	| RTHeading1Node
+	| RTHeading2Node
+	| RTHeading3Node
+	| RTHeading4Node
+	| RTHeading5Node
+	| RTHeading6Node
+	| RTParagraphNode
+	| RTPreformattedNode
+	| RTListItemNode
+	| RTOListItemNode;
+
+export type RTBlockNode =
+	| RTHeading1Node
+	| RTHeading2Node
+	| RTHeading3Node
+	| RTHeading4Node
+	| RTHeading5Node
+	| RTHeading6Node
+	| RTParagraphNode
+	| RTPreformattedNode
+	| RTListItemNode
+	| RTOListItemNode
+	| RTListNode
+	| RTOListNode
+	| RTImageNode
+	| RTEmbedNode;
+
+export type RTInlineNode =
+	| RTStrongNode
+	| RTEmNode
+	| RTLabelNode
+	| RTLinkNode
+	| RTSpanNode;
+
+export type TitleField = [
+	| RTHeading1Node
+	| RTHeading2Node
+	| RTHeading3Node
+	| RTHeading4Node
+	| RTHeading5Node
+	| RTHeading6Node,
+];
+
+export type RichTextField = RTNode[];
+
+// Image
 
 export interface ImageField extends Record<string, unknown> {
 	dimensions: { width: number; height: number } | null;
@@ -24,11 +200,13 @@ export interface ImageField extends Record<string, unknown> {
 	url: string | null;
 }
 
+// Links
+
 export enum LinkType {
 	Any = "Any",
 	Document = "Document",
 	Media = "Media",
-	Web = "Web"
+	Web = "Web",
 }
 
 export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
@@ -37,7 +215,7 @@ export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 
 export interface FilledLinkToDocumentField<
 	TypeEnum = string,
-	LangEnum = string
+	LangEnum = string,
 > {
 	link_type: LinkType.Document;
 	id: string;
@@ -80,6 +258,8 @@ export type LinkToMediaField =
 	| FilledLinkToMediaField
 	| EmptyLinkField<LinkType.Media>;
 
+// Simple fields
+
 export type DateField = string | null;
 
 export type TimestampField = string | null;
@@ -96,7 +276,7 @@ export type BooleanField = boolean;
 
 export enum EmbedType {
 	Link = "link",
-	Rich = "rich"
+	Rich = "rich",
 }
 
 export type EmbedField =
@@ -130,6 +310,37 @@ export type GeoPointField =
 	  }
 	| EmptyObjectField;
 
+// Complex
+
+export type GroupField<
+	Fields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+> = Fields[];
+
+// TODO: Might be prone to change really soon with variations!
+export interface Slice<
+	SliceType = string,
+	PrimaryFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+	ItemsFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+> {
+	slice_type: SliceType;
+	slice_label: string | null;
+	primary: PrimaryFields;
+	items: ItemsFields[];
+}
+
+export type SliceZone<Slices extends Slice = Slice> = Slices[];
+
+// Misc
+
 export type AnyRegularField =
 	| TitleField
 	| RichTextField
@@ -146,30 +357,3 @@ export type AnyRegularField =
 	| BooleanField
 	| EmbedField
 	| GeoPointField;
-
-export type GroupField<
-	Fields extends Record<string, AnyRegularField> = Record<
-		string,
-		AnyRegularField
-	>
-> = Fields[];
-
-// TODO: Might be prone to change really soon with variations!
-export interface Slice<
-	SliceType = string,
-	PrimaryFields extends Record<string, AnyRegularField> = Record<
-		string,
-		AnyRegularField
-	>,
-	ItemsFields extends Record<string, AnyRegularField> = Record<
-		string,
-		AnyRegularField
-	>
-> {
-	slice_type: SliceType;
-	slice_label: string | null;
-	primary: PrimaryFields;
-	items: ItemsFields[];
-}
-
-export type SliceZone<Slices extends Slice = Slice> = Slices[];

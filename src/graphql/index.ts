@@ -8,5 +8,5 @@ export type {
 	FilledMinimalLinkToMediaField,
 	RelationField,
 	LinkField,
-	LinkToMediaField
+	LinkToMediaField,
 } from "./fields";
