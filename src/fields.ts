@@ -123,14 +123,14 @@ export interface RTOListNode {
 	type: RichTextNodeType.oList;
 	items: RTOListItemNode[];
 }
-export interface RTSpanNode extends RTSpanNodeBase {
+// This one is confusing but it's actually the inner content of a block
+export interface RTSpanNode extends RTTextNodeBase {
 	type: RichTextNodeType.span;
-	data: {
-		label: string;
-	};
 }
 
 // Helpers
+
+// Nodes from a rich text field
 export type RTNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -145,6 +145,7 @@ export type RTNode =
 	| RTImageNode
 	| RTEmbedNode;
 
+// Nodes with text
 export type RTTextNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -157,6 +158,7 @@ export type RTTextNode =
 	| RTListItemNode
 	| RTOListItemNode;
 
+// Block nodes
 export type RTBlockNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -173,13 +175,13 @@ export type RTBlockNode =
 	| RTImageNode
 	| RTEmbedNode;
 
-export type RTInlineNode =
-	| RTStrongNode
-	| RTEmNode
-	| RTLabelNode
-	| RTLinkNode
-	| RTSpanNode;
+// Inline nodes
+export type RTInlineNode = RTStrongNode | RTEmNode | RTLabelNode | RTLinkNode;
 
+// All nodes
+export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
+
+// Title field nodes
 export type TitleField = [
 	| RTHeading1Node
 	| RTHeading2Node

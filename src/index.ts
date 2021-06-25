@@ -37,6 +37,7 @@ export type {
 	RTTextNode,
 	RTBlockNode,
 	RTInlineNode,
+	RTAnyNode,
 	// Image
 	ImageField,
 	// Links
