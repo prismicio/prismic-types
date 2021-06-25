@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/prismicio/prismic-types/compare/v0.0.10...v0.0.11) (2021-06-25)
+
+
+### Bug Fixes
+
+* span node type ([6b261ab](https://github.com/prismicio/prismic-types/commit/6b261abef79c6de32751e7067228216a2a5267ca))
+
 ### [0.0.10](https://github.com/prismicio/prismic-types/compare/v0.0.9...v0.0.10) (2021-06-23)
 
 
