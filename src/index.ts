@@ -65,3 +65,43 @@ export type {
 	// Misc
 	AnyRegularField,
 } from "./fields";
+
+export type {
+	CustomType,
+	CustomTypeTab,
+	// Fields
+	CustomTypeField,
+	CustomTypeFieldForData,
+	CustomTypeFieldForGroup,
+	CustomTypeFieldType,
+	// Individual Fields
+	CustomTypeBooleanField,
+	CustomTypeColorField,
+	CustomTypeContentRelationshipField,
+	CustomTypeDateField,
+	CustomTypeEmbedField,
+	CustomTypeGeoPointField,
+	CustomTypeGroupField,
+	CustomTypeImageConstraint,
+	CustomTypeImageField,
+	CustomTypeImageThumbnail,
+	CustomTypeIntegrationField,
+	CustomTypeLinkField,
+	CustomTypeLinkSelectType,
+	CustomTypeLinkToMediaField,
+	CustomTypeNumberField,
+	CustomTypeRichTextField,
+	CustomTypeRichTextMultiField,
+	CustomTypeRichTextSingleField,
+	CustomTypeSelectField,
+	CustomTypeTextField,
+	CustomTypeTimestampField,
+	CustomTypeTitleField,
+	CustomTypeUIDField,
+	// Slices
+	CustomTypeSliceZoneField,
+	CustomTypeSlice,
+	CustomTypeSharedSlice,
+	CustomTypeSliceLabel,
+	CustomTypeSliceDisplay,
+} from "./customType";
