@@ -10,11 +10,8 @@ export type CustomTypeTab<FieldName extends string = string> = Record<
 
 export type CustomTypeField =
 	| CustomTypeUIDField
-	| CustomTypeSliceZoneField
-	| CustomTypeFieldForData;
-
-export type CustomTypeFieldForData =
 	| CustomTypeGroupField
+	| CustomTypeSliceZoneField
 	| CustomTypeFieldForGroup;
 
 export type CustomTypeFieldForGroup =

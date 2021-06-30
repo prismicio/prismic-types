@@ -71,7 +71,6 @@ export type {
 	CustomTypeTab,
 	// Fields
 	CustomTypeField,
-	CustomTypeFieldForData,
 	CustomTypeFieldForGroup,
 	CustomTypeFieldType,
 	// Individual Fields
