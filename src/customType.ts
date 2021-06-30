@@ -261,11 +261,11 @@ export enum CustomTypeSliceType {
 export interface CustomTypeSlice<
 	NonRepeatFields extends Record<string, CustomTypeFieldForGroup> = Record<
 		string,
-		never
+		CustomTypeFieldForGroup
 	>,
 	RepeatFields extends Record<string, CustomTypeFieldForGroup> = Record<
 		string,
-		never
+		CustomTypeFieldForGroup
 	>,
 > {
 	type: CustomTypeSliceType.Slice;
