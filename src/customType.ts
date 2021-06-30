@@ -44,8 +44,6 @@ export enum CustomTypeFieldType {
 	Link = "Link",
 	Number = "Number",
 	Select = "Select",
-	SharedSlice = "SharedSlice",
-	Slice = "Slice",
 	Slices = "Slices",
 	StructuredText = "StructuredText",
 	Text = "Text",
@@ -255,6 +253,11 @@ export enum CustomTypeSliceDisplay {
 	Grid = "grid",
 }
 
+export enum CustomTypeSliceType {
+	Slice = "Slice",
+	SharedSlice = "SharedSlice",
+}
+
 export interface CustomTypeSlice<
 	NonRepeatFields extends Record<string, CustomTypeFieldForGroup> = Record<
 		string,
@@ -265,7 +268,7 @@ export interface CustomTypeSlice<
 		never
 	>,
 > {
-	type: CustomTypeFieldType.Slice;
+	type: CustomTypeSliceType.Slice;
 	fieldset: string;
 	description: string;
 	icon: string;
@@ -275,5 +278,5 @@ export interface CustomTypeSlice<
 }
 
 export interface CustomTypeSharedSlice {
-	type: CustomTypeFieldType.SharedSlice;
+	type: CustomTypeSliceType.SharedSlice;
 }
