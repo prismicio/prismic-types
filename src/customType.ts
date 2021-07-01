@@ -472,15 +472,17 @@ export interface CustomTypeModelSharedSlice {
  * More details:
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
+ *
+ * @typeParam Variation A variation for the Shared Slice.
  */
 export interface SharedSliceModel<
-	Variations extends readonly SharedSliceModelVariation[] = readonly SharedSliceModelVariation[],
+	Variation extends SharedSliceModelVariation = SharedSliceModelVariation,
 > {
 	type: CustomTypeModelSliceType.SharedSlice;
 	id: string;
 	name: string;
 	description: string;
-	variations: Variations;
+	variations: readonly Variation[];
 }
 
 /**
