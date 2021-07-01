@@ -66,13 +66,19 @@ export type {
 	AnyRegularField,
 } from "./fields";
 
+export {
+	CustomTypeFieldType,
+	CustomTypeLinkSelectType,
+	CustomTypeSliceDisplay,
+	CustomTypeSliceType,
+} from "./customType";
+
 export type {
 	CustomType,
 	CustomTypeTab,
 	// Fields
 	CustomTypeField,
 	CustomTypeFieldForGroup,
-	CustomTypeFieldType,
 	// Individual Fields
 	CustomTypeBooleanField,
 	CustomTypeColorField,
@@ -87,7 +93,6 @@ export type {
 	CustomTypeIntegrationField,
 	CustomTypeKeyTextField,
 	CustomTypeLinkField,
-	CustomTypeLinkSelectType,
 	CustomTypeLinkToMediaField,
 	CustomTypeNumberField,
 	CustomTypeRichTextField,
@@ -100,7 +105,6 @@ export type {
 	// Slices
 	CustomTypeSliceZoneField,
 	CustomTypeSlice,
-	CustomTypeSliceDisplay,
 	CustomTypeSliceLabel,
 	CustomTypeSharedSlice,
 } from "./customType";
