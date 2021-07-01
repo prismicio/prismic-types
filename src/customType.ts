@@ -465,3 +465,49 @@ export interface CustomTypeModelSlice<
 export interface CustomTypeModelSharedSlice {
 	type: CustomTypeModelSliceType.SharedSlice;
 }
+
+/**
+ * A Prismic Shared Slice model.
+ *
+ * More details:
+ * - {@link https://prismic.io/docs/core-concepts/slices}
+ * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
+ */
+export interface SharedSliceModel<
+	Variations extends readonly SharedSliceModelVariation[] = readonly SharedSliceModelVariation[],
+> {
+	type: CustomTypeModelSliceType.SharedSlice;
+	id: string;
+	name: string;
+	description: string;
+	variations: Variations;
+}
+
+/**
+ * A Shared Slice variation.
+ *
+ * More details:
+ * - {@link https://prismic.io/docs/core-concepts/slices}
+ * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
+ *
+ * @typeParam PrimaryFields A record of fields that cannnot be repeated.
+ * @typeParam ItemFields A record of fields that can be repeated.
+ */
+export interface SharedSliceModelVariation<
+	PrimaryFields extends Record<string, CustomTypeModelFieldForGroup> = Record<
+		string,
+		CustomTypeModelFieldForGroup
+	>,
+	ItemFields extends Record<string, CustomTypeModelFieldForGroup> = Record<
+		string,
+		CustomTypeModelFieldForGroup
+	>,
+> {
+	id: string;
+	name: string;
+	docURL: string;
+	version: string;
+	description: string;
+	primary: PrimaryFields;
+	items: ItemFields;
+}

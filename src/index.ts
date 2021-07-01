@@ -107,4 +107,7 @@ export type {
 	CustomTypeModelSlice,
 	CustomTypeModelSliceLabel,
 	CustomTypeModelSharedSlice,
+	// SharedSlices
+	SharedSliceModel,
+	SharedSliceModelVariation,
 } from "./customType";
