@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/prismicio/prismic-types/compare/v0.0.11...v0.0.12) (2021-07-01)
+
+
+### Features
+
+* add custom type model types ([#2](https://github.com/prismicio/prismic-types/issues/2)) ([c664bf8](https://github.com/prismicio/prismic-types/commit/c664bf8fcf7daf00d1cd2cca5f0d31713ca693aa))
+* export Custom Type enums ([e7a78e5](https://github.com/prismicio/prismic-types/commit/e7a78e572638b037c6be2d56f6ef02fff6d96500))
+
+
+### Chore
+
+* update dependencies ([b024ff6](https://github.com/prismicio/prismic-types/commit/b024ff63527fa18507b5ce57a2e45bb3ad31c09a))
+* use npm over yarn ([ad27195](https://github.com/prismicio/prismic-types/commit/ad27195659494dfc7ba8acea2a1132087aa82ada))
+
 ### [0.0.11](https://github.com/prismicio/prismic-types/compare/v0.0.10...v0.0.11) (2021-06-25)
 
 
