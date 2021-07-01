@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/prismicio/prismic-types/compare/v0.0.12...v0.1.0) (2021-07-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename CustomType prefix to CustomTypeModel
+
+### Features
+
+* add Shared Slice types ([c815c2d](https://github.com/prismicio/prismic-types/commit/c815c2d27386355725fc857ccd2625713d0dfcd3))
+* rename CustomType prefix to CustomTypeModel ([7a493eb](https://github.com/prismicio/prismic-types/commit/7a493ebdf54bb917bf1844cfcba5aa79a992776c))
+
 ### [0.0.12](https://github.com/prismicio/prismic-types/compare/v0.0.11...v0.0.12) (2021-07-01)
 
 
