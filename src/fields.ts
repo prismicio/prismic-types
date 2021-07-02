@@ -218,6 +218,7 @@ export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 export interface FilledLinkToDocumentField<
 	TypeEnum = string,
 	LangEnum = string,
+	DataInterface = never,
 > {
 	link_type: LinkType.Document;
 	id: string;
@@ -228,6 +229,7 @@ export interface FilledLinkToDocumentField<
 	url?: string;
 	slug?: string;
 	isBroken?: boolean;
+	data?: DataInterface;
 }
 
 export interface FilledLinkToWebField {
@@ -246,12 +248,20 @@ export interface FilledLinkToMediaField {
 	width?: string | null;
 }
 
-export type RelationField<TypeEnum = string, LangEnum = string> =
-	| FilledLinkToDocumentField<TypeEnum, LangEnum>
+export type RelationField<
+	TypeEnum = string,
+	LangEnum = string,
+	DataInterface = never,
+> =
+	| FilledLinkToDocumentField<TypeEnum, LangEnum, DataInterface>
 	| EmptyLinkField<LinkType.Document>;
 
-export type LinkField<TypeEnum = string, LangEnum = string> =
-	| RelationField<TypeEnum, LangEnum>
+export type LinkField<
+	TypeEnum = string,
+	LangEnum = string,
+	DataInterface = never,
+> =
+	| RelationField<TypeEnum, LangEnum, DataInterface>
 	| FilledLinkToWebField
 	| LinkToMediaField
 	| EmptyLinkField<LinkType.Any>;
