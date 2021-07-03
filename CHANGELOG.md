@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/prismicio/prismic-types/compare/v0.1.0...v0.1.1) (2021-07-03)
+
+
+### Bug Fixes
+
+* add data property to FilledLinkToDocumentField ([cc62bf0](https://github.com/prismicio/prismic-types/commit/cc62bf0dfe3f086668b2d42c3fc72642d0e9e168)), closes [#1](https://github.com/prismicio/prismic-types/issues/1)
+* looser SharedSliceModel variation generic ([b97f2c1](https://github.com/prismicio/prismic-types/commit/b97f2c1ffa8b04ae9b40c6a42a653556b4995d1c))
+
 ## [0.1.0](https://github.com/prismicio/prismic-types/compare/v0.0.12...v0.1.0) (2021-07-01)
 
 
