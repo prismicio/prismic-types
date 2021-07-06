@@ -331,6 +331,8 @@ export type GroupField<
 	>,
 > = Fields[];
 
+export type IntegrationField<Blob = unknown> = Blob | null;
+
 // TODO: Might be prone to change really soon with variations!
 export interface Slice<
 	SliceType = string,
