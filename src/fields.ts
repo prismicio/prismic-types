@@ -370,4 +370,5 @@ export type AnyRegularField =
 	| SelectField
 	| BooleanField
 	| EmbedField
-	| GeoPointField;
+	| GeoPointField
+	| IntegrationField;
