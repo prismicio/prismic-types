@@ -97,6 +97,10 @@ export type RTImageNode = {
 		width: number;
 		height: number;
 	};
+	linkTo?:
+		| FilledLinkToDocumentField
+		| FilledLinkToWebField
+		| FilledLinkToMediaField;
 };
 export type RTEmbedNode = {
 	type: RichTextNodeType.embed;
