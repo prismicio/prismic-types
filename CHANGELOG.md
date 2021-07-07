@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/prismicio/prismic-types/compare/v0.1.1...v0.1.2) (2021-07-07)
+
+
+### Features
+
+* add integration field ([91eaad5](https://github.com/prismicio/prismic-types/commit/91eaad5482472a54b00e46ce7755b79fcf4d7d16))
+
+
+### Bug Fixes
+
+* image node can feature a linkTo property ([fa3adba](https://github.com/prismicio/prismic-types/commit/fa3adbaecbea68f53efa77ea7865ebf749188af6))
+
+
+### Chore
+
+* add integration field to regular field type list ([0bb0e25](https://github.com/prismicio/prismic-types/commit/0bb0e255fcbbd29f50075fdcd3371b821e626220))
+
 ### [0.1.1](https://github.com/prismicio/prismic-types/compare/v0.1.0...v0.1.1) (2021-07-03)
 
 
