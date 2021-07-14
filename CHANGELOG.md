@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/prismicio/prismic-types/compare/v0.1.2...v0.1.3) (2021-07-14)
+
+
+### Features
+
+* add SharedSlice and SharedSliceVariation ([cd9db5f](https://github.com/prismicio/prismic-types/commit/cd9db5fa866cf5eea3e458710511ae109384d1b8))
+
+
+### Chore
+
+* update pull request template ([c8b2339](https://github.com/prismicio/prismic-types/commit/c8b23399cfac7d9d94ae5bb6030f6ba2305d237b))
+
 ### [0.1.2](https://github.com/prismicio/prismic-types/compare/v0.1.1...v0.1.2) (2021-07-07)
 
 
