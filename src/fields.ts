@@ -331,7 +331,6 @@ export type GroupField<
 	>,
 > = Fields[];
 
-// TODO: Might be prone to change really soon with variations!
 export interface Slice<
 	SliceType = string,
 	PrimaryFields extends Record<string, AnyRegularField> = Record<
@@ -349,7 +348,34 @@ export interface Slice<
 	items: ItemsFields[];
 }
 
-export type SliceZone<Slices extends Slice = Slice> = Slices[];
+export type SharedSlice<
+	SliceType = string,
+	Variations extends SharedSliceVariation = SharedSliceVariation,
+> = {
+	slice_type: SliceType;
+	slice_label: string | null;
+} & Variations;
+
+export interface SharedSliceVariation<
+	Variation = string,
+	PrimaryFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+	ItemsFields extends Record<string, AnyRegularField> = Record<
+		string,
+		AnyRegularField
+	>,
+> {
+	variation: Variation;
+	version: string;
+	primary: PrimaryFields;
+	items: ItemsFields[];
+}
+
+export type SliceZone<
+	Slices extends Slice | SharedSlice = Slice | SharedSlice,
+> = Slices[];
 
 // Misc
 
