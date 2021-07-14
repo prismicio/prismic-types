@@ -97,6 +97,10 @@ export type RTImageNode = {
 		width: number;
 		height: number;
 	};
+	linkTo?:
+		| FilledLinkToDocumentField
+		| FilledLinkToWebField
+		| FilledLinkToMediaField;
 };
 export type RTEmbedNode = {
 	type: RichTextNodeType.embed;
@@ -331,6 +335,8 @@ export type GroupField<
 	>,
 > = Fields[];
 
+export type IntegrationField<Blob = unknown> = Blob | null;
+
 export interface Slice<
 	SliceType = string,
 	PrimaryFields extends Record<string, AnyRegularField> = Record<
@@ -394,4 +400,5 @@ export type AnyRegularField =
 	| SelectField
 	| BooleanField
 	| EmbedField
-	| GeoPointField;
+	| GeoPointField
+	| IntegrationField;

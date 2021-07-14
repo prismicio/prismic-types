@@ -60,6 +60,7 @@ export type {
 	GeoPointField,
 	// Complex
 	GroupField,
+	IntegrationField,
 	Slice,
 	SliceZone,
 	// Misc
