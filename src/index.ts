@@ -62,6 +62,8 @@ export type {
 	GroupField,
 	IntegrationField,
 	Slice,
+	SharedSlice,
+	SharedSliceVariation,
 	SliceZone,
 	// Misc
 	AnyRegularField,
