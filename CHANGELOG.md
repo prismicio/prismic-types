@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/prismicio/prismic-types/compare/v0.1.3...v0.1.4) (2021-07-14)
+
+
+### Bug Fixes
+
+* export SharedSlice and SharedSliceVariation ([02498d3](https://github.com/prismicio/prismic-types/commit/02498d3a2dcaabfb95079fff44e6ab931a4cfb1c))
+
 ### [0.1.3](https://github.com/prismicio/prismic-types/compare/v0.1.2...v0.1.3) (2021-07-14)
 
 
