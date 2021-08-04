@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/prismicio/prismic-types/compare/v0.1.4...v0.1.5) (2021-08-04)
+
+
+### Features
+
+* add CustomTypeModelDefinition and restructure CustomTypeModel ([453328c](https://github.com/prismicio/prismic-types/commit/453328cbec33770b66c4be1043d775a8c926932b))
+
 ### [0.1.4](https://github.com/prismicio/prismic-types/compare/v0.1.3...v0.1.4) (2021-07-14)
 
 
