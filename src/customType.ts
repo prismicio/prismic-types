@@ -308,14 +308,14 @@ export interface CustomTypeModelNumberField {
  * @typeParam DefaultValue Default value for the field.
  */
 export interface CustomTypeModelSelectField<
-	Options extends readonly string[] = readonly string[],
-	DefaultValue extends IterableElement<Options> = IterableElement<Options>,
+	Option extends string = string,
+	DefaultValue extends Option = Option,
 > {
 	type: CustomTypeModelFieldType.Select;
 	config: {
 		label: string;
 		placeholder?: string;
-		options: Options;
+		options: Option[];
 		default_value?: DefaultValue;
 	};
 }
