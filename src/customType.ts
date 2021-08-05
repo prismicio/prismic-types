@@ -1,11 +1,4 @@
 /**
- * Returns a union of element types in an Iterable.
- *
- * @typeParam T Type from which to extract element types.
- */
-type IterableElement<T> = T extends Iterable<infer U> ? U : never;
-
-/**
  * A Prismic Custom Type model.
  *
  * @typeParam ID API ID of the Custom Type.
