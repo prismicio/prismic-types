@@ -78,6 +78,7 @@ export {
 
 export type {
 	CustomTypeModel,
+	CustomTypeModelDefinition,
 	CustomTypeModelTab,
 	// Fields
 	CustomTypeModelField,
