@@ -247,6 +247,8 @@ export interface CustomTypeModelContentRelationshipField {
 		label: string;
 		placeholder?: string;
 		select: CustomTypeModelLinkSelectType.Document;
+		customtypes?: string[];
+		tags?: string[];
 	};
 }
 
