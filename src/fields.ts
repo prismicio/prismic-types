@@ -1,6 +1,6 @@
 type EmptyObjectField = Record<string, never>;
 
-// RichText & Title
+// Types for RichTextNodes
 export const enum RichTextNodeType {
 	heading1 = "heading1",
 	heading2 = "heading2",
@@ -26,40 +26,79 @@ export const enum RichTextNodeType {
 // Text nodes
 
 /**
- * @internal
+ * Base to be extended by other RT Nodes.
  */
 export interface RTTextNodeBase {
 	text: string;
 	spans: RTInlineNode[];
 }
 
+/**
+ * Rich Text <h1 /> node
+ */
 export interface RTHeading1Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading1;
 }
+
+/**
+ * Rich Text <h2 /> node
+ */
 export interface RTHeading2Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading2;
 }
+
+/**
+ * Rich Text <h3 /> node
+ */
 export interface RTHeading3Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading3;
 }
+
+/**
+ * Rich Text <h4 /> node
+ */
 export interface RTHeading4Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading4;
 }
+
+/**
+ * Rich Text <h5 /> node
+ */
 export interface RTHeading5Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading5;
 }
+
+/**
+ * Rich Text <h6 /> node
+ */
 export interface RTHeading6Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading6;
 }
+
+/**
+ * Rich Text <p /> node
+ */
 export interface RTParagraphNode extends RTTextNodeBase {
 	type: RichTextNodeType.paragraph;
 }
+
+/**
+ * Rich Text <pre /> node
+ */
 export interface RTPreformattedNode extends RTTextNodeBase {
 	type: RichTextNodeType.preformatted;
 }
+
+/**
+ * Rich Text <li /> node
+ */
 export interface RTListItemNode extends RTTextNodeBase {
 	type: RichTextNodeType.listItem;
 }
+
+/**
+ * Rich Text <li /> node for ordered lists
+ */
 export interface RTOListItemNode extends RTTextNodeBase {
 	type: RichTextNodeType.oListItem;
 }
@@ -68,18 +107,29 @@ export interface RTOListItemNode extends RTTextNodeBase {
 
 /**
  * @internal
+ * Span Node base to be extended for other Span nodes
  */
 export interface RTSpanNodeBase {
 	start: number;
 	end: number;
 }
-
+/**
+ * Rich Text <strong /> node
+ */
 export interface RTStrongNode extends RTSpanNodeBase {
 	type: RichTextNodeType.strong;
 }
+
+/**
+ * Rich Text <em /> node
+ */
 export interface RTEmNode extends RTSpanNodeBase {
 	type: RichTextNodeType.em;
 }
+
+/**
+ * Rich Text <label /> node
+ */
 export interface RTLabelNode extends RTSpanNodeBase {
 	type: RichTextNodeType.label;
 	data: {
@@ -88,6 +138,10 @@ export interface RTLabelNode extends RTSpanNodeBase {
 }
 
 // Media nodes
+
+/**
+ * Rich Text <img /> nodes. They could link to other documents, external web links and media fields
+ */
 export type RTImageNode = {
 	type: RichTextNodeType.image;
 	url: string;
@@ -102,6 +156,10 @@ export type RTImageNode = {
 		| FilledLinkToWebField
 		| FilledLinkToMediaField;
 };
+
+/**
+ * Rich Text <embed /> node
+ */
 export type RTEmbedNode = {
 	type: RichTextNodeType.embed;
 	oembed: Record<string, string | number | null> & {
@@ -110,6 +168,11 @@ export type RTEmbedNode = {
 };
 
 // Link nodes
+
+/**
+ * /**
+ * Rich Text <a /> node
+ */
 export interface RTLinkNode extends RTSpanNodeBase {
 	type: RichTextNodeType.hyperlink;
 	data:
@@ -119,22 +182,35 @@ export interface RTLinkNode extends RTSpanNodeBase {
 }
 
 // Serialization related nodes
+
+/**
+ * Rich Text <ul /> node
+ */
 export interface RTListNode {
 	type: RichTextNodeType.list;
 	items: RTListItemNode[];
 }
+
+/**
+ * Rich Text <ol /> node
+ */
 export interface RTOListNode {
 	type: RichTextNodeType.oList;
 	items: RTOListItemNode[];
 }
 // This one is confusing but it's actually the inner content of a block
+/**
+ * Rich Text <span /> node
+ */
 export interface RTSpanNode extends RTTextNodeBase {
 	type: RichTextNodeType.span;
 }
 
 // Helpers
 
-// Nodes from a rich text field
+/**
+ * Nodes from a Rich Text Field
+ */
 export type RTNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -149,7 +225,9 @@ export type RTNode =
 	| RTImageNode
 	| RTEmbedNode;
 
-// Nodes with text
+/**
+ * Rich text nodes with text
+ */
 export type RTTextNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -162,7 +240,9 @@ export type RTTextNode =
 	| RTListItemNode
 	| RTOListItemNode;
 
-// Block nodes
+/**
+ * Rich Text block nodes
+ */
 export type RTBlockNode =
 	| RTHeading1Node
 	| RTHeading2Node
@@ -179,13 +259,19 @@ export type RTBlockNode =
 	| RTImageNode
 	| RTEmbedNode;
 
-// Inline nodes
+/**
+ * Inline Rich Text Nodes
+ */
 export type RTInlineNode = RTStrongNode | RTEmNode | RTLabelNode | RTLinkNode;
 
-// All nodes
+/**
+ * All Rich Text nodes
+ */
 export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
 
-// Title field nodes
+/**
+ * All Rich Text Title Nodes
+ */
 export type TitleField = [
 	| RTHeading1Node
 	| RTHeading2Node
@@ -199,6 +285,9 @@ export type RichTextField = RTNode[];
 
 // Image
 
+/**
+ * Image Field
+ */
 export interface ImageField extends Record<string, unknown> {
 	dimensions: { width: number; height: number } | null;
 	alt: string | null;
@@ -207,7 +296,9 @@ export interface ImageField extends Record<string, unknown> {
 }
 
 // Links
-
+/**
+ * Link Types
+ */
 export enum LinkType {
 	Any = "Any",
 	Document = "Document",
@@ -215,10 +306,16 @@ export enum LinkType {
 	Web = "Web",
 }
 
+/**
+ * For link fields that haven't been filled
+ */
 export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 	link_type: Type | string;
 };
 
+/**
+ * Links that refer to Documents
+ */
 export interface FilledLinkToDocumentField<
 	TypeEnum = string,
 	LangEnum = string,
@@ -235,13 +332,18 @@ export interface FilledLinkToDocumentField<
 	isBroken?: boolean;
 	data?: DataInterface;
 }
-
+/**
+ * Link that points to external website
+ */
 export interface FilledLinkToWebField {
 	link_type: LinkType.Web;
 	url: string;
 	target?: string;
 }
 
+/**
+ * Link that points to  media
+ */
 export interface FilledLinkToMediaField {
 	link_type: LinkType.Media;
 	name: string;
@@ -252,6 +354,9 @@ export interface FilledLinkToMediaField {
 	width?: string | null;
 }
 
+/**
+ * Field for related documents
+ */
 export type RelationField<
 	TypeEnum = string,
 	LangEnum = string,
@@ -260,6 +365,9 @@ export type RelationField<
 	| FilledLinkToDocumentField<TypeEnum, LangEnum, DataInterface>
 	| EmptyLinkField<LinkType.Document>;
 
+/**
+ * Link Field
+ */
 export type LinkField<
 	TypeEnum = string,
 	LangEnum = string,
@@ -270,31 +378,59 @@ export type LinkField<
 	| LinkToMediaField
 	| EmptyLinkField<LinkType.Any>;
 
+/**
+ * Link field that points to media
+ */
 export type LinkToMediaField =
 	| FilledLinkToMediaField
 	| EmptyLinkField<LinkType.Media>;
 
 // Simple fields
-
+/**
+ * Simple Date Field
+ */
 export type DateField = string | null;
 
+/**
+ * Simple Timestamp Field
+ */
 export type TimestampField = string | null;
 
+/**
+ * Simple Color Field
+ */
 export type ColorField = `#${string}` | null;
 
+/**
+ * Simple Number Field
+ */
 export type NumberField = number | null;
-
+/**
+ * Simple Key Text Field
+ */
 export type KeyTextField = string | null;
 
+/**
+ * Simple Select Field
+ */
 export type SelectField<Enum = string> = Enum | null;
 
+/**
+ * Simple Boolean Field
+ */
 export type BooleanField = boolean;
 
+/**
+ * Embed Type - Link or RichText Field
+ */
 export enum EmbedType {
 	Link = "link",
 	Rich = "rich",
 }
 
+/**
+ * Simple Embed Field
+ */
 export type EmbedField =
 	| {
 			url: string;
@@ -319,6 +455,9 @@ export type EmbedField =
 	  }
 	| EmptyObjectField;
 
+/**
+ * Simple GeoPoint Field
+ */
 export type GeoPointField =
 	| {
 			latitude: number;
@@ -327,7 +466,9 @@ export type GeoPointField =
 	| EmptyObjectField;
 
 // Complex
-
+/**
+ * Group Field - Can be any Field
+ */
 export type GroupField<
 	Fields extends Record<string, AnyRegularField> = Record<
 		string,
@@ -335,8 +476,15 @@ export type GroupField<
 	>,
 > = Fields[];
 
+/**
+ * Integration Field for Custom APIs
+ */
 export type IntegrationField<Blob = unknown> = Blob | null;
 
+/**
+ * Slice
+ * View Docs: {@link https://prismic.io/docs/core-concepts/slices}
+ */
 export interface Slice<
 	SliceType = string,
 	PrimaryFields extends Record<string, AnyRegularField> = Record<
@@ -378,7 +526,10 @@ export interface SharedSliceVariation<
 	primary: PrimaryFields;
 	items: ItemsFields[];
 }
-
+/**
+ * Prismic Slices are sections of your website. Prismic documents contain a dynamic "Slice Zone" that allows content creators to add, edit, and rearrange Slices to compose dynamic layouts for any page design, such as blog posts, landing pages, case studies, and tutorials.
+ * View Docs: {@link https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs}
+ */
 export type SliceZone<
 	Slices extends Slice | SharedSlice = Slice | SharedSlice,
 > = Slices[];
