@@ -104,9 +104,7 @@ export type RTImageNode = {
 };
 export type RTEmbedNode = {
 	type: RichTextNodeType.embed;
-	oembed: Record<string, string | number | null> & {
-		html: string;
-	};
+	oembed: EmbedField;
 };
 
 // Link nodes
