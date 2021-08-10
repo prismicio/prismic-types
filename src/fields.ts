@@ -1,6 +1,9 @@
 type EmptyObjectField = Record<string, never>;
 
-// Types for RichTextNodes
+/**
+ * Types for RichTextNodes
+ * More Details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
+ */
 export const enum RichTextNodeType {
 	heading1 = "heading1",
 	heading2 = "heading2",
@@ -141,6 +144,7 @@ export interface RTLabelNode extends RTSpanNodeBase {
 
 /**
  * Rich Text <img /> nodes. They could link to other documents, external web links and media fields
+ * @typeParam linkTo - A link to either a document, external site or media
  */
 export type RTImageNode = {
 	type: RichTextNodeType.image;
@@ -172,6 +176,8 @@ export type RTEmbedNode = {
 /**
  * /**
  * Rich Text <a /> node
+ * @typeParam data - A link to either a document, external site or media
+ * More Details {@link https://prismic.io/docs/core-concepts/edit-rich-text#add-links}
  */
 export interface RTLinkNode extends RTSpanNodeBase {
 	type: RichTextNodeType.hyperlink;
@@ -385,9 +391,12 @@ export type LinkToMediaField =
 	| FilledLinkToMediaField
 	| EmptyLinkField<LinkType.Media>;
 
-// Simple fields
+// Simple Fields
+
 /**
- * Simple Date Field
+ * A Date field.
+ *
+ * More details: {@link https://prismic.io/docs/core-concepts/date}
  */
 export type DateField = string | null;
 
@@ -397,26 +406,37 @@ export type DateField = string | null;
 export type TimestampField = string | null;
 
 /**
- * Simple Color Field
+ * A Color field.
+ *
+ * More details: {@link https://prismic.io/docs/core-concepts/color}
  */
 export type ColorField = `#${string}` | null;
 
 /**
- * Simple Number Field
+ * A Number field
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export type NumberField = number | null;
+
 /**
- * Simple Key Text Field
+ * A Key text field
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/key-text}
  */
 export type KeyTextField = string | null;
 
 /**
- * Simple Select Field
+ * A Select field
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/select}
  */
 export type SelectField<Enum = string> = Enum | null;
 
 /**
- * Simple Boolean Field
+ * A Boolean field.
+ *
+ * More details: {@link https://prismic.io/docs/core-concepts/boolean}
  */
 export type BooleanField = boolean;
 
@@ -429,7 +449,9 @@ export enum EmbedType {
 }
 
 /**
- * Simple Embed Field
+ * An Embed field.
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
 export type EmbedField =
 	| {
@@ -456,7 +478,9 @@ export type EmbedField =
 	| EmptyObjectField;
 
 /**
- * Simple GeoPoint Field
+ * A Geopoint field.
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/geopoint}
  */
 export type GeoPointField =
 	| {
@@ -467,7 +491,9 @@ export type GeoPointField =
 
 // Complex
 /**
- * Group Field - Can be any Field
+ * A Group field.
+ * 
+ * More details: {@link https://prismic.io/docs/core-concepts/group}
  */
 export type GroupField<
 	Fields extends Record<string, AnyRegularField> = Record<
@@ -478,12 +504,13 @@ export type GroupField<
 
 /**
  * Integration Field for Custom APIs
+ * More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
 export type IntegrationField<Blob = unknown> = Blob | null;
 
 /**
- * Slice
- * View Docs: {@link https://prismic.io/docs/core-concepts/slices}
+ * Slice - Sections of your website
+ * More Details: {@link https://prismic.io/docs/core-concepts/slices}
  */
 export interface Slice<
 	SliceType = string,
@@ -502,6 +529,10 @@ export interface Slice<
 	items: ItemsFields[];
 }
 
+/**
+ * Shared Slice
+ * More Details: {@link https://prismic.io/docs/core-concepts/reusing-slices#shared-slices}
+ */
 export type SharedSlice<
 	SliceType = string,
 	Variations extends SharedSliceVariation = SharedSliceVariation,
@@ -528,7 +559,7 @@ export interface SharedSliceVariation<
 }
 /**
  * Prismic Slices are sections of your website. Prismic documents contain a dynamic "Slice Zone" that allows content creators to add, edit, and rearrange Slices to compose dynamic layouts for any page design, such as blog posts, landing pages, case studies, and tutorials.
- * View Docs: {@link https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs}
+ * More Details: {@link https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs}
  */
 export type SliceZone<
 	Slices extends Slice | SharedSlice = Slice | SharedSlice,
