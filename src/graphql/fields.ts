@@ -5,17 +5,30 @@ export enum LinkType {
 	Web = "Link.web",
 }
 
+/**
+ * Represents a link field without a value.
+ */
+
 export type EmptyLinkField = null;
 
+/**
+ * Link that point to Documents
+ */
 export interface FilledMinimalLinkToDocumentField {
 	_linkType: LinkType.Document | string;
 }
 
+/**
+ * Link that points to external website
+ */
 export interface FilledMinimalLinkToWebField {
 	_linkType: LinkType.Web | string;
 	url: string;
 }
 
+/**
+ * Link that points to media (images, PDFs, or any file in the Media Library)
+ */
 export interface FilledMinimalLinkToMediaField {
 	_linkType: LinkType.File | LinkType.Image | string;
 	url: string;
