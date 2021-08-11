@@ -1,7 +1,7 @@
 import { AnyRegularField, GroupField, SliceZone } from "./fields";
 
 /**
- * Alternate Language to query by
+ * Document metadata for a translation of a Prismic document.
  */
 interface AlternateLanguage {
 	id: string;
@@ -27,9 +27,9 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 	alternate_languages: AlternateLanguage[];
 }
 /**
- * Prismic Documents are instances of CustomTypes.
+ * A Prismic document served through REST API v2.
  * 
- * More details on Custom Types: {@link https://prismic.io/docs/core-concepts/custom-types}
+ * More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
  */
 export interface PrismicDocument<
 	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
