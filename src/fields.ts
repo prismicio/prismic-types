@@ -287,7 +287,6 @@ export type TitleField = [
 export type RichTextField = RTNode[];
 
 // Image
-https://prismic.io/docs/core-concepts/image
 
 /**
  * Image Field
@@ -414,21 +413,21 @@ export type ColorField = `#${string}` | null;
 
 /**
  * A Number field
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export type NumberField = number | null;
 
 /**
  * A Key text field
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/key-text}
  */
 export type KeyTextField = string | null;
 
 /**
  * A Select field
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/select}
  */
 export type SelectField<Enum = string> = Enum | null;
@@ -450,7 +449,7 @@ export enum EmbedType {
 
 /**
  * An Embed field.
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
 export type EmbedField =
@@ -479,7 +478,7 @@ export type EmbedField =
 
 /**
  * A Geopoint field.
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/geopoint}
  */
 export type GeoPointField =
@@ -492,7 +491,7 @@ export type GeoPointField =
 // Complex
 /**
  * A Group field.
- * 
+ *
  * More details: {@link https://prismic.io/docs/core-concepts/group}
  */
 export type GroupField<

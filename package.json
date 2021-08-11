@@ -40,6 +40,7 @@
 	"scripts": {
 		"build": "siroc build",
 		"dev": "siroc build --watch",
+		"format": "prettier --write .",
 		"release": "npm run build && npm run test && standard-version && git push --follow-tags && npm run build && npm publish",
 		"release:dry": "standard-version --dry-run",
 		"release:alpha": "npm run build && npm run test && standard-version --release-as minor --prerelease alpha && git push --follow-tags && npm run build && npm publish --tag alpha",
