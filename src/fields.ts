@@ -507,8 +507,9 @@ export type GroupField<
 > = Fields[];
 
 /**
- * Integration Field for Custom APIs More details:
- * {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
+ * Integration Field for Custom APIs
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
 export type IntegrationField<Blob = unknown> = Blob | null;
 
