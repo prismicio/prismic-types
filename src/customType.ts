@@ -1,8 +1,8 @@
 /**
  * A Prismic Custom Type model.
  *
- * @typeParam ID API ID of the Custom Type.
- * @typeParam Definition The Custom Type's tabs and their fields.
+ * @typeParam ID - API ID of the Custom Type.
+ * @typeParam Definition - The Custom Type's tabs and their fields.
  */
 export interface CustomTypeModel<
 	ID extends string = string,
@@ -37,7 +37,7 @@ export interface CustomTypeModel<
 /**
  * A Prismic Custom Type's tabs and their fields.
  *
- * @typeParam TabName Names of Custom Type tabs.
+ * @typeParam TabName - Names of Custom Type tabs.
  */
 export type CustomTypeModelDefinition<TabName extends string = string> = Record<
 	TabName,
@@ -48,7 +48,7 @@ export type CustomTypeModelDefinition<TabName extends string = string> = Record<
  * A Custom Type's tab. Each tab can contain any number of fields but is limited
  * to one Slice Zone.
  *
- * @typeParam FieldName API IDs of the fields.
+ * @typeParam FieldName - API IDs of the fields.
  */
 export type CustomTypeModelTab<FieldName extends string = string> = Record<
 	FieldName,
@@ -175,7 +175,7 @@ export interface CustomTypeModelGeoPointField {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/group}
  *
- * @typeParam Fields A record of fields that can be repeated.
+ * @typeParam Fields - A record of fields that can be repeated.
  */
 export interface CustomTypeModelGroupField<
 	Fields extends Record<string, CustomTypeModelFieldForGroup> = Record<
@@ -310,8 +310,8 @@ export interface CustomTypeModelNumberField {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/select}
  *
- * @typeParam Options Options for the field.
- * @typeParam DefaultValue Default value for the field.
+ * @typeParam Options - Options for the field.
+ * @typeParam DefaultValue - Default value for the field.
  */
 export interface CustomTypeModelSelectField<
 	Option extends string = string,
@@ -465,8 +465,8 @@ export enum CustomTypeModelSliceType {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/slices}
  *
- * @typeParam NonRepeatFields A record of fields that cannnot be repeated.
- * @typeParam RepeatFields A record of fields that can be repeated.
+ * @typeParam NonRepeatFields - A record of fields that cannnot be repeated.
+ * @typeParam RepeatFields - A record of fields that can be repeated.
  */
 export interface CustomTypeModelSlice<
 	NonRepeatFields extends Record<string, CustomTypeModelFieldForGroup> = Record<
@@ -507,7 +507,7 @@ export interface CustomTypeModelSharedSlice {
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  *
- * @typeParam Variation A variation for the Shared Slice.
+ * @typeParam Variation - A variation for the Shared Slice.
  */
 export interface SharedSliceModel<
 	ID extends string = string,
@@ -528,8 +528,8 @@ export interface SharedSliceModel<
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  *
- * @typeParam PrimaryFields A record of fields that cannnot be repeated.
- * @typeParam ItemFields A record of fields that can be repeated.
+ * @typeParam PrimaryFields - A record of fields that cannnot be repeated.
+ * @typeParam ItemFields - A record of fields that can be repeated.
  */
 export interface SharedSliceModelVariation<
 	PrimaryFields extends Record<string, CustomTypeModelFieldForGroup> = Record<
