@@ -6,12 +6,13 @@ export enum LinkType {
 }
 
 /**
- * For link fields that haven't been filled
+ * Represents a link field without a value.
  */
+
 export type EmptyLinkField = null;
 
 /**
- * Links that point to Documents
+ * Link that point to Documents
  */
 export interface FilledMinimalLinkToDocumentField {
 	_linkType: LinkType.Document | string;
@@ -26,7 +27,7 @@ export interface FilledMinimalLinkToWebField {
 }
 
 /**
- * Link that points to  media
+ * Link that points to media (images, PDFs, or any file in the Media Library)
  */
 export interface FilledMinimalLinkToMediaField {
 	_linkType: LinkType.File | LinkType.Image | string;
