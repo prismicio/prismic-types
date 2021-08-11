@@ -2,7 +2,7 @@ type EmptyObjectField = Record<string, never>;
 
 /**
  * Types for RichTextNodes
- * More Details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
+ * @see More Details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export const enum RichTextNodeType {
 	heading1 = "heading1",
@@ -37,70 +37,70 @@ export interface RTTextNodeBase {
 }
 
 /**
- * Rich Text <h1 /> node
+ * Rich Text `heading1` node
  */
 export interface RTHeading1Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading1;
 }
 
 /**
- * Rich Text <h2 /> node
+ * Rich Text `heading2` node
  */
 export interface RTHeading2Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading2;
 }
 
 /**
- * Rich Text <h3 /> node
+ * Rich Text `heading3` node
  */
 export interface RTHeading3Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading3;
 }
 
 /**
- * Rich Text <h4 /> node
+ * Rich Text `heading4` node
  */
 export interface RTHeading4Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading4;
 }
 
 /**
- * Rich Text <h5 /> node
+ * Rich Text `heading5` node
  */
 export interface RTHeading5Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading5;
 }
 
 /**
- * Rich Text <h6 /> node
+ * Rich Text `heading6` node
  */
 export interface RTHeading6Node extends RTTextNodeBase {
 	type: RichTextNodeType.heading6;
 }
 
 /**
- * Rich Text <p /> node
+ * Rich Text `paragraph` node
  */
 export interface RTParagraphNode extends RTTextNodeBase {
 	type: RichTextNodeType.paragraph;
 }
 
 /**
- * Rich Text <pre /> node
+ * Rich Text `preformatted` node
  */
 export interface RTPreformattedNode extends RTTextNodeBase {
 	type: RichTextNodeType.preformatted;
 }
 
 /**
- * Rich Text <li /> node
+ * Rich Text `list-item` node
  */
 export interface RTListItemNode extends RTTextNodeBase {
 	type: RichTextNodeType.listItem;
 }
 
 /**
- * Rich Text <li /> node for ordered lists
+ * Rich Text `o-list-item` node for ordered lists
  */
 export interface RTOListItemNode extends RTTextNodeBase {
 	type: RichTextNodeType.oListItem;
@@ -117,21 +117,21 @@ export interface RTSpanNodeBase {
 	end: number;
 }
 /**
- * Rich Text <strong /> node
+ * Rich Text `strong` node
  */
 export interface RTStrongNode extends RTSpanNodeBase {
 	type: RichTextNodeType.strong;
 }
 
 /**
- * Rich Text <em /> node
+ * Rich Text `embed` node
  */
 export interface RTEmNode extends RTSpanNodeBase {
 	type: RichTextNodeType.em;
 }
 
 /**
- * Rich Text <label /> node
+ * Rich Text `label` node
  */
 export interface RTLabelNode extends RTSpanNodeBase {
 	type: RichTextNodeType.label;
@@ -143,8 +143,7 @@ export interface RTLabelNode extends RTSpanNodeBase {
 // Media nodes
 
 /**
- * Rich Text <img /> nodes. They could link to other documents, external web links and media fields
- * @typeParam linkTo - A link to either a document, external site or media
+ * Rich Text `image` nodes. They could link to other documents, external web links and media fields
  */
 export type RTImageNode = {
 	type: RichTextNodeType.image;
@@ -162,7 +161,7 @@ export type RTImageNode = {
 };
 
 /**
- * Rich Text <embed /> node
+ * Rich Text `embed` node
  */
 export type RTEmbedNode = {
 	type: RichTextNodeType.embed;
@@ -174,9 +173,8 @@ export type RTEmbedNode = {
 // Link nodes
 
 /**
- * /**
- * Rich Text <a /> node
- * @typeParam data - A link to either a document, external site or media
+ *
+ * Rich Text `a` node
  * More Details {@link https://prismic.io/docs/core-concepts/edit-rich-text#add-links}
  */
 export interface RTLinkNode extends RTSpanNodeBase {
@@ -190,7 +188,7 @@ export interface RTLinkNode extends RTSpanNodeBase {
 // Serialization related nodes
 
 /**
- * Rich Text <ul /> node
+ * Rich Text `list` node
  */
 export interface RTListNode {
 	type: RichTextNodeType.list;
@@ -198,7 +196,7 @@ export interface RTListNode {
 }
 
 /**
- * Rich Text <ol /> node
+ * Rich Text o-lost node
  */
 export interface RTOListNode {
 	type: RichTextNodeType.oList;
@@ -206,7 +204,7 @@ export interface RTOListNode {
 }
 // This one is confusing but it's actually the inner content of a block
 /**
- * Rich Text <span /> node
+ * Rich Text `span` node
  */
 export interface RTSpanNode extends RTTextNodeBase {
 	type: RichTextNodeType.span;
@@ -277,6 +275,7 @@ export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
 
 /**
  * All Rich Text Title Nodes
+ * @see Title field documentation: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export type TitleField = [
 	| RTHeading1Node
@@ -290,9 +289,11 @@ export type TitleField = [
 export type RichTextField = RTNode[];
 
 // Image
+https://prismic.io/docs/core-concepts/image
 
 /**
  * Image Field
+ * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export interface ImageField extends Record<string, unknown> {
 	dimensions: { width: number; height: number } | null;
@@ -314,6 +315,7 @@ export enum LinkType {
 
 /**
  * For link fields that haven't been filled
+ * @typeParam Type - The type of link.
  */
 export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 	link_type: Type | string;
