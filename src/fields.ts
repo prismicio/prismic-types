@@ -2,7 +2,8 @@ type EmptyObjectField = Record<string, never>;
 
 /**
  * Types for RichTextNodes
- * @see More Details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export const enum RichTextNodeType {
 	heading1 = "heading1",
@@ -109,8 +110,7 @@ export interface RTOListItemNode extends RTTextNodeBase {
 // Span nodes
 
 /**
- * @internal
- * Span Node base to be extended for other Span nodes
+ * @internal Span Node base to be extended for other Span nodes
  */
 export interface RTSpanNodeBase {
 	start: number;
@@ -143,7 +143,8 @@ export interface RTLabelNode extends RTSpanNodeBase {
 // Media nodes
 
 /**
- * Rich Text `image` nodes. They could link to other documents, external web links and media fields
+ * Rich Text `image` nodes. They could link to other documents, external web
+ * links and media fields
  */
 export type RTImageNode = {
 	type: RichTextNodeType.image;
@@ -171,9 +172,9 @@ export type RTEmbedNode = {
 // Link nodes
 
 /**
- *
  * Rich Text `a` node
- * More Details {@link https://prismic.io/docs/core-concepts/edit-rich-text#add-links}
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/edit-rich-text#add-links}
  */
 export interface RTLinkNode extends RTSpanNodeBase {
 	type: RichTextNodeType.hyperlink;
@@ -200,6 +201,7 @@ export interface RTOListNode {
 	type: RichTextNodeType.oList;
 	items: RTOListItemNode[];
 }
+
 // This one is confusing but it's actually the inner content of a block
 /**
  * Rich Text `span` node
@@ -273,6 +275,7 @@ export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
 
 /**
  * All Rich Text Title Nodes
+ *
  * @see Title field documentation: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export type TitleField = [
@@ -290,6 +293,7 @@ export type RichTextField = RTNode[];
 
 /**
  * Image Field
+ *
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export interface ImageField extends Record<string, unknown> {
@@ -312,6 +316,7 @@ export enum LinkType {
 
 /**
  * For link fields that haven't been filled
+ *
  * @typeParam Type - The type of link.
  */
 export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
@@ -347,7 +352,7 @@ export interface FilledLinkToWebField {
 }
 
 /**
- * Link that points to  media
+ * Link that points to media
  */
 export interface FilledLinkToMediaField {
 	link_type: LinkType.Media;
@@ -502,14 +507,15 @@ export type GroupField<
 > = Fields[];
 
 /**
- * Integration Field for Custom APIs
- * More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
+ * Integration Field for Custom APIs More details:
+ * {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
 export type IntegrationField<Blob = unknown> = Blob | null;
 
 /**
  * Slice - Sections of your website
- * More Details: {@link https://prismic.io/docs/core-concepts/slices}
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/slices}
  */
 export interface Slice<
 	SliceType = string,
@@ -530,7 +536,8 @@ export interface Slice<
 
 /**
  * Shared Slice
- * More Details: {@link https://prismic.io/docs/core-concepts/reusing-slices#shared-slices}
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/reusing-slices#shared-slices}
  */
 export type SharedSlice<
 	SliceType = string,
@@ -557,8 +564,12 @@ export interface SharedSliceVariation<
 	items: ItemsFields[];
 }
 /**
- * Prismic Slices are sections of your website. Prismic documents contain a dynamic "Slice Zone" that allows content creators to add, edit, and rearrange Slices to compose dynamic layouts for any page design, such as blog posts, landing pages, case studies, and tutorials.
- * More Details: {@link https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs}
+ * Prismic Slices are sections of your website. Prismic documents contain a
+ * dynamic "Slice Zone" that allows content creators to add, edit, and rearrange
+ * Slices to compose dynamic layouts for any page design, such as blog posts,
+ * landing pages, case studies, and tutorials.
+ *
+ * @see More details: {@link https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs}
  */
 export type SliceZone<
 	Slices extends Slice | SharedSlice = Slice | SharedSlice,

@@ -8,19 +8,29 @@ export interface CustomTypeModel<
 	ID extends string = string,
 	Definition extends CustomTypeModelDefinition = CustomTypeModelDefinition,
 > {
-	/** The ID of the Custom Type model. */
+	/**
+	 * The ID of the Custom Type model.
+	 */
 	id: ID;
 
-	/** The human readable name of the Custom Type Model. */
+	/**
+	 * The human readable name of the Custom Type Model.
+	 */
 	label: string;
 
-	/** Determines if more than one document for the Custom Type can be created. */
+	/**
+	 * Determines if more than one document for the Custom Type can be created.
+	 */
 	repeatable: boolean;
 
-	/** The Custom Type model definition. */
+	/**
+	 * The Custom Type model definition.
+	 */
 	json: Definition;
 
-	/** Determines if new documents for the Custom Type can be created. */
+	/**
+	 * Determines if new documents for the Custom Type can be created.
+	 */
 	status: boolean;
 }
 
@@ -35,7 +45,8 @@ export type CustomTypeModelDefinition<TabName extends string = string> = Record<
 >;
 
 /**
- * A Custom Type's tab. Each tab can contain any number of fields but is limited to one Slice Zone.
+ * A Custom Type's tab. Each tab can contain any number of fields but is limited
+ * to one Slice Zone.
  *
  * @typeParam FieldName API IDs of the fields.
  */
@@ -480,6 +491,7 @@ export interface CustomTypeModelSlice<
  * A Shared Slice for a Custom Type.
  *
  * More details:
+ *
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  */
@@ -491,6 +503,7 @@ export interface CustomTypeModelSharedSlice {
  * A Prismic Shared Slice model.
  *
  * More details:
+ *
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  *
@@ -511,6 +524,7 @@ export interface SharedSliceModel<
  * A Shared Slice variation.
  *
  * More details:
+ *
  * - {@link https://prismic.io/docs/core-concepts/slices}
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  *

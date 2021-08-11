@@ -29,7 +29,7 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 /**
  * A Prismic document served through REST API v2.
  *
- * More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
+ * @see More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
  */
 export interface PrismicDocument<
 	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
