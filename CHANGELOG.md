@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/prismicio/prismic-types/compare/v0.1.5...v0.1.6) (2021-08-11)
+
+
+### Bug Fixes
+
+* add customtypes and tags to CustomTypeModelContentRelationshipField ([c274837](https://github.com/prismicio/prismic-types/commit/c274837f3fabbf8cc1d94c3b3bf6af9caddf1e69))
+* allow null alt on Rich Text image blocks ([e531e2c](https://github.com/prismicio/prismic-types/commit/e531e2ceb01f37d218d6cb64f472339dc993704d))
+* export CustomTypeModelDefinition ([79a5011](https://github.com/prismicio/prismic-types/commit/79a5011d9de153b4f4dfd143cdfacf7f127c1877))
+* normalize Rich Text embed block with Embed field ([14f32ff](https://github.com/prismicio/prismic-types/commit/14f32ff20cf802d3981dbb570a16600f9b6461bb))
+* use more flexible Option generic for CustomTypeModelSelectField ([6eaeba4](https://github.com/prismicio/prismic-types/commit/6eaeba4526858d1396709f7800902b84952ea7f4))
+
+
+### Chore
+
+* remove unused type ([c36bdae](https://github.com/prismicio/prismic-types/commit/c36bdae9234f7008dc61081b7a6500116b12eed6))
+
 ### [0.1.5](https://github.com/prismicio/prismic-types/compare/v0.1.4...v0.1.5) (2021-08-04)
 
 
