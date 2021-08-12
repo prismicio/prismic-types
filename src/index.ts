@@ -1,4 +1,8 @@
-export type { PrismicDocumentHeader, PrismicDocument } from "./document";
+export type {
+	PrismicDocumentHeader,
+	PrismicDocument,
+	AlternateLanguage,
+} from "./document";
 
 export { RichTextNodeType, LinkType, EmbedType } from "./fields";
 

@@ -3,12 +3,13 @@ import { AnyRegularField, GroupField, SliceZone } from "./fields";
 /**
  * Document metadata for a translation of a Prismic document.
  */
-interface AlternateLanguage {
+export interface AlternateLanguage<TypeEnum = string, LangEnum = string> {
 	id: string;
 	uid?: string;
-	type: string;
-	lang: string;
+	type: TypeEnum;
+	lang: LangEnum;
 }
+
 /**
  * Metadata for Prismic Document
  */
@@ -24,8 +25,9 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 	slugs: string[];
 	linked_documents: unknown[]; // TODO: Not sure of the type for this one
 	lang: LangEnum;
-	alternate_languages: AlternateLanguage[];
+	alternate_languages: AlternateLanguage<TypeEnum, LangEnum>[];
 }
+
 /**
  * A Prismic document served through REST API v2.
  *
