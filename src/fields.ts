@@ -292,16 +292,26 @@ export type RichTextField = RTNode[];
 // Image
 
 /**
- * Image Field
- *
- * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
+ * An individual image within an image field. The base image and each thumbnail
+ * uses this type.
  */
-export interface ImageField extends Record<string, unknown> {
-	dimensions: { width: number; height: number } | null;
+interface ImageFieldImage {
+	dimensions: {
+		width: number;
+		height: number;
+	} | null;
 	alt: string | null;
 	copyright: string | null;
 	url: string | null;
 }
+
+/**
+ * Image Field
+ *
+ * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
+ */
+export type ImageField<ThumbnailNames extends string = string> =
+	ImageFieldImage & Record<ThumbnailNames, ImageFieldImage>;
 
 // Links
 /**
