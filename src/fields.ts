@@ -292,10 +292,12 @@ export type RichTextField = RTNode[];
 // Image
 
 /**
- * An individual image within an image field. The base image and each thumbnail
+ * An individual image within an Image field. The base image and each thumbnail
  * uses this type.
+ *
+ * @see {@link ImageField} for a full Image field type.
  */
-interface ImageFieldImage {
+export interface ImageFieldImage {
 	dimensions: {
 		width: number;
 		height: number;

@@ -44,6 +44,7 @@ export type {
 	RTAnyNode,
 	// Image
 	ImageField,
+	ImageFieldImage,
 	// Links
 	EmptyLinkField,
 	FilledLinkToDocumentField,
