@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/prismicio/prismic-types/compare/v0.1.6...v0.1.7) (2021-08-19)
+
+
+### Features
+
+* export AlternateLanguage ([2cbf907](https://github.com/prismicio/prismic-types/commit/2cbf907ea903b5490c2d8806fea288c09abf742b))
+* type image thumbnails ([76c21a9](https://github.com/prismicio/prismic-types/commit/76c21a9fb2c2ee86fa37af2361ec695dfdc1c47a))
+
+
+### Chore
+
+* add TSDoc plugins for ESLint and Prettier ([4ad8db0](https://github.com/prismicio/prismic-types/commit/4ad8db0ac8b7752d32ffa129def3014e265b5163))
+
+
+### Documentation
+
+* add TSDoc to document types ([#9](https://github.com/prismicio/prismic-types/issues/9)) ([cffda1b](https://github.com/prismicio/prismic-types/commit/cffda1b974eb6695c56b2fbfdcc5a5893cf616c3))
+* add TSDoc to field types ([#11](https://github.com/prismicio/prismic-types/issues/11)) ([eea1934](https://github.com/prismicio/prismic-types/commit/eea19343278fca7082bd1e7860464817fbc1d65e))
+* add TSDoc to GraphQL types ([#10](https://github.com/prismicio/prismic-types/issues/10)) ([a8d627d](https://github.com/prismicio/prismic-types/commit/a8d627dba63c34a4a116cda8921372c4f0ca4e33))
+* fix link formatting ([dc81d81](https://github.com/prismicio/prismic-types/commit/dc81d8144acef6e5de813fbef754abdfd277aa50))
+
 ### [0.1.6](https://github.com/prismicio/prismic-types/compare/v0.1.5...v0.1.6) (2021-08-11)
 
 
