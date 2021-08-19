@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/prismicio/prismic-types/compare/v0.1.8...v0.1.9) (2021-08-19)
+
+
+### Features
+
+* export ImageFieldImage ([76727ec](https://github.com/prismicio/prismic-types/commit/76727ec727608c264de668e04dc08e28edd0f4d2))
+
+
+### Bug Fixes
+
+* use standard "Integration Fields" name ([8f303d2](https://github.com/prismicio/prismic-types/commit/8f303d206f1add405d17aab19ffcb57e00894168))
+
 ### [0.1.8](https://github.com/prismicio/prismic-types/compare/v0.1.7...v0.1.8) (2021-08-19)
 
 ### [0.1.7](https://github.com/prismicio/prismic-types/compare/v0.1.6...v0.1.7) (2021-08-19)
