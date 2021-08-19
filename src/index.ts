@@ -121,7 +121,7 @@ export type {
 	SharedSliceModelVariation,
 } from "./customType";
 
-export {
+export type {
 	Repository,
 	Ref,
 	Release,
