@@ -519,11 +519,18 @@ export type GroupField<
 > = Fields[];
 
 /**
- * Integration Field for Custom APIs
+ * Integration Fields for Custom APIs
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
-export type IntegrationField<Blob = unknown> = Blob | null;
+export type IntegrationFields<Blob = unknown> = {
+	id: string;
+	title?: string;
+	description?: string;
+	image_url?: string;
+	last_update: number;
+	blob: Blob;
+} | null;
 
 /**
  * Slice - Sections of your website
@@ -606,4 +613,4 @@ export type AnyRegularField =
 	| BooleanField
 	| EmbedField
 	| GeoPointField
-	| IntegrationField;
+	| IntegrationFields;

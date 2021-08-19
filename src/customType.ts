@@ -74,7 +74,7 @@ export type CustomTypeModelFieldForGroup =
 	| CustomTypeModelEmbedField
 	| CustomTypeModelGeoPointField
 	| CustomTypeModelImageField
-	| CustomTypeModelIntegrationField
+	| CustomTypeModelIntegrationFieldsField
 	| CustomTypeModelContentRelationshipField
 	| CustomTypeModelLinkField
 	| CustomTypeModelLinkToMediaField
@@ -229,10 +229,11 @@ export interface CustomTypeModelImageThumbnail
  *
  * More details: {@link https://prismic.io/docs/core-concepts/integration-fields}
  */
-export interface CustomTypeModelIntegrationField {
+export interface CustomTypeModelIntegrationFieldsField {
 	type: CustomTypeModelFieldType.IntegrationFields;
 	config: {
 		label: string;
+		placeholder?: string;
 		catalog: string;
 	};
 }

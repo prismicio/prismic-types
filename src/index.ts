@@ -65,7 +65,7 @@ export type {
 	GeoPointField,
 	// Complex
 	GroupField,
-	IntegrationField,
+	IntegrationFields,
 	Slice,
 	SharedSlice,
 	SharedSliceVariation,
@@ -99,7 +99,7 @@ export type {
 	CustomTypeModelImageConstraint,
 	CustomTypeModelImageField,
 	CustomTypeModelImageThumbnail,
-	CustomTypeModelIntegrationField,
+	CustomTypeModelIntegrationFieldsField,
 	CustomTypeModelKeyTextField,
 	CustomTypeModelLinkField,
 	CustomTypeModelLinkToMediaField,
