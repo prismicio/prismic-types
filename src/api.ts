@@ -2,9 +2,9 @@ import { PrismicDocument } from "./document";
 
 /**
  * Repository metadata returned from the Prismic REST API V2. This data can be
- * fetched by sending a `GET` a request to the repository's `/api` endpoint.
+ * fetched by sending a `GET` a request to a repository's `/api/v2` endpoint.
  *
- * @see More details on the `/api` endpoint: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2}
+ * @see More details on the `/api/v2` endpoint: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2}
  */
 export interface Repository {
 	/**
@@ -208,3 +208,12 @@ export interface FormField {
 	multiple: boolean;
 	default?: string;
 }
+
+/**
+ * List of tags returned from the Prismic Tags API. This data can be fetched by
+ * sending a `GET` request to a repository's `/api/tags` endpoint.
+ *
+ * @typeParam Tag - Tags that are returned by the Tags API.
+ * @see More details on the Tags API: {@link https://prismic.io/docs/technologies/tags-api-technical-reference}
+ */
+export type Tags<Tag extends string = string> = Tag[];

@@ -129,4 +129,5 @@ export type {
 	Query,
 	Form,
 	FormField,
+	Tags,
 } from "./api";
