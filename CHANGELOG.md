@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/prismicio/prismic-types/compare/v0.1.9...v0.1.10) (2021-08-20)
+
+
+### Features
+
+* add REST API V2 types ([083b61a](https://github.com/prismicio/prismic-types/commit/083b61aeaab9204dd32ff458daca262727381fda))
+* add Tags API ([dc02c94](https://github.com/prismicio/prismic-types/commit/dc02c94a6fcb806713bb11655400dc4291665294))
+
+
+### Bug Fixes
+
+* export API types using `export type` ([b4a9565](https://github.com/prismicio/prismic-types/commit/b4a95651bc1077c281c39d531cefc9d10825f9ce))
+
 ### [0.1.9](https://github.com/prismicio/prismic-types/compare/v0.1.8...v0.1.9) (2021-08-19)
 
 
