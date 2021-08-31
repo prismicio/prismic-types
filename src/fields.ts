@@ -313,8 +313,7 @@ export interface ImageFieldImage {
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export type ImageField<ThumbnailNames extends string = string> =
-	| (ImageFieldImage & Record<ThumbnailNames, ImageFieldImage>)
-	| null;
+	ImageFieldImage & Record<ThumbnailNames, ImageFieldImage>;
 
 // Links
 /**
