@@ -297,14 +297,23 @@ export type RichTextField = RTNode[];
  *
  * @see {@link ImageField} for a full Image field type.
  */
-export interface ImageFieldImage {
+export type ImageFieldImage = FilledImageFieldImage | EmptyImageFieldImage;
+
+export interface FilledImageFieldImage {
+	url: string;
 	dimensions: {
 		width: number;
 		height: number;
-	} | null;
+	};
 	alt: string | null;
 	copyright: string | null;
-	url: string | null;
+}
+
+export interface EmptyImageFieldImage {
+	url: null;
+	dimensions: null;
+	alt: null;
+	copyright: null;
 }
 
 /**

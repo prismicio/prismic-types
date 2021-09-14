@@ -45,6 +45,8 @@ export type {
 	// Image
 	ImageField,
 	ImageFieldImage,
+	FilledImageFieldImage,
+	EmptyImageFieldImage,
 	// Links
 	EmptyLinkField,
 	FilledLinkToDocumentField,
