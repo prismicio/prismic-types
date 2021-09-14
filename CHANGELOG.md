@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/prismicio/prismic-types/compare/v0.1.10...v0.1.11) (2021-09-14)
+
+
+### Features
+
+* add empty/filled Image field ([a05bb5d](https://github.com/prismicio/prismic-types/commit/a05bb5d5eed1e3a4c7343678cf30c661cc3684c4))
+
+
+### Bug Fixes
+
+* type ImageField as nullable ([3f60434](https://github.com/prismicio/prismic-types/commit/3f6043436cc9da0a6da0ead7e6acb7736e8b6276))
+
 ### [0.1.10](https://github.com/prismicio/prismic-types/compare/v0.1.9...v0.1.10) (2021-08-20)
 
 
