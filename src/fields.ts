@@ -5,7 +5,7 @@ type EmptyObjectField = Record<string, never>;
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
-export const enum RichTextNodeType {
+export enum RichTextNodeType {
 	heading1 = "heading1",
 	heading2 = "heading2",
 	heading3 = "heading3",
