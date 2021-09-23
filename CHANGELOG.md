@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/prismicio/prismic-types/compare/v0.1.12...v0.1.13) (2021-09-23)
+
+
+### Bug Fixes
+
+* use non-const enum for Element ([ddae971](https://github.com/prismicio/prismic-types/commit/ddae971353602a27cee4341ea50554570c8a2de7))
+
 ### [0.1.12](https://github.com/prismicio/prismic-types/compare/v0.1.11...v0.1.12) (2021-09-14)
 
 
