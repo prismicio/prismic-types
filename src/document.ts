@@ -20,7 +20,9 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 	type: TypeEnum;
 	href: string;
 	tags: string[];
+	/** The timestamp at which the document was first published */
 	first_publication_date: string;
+	/** The timestamp at which the document was last published */
 	last_publication_date: string;
 	slugs: string[];
 	linked_documents: unknown[]; // TODO: Not sure of the type for this one
