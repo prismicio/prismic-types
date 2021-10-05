@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/prismicio/prismic-types/compare/v0.1.13...v0.1.14) (2021-10-05)
+
+
+### Documentation
+
+* add graphql and document field TSDocs ([#12](https://github.com/prismicio/prismic-types/issues/12)) ([ff2c36e](https://github.com/prismicio/prismic-types/commit/ff2c36e6337bd8cc88a464bb46cd0b45f1bd474b))
+
+
+### Chore
+
+* prettier ignore CHANGELOG ([ada0e7b](https://github.com/prismicio/prismic-types/commit/ada0e7b7b10f325a57979d454755dcaa8df803d1))
+
 ### [0.1.13](https://github.com/prismicio/prismic-types/compare/v0.1.12...v0.1.13) (2021-09-23)
 
 
