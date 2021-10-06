@@ -1,6 +1,11 @@
 type EmptyObjectField = Record<string, never>;
 
 /**
+ * Valid states for fields. Not all fields use this type (e.g. BooleanField).
+ */
+type FieldState = "empty" | "filled";
+
+/**
  * Types for RichTextNodes
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
@@ -297,8 +302,8 @@ export type RichTextField = RTNode[];
  *
  * @see {@link ImageField} for a full Image field type.
  */
-export type ImageFieldImage<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true ? EmptyImageFieldImage : FilledImageFieldImage;
+export type ImageFieldImage<State extends FieldState = FieldState> =
+	State extends "empty" ? EmptyImageFieldImage : FilledImageFieldImage;
 
 export interface FilledImageFieldImage {
 	url: string;
@@ -324,11 +329,11 @@ export interface EmptyImageFieldImage {
  */
 export type ImageField<
 	ThumbnailNames extends string = string,
-	IsEmpty extends boolean = boolean,
-> = ImageFieldImage<IsEmpty> &
+	State extends FieldState = FieldState,
+> = ImageFieldImage<State> &
 	Record<
 		Exclude<ThumbnailNames, keyof ImageFieldImage>,
-		ImageFieldImage<IsEmpty>
+		ImageFieldImage<State>
 	>;
 
 // Links
@@ -399,8 +404,8 @@ export type RelationField<
 	TypeEnum = string,
 	LangEnum = string,
 	DataInterface = never,
-	IsEmpty extends boolean = boolean,
-> = IsEmpty extends true
+	State extends FieldState = FieldState,
+> = State extends "empty"
 	? EmptyLinkField<LinkType.Document>
 	: FilledLinkToDocumentField<TypeEnum, LangEnum, DataInterface>;
 
@@ -411,8 +416,8 @@ export type LinkField<
 	TypeEnum = string,
 	LangEnum = string,
 	DataInterface = never,
-	IsEmpty extends boolean = boolean,
-> = IsEmpty extends true
+	State extends FieldState = FieldState,
+> = State extends "empty"
 	? EmptyLinkField<LinkType.Any>
 	:
 			| RelationField<TypeEnum, LangEnum, DataInterface>
@@ -422,8 +427,8 @@ export type LinkField<
 /**
  * Link field that points to media
  */
-export type LinkToMediaField<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true
+export type LinkToMediaField<State extends FieldState = FieldState> =
+	State extends "empty"
 		? EmptyLinkField<LinkType.Media>
 		: FilledLinkToMediaField;
 
@@ -434,40 +439,38 @@ export type LinkToMediaField<IsEmpty extends boolean = boolean> =
  *
  * More details: {@link https://prismic.io/docs/core-concepts/date}
  */
-export type DateField<IsEmpty extends boolean = boolean> = IsEmpty extends true
-	? null
-	: string;
+export type DateField<State extends FieldState = FieldState> =
+	State extends "empty" ? null : string;
 
 /**
  * Simple Timestamp Field
  */
-export type TimestampField<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true ? null : string;
+export type TimestampField<State extends FieldState = FieldState> =
+	State extends "empty" ? null : string;
 
 /**
  * A Color field.
  *
  * More details: {@link https://prismic.io/docs/core-concepts/color}
  */
-export type ColorField<IsEmpty extends boolean = boolean> = IsEmpty extends true
-	? null
-	: `#${string}`;
+export type ColorField<State extends FieldState = FieldState> =
+	State extends "empty" ? null : `#${string}`;
 
 /**
  * A Number field
  *
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
-export type NumberField<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true ? null : number;
+export type NumberField<State extends FieldState = FieldState> =
+	State extends "empty" ? null : number;
 
 /**
  * A Key text field
  *
  * More details: {@link https://prismic.io/docs/core-concepts/key-text}
  */
-export type KeyTextField<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true ? null : string;
+export type KeyTextField<State extends FieldState = FieldState> =
+	State extends "empty" ? null : string;
 
 /**
  * A Select field
@@ -476,8 +479,8 @@ export type KeyTextField<IsEmpty extends boolean = boolean> =
  */
 export type SelectField<
 	Enum = string,
-	IsEmpty extends boolean = boolean,
-> = IsEmpty extends true ? null : Enum;
+	State extends FieldState = FieldState,
+> = State extends "empty" ? null : Enum;
 
 /**
  * A Boolean field.
@@ -499,37 +502,38 @@ export enum EmbedType {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
-export type EmbedField<IsEmpty extends boolean = boolean> = IsEmpty extends true
-	? EmptyObjectField
-	: {
-			url: string;
-			width?: number | null;
-			height?: number | null;
-			embed_url: string;
-			type: EmbedType;
-			version: string;
-			title: string | null;
+export type EmbedField<State extends FieldState = FieldState> =
+	State extends "empty"
+		? EmptyObjectField
+		: {
+				url: string;
+				width?: number | null;
+				height?: number | null;
+				embed_url: string;
+				type: EmbedType;
+				version: string;
+				title: string | null;
 
-			author_name: string | null;
-			author_url: string | null;
+				author_name: string | null;
+				author_url: string | null;
 
-			provider_name: string;
-			cache_age: number | null;
+				provider_name: string;
+				cache_age: number | null;
 
-			thumbnail_url: string | null;
-			thumbnail_width: number | null;
-			thumbnail_height: number | null;
+				thumbnail_url: string | null;
+				thumbnail_width: number | null;
+				thumbnail_height: number | null;
 
-			html: string | null;
-	  };
+				html: string | null;
+		  };
 
 /**
  * A Geopoint field.
  *
  * More details: {@link https://prismic.io/docs/core-concepts/geopoint}
  */
-export type GeoPointField<IsEmpty extends boolean = boolean> =
-	IsEmpty extends true
+export type GeoPointField<State extends FieldState = FieldState> =
+	State extends "empty"
 		? EmptyObjectField
 		: {
 				latitude: number;
@@ -556,8 +560,8 @@ export type GroupField<
  */
 export type IntegrationFields<
 	Blob = unknown,
-	IsEmpty extends boolean = boolean,
-> = IsEmpty extends true
+	State extends FieldState = FieldState,
+> = State extends "empty"
 	? null
 	: {
 			id: string;
