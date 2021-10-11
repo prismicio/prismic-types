@@ -39,7 +39,8 @@ export interface FilledMinimalLinkToMediaField {
  */
 export type RelationField<
 	ExtendedLinkToDocumentField extends FilledMinimalLinkToWebField = FilledMinimalLinkToWebField,
-> = ExtendedLinkToDocumentField | EmptyLinkField;
+	IsEmpty extends boolean = boolean,
+> = IsEmpty extends true ? EmptyLinkField : ExtendedLinkToDocumentField;
 
 /**
  * Link Field
@@ -48,15 +49,18 @@ export type LinkField<
 	ExtendedLinkToDocumentField extends FilledMinimalLinkToDocumentField = FilledMinimalLinkToDocumentField,
 	ExtendedLinkToWebField extends FilledMinimalLinkToWebField = FilledMinimalLinkToWebField,
 	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField,
-> =
-	| ExtendedLinkToDocumentField
-	| ExtendedLinkToWebField
-	| ExtendedLinkToMediaField
-	| EmptyLinkField;
+	IsEmpty extends boolean = boolean,
+> = IsEmpty extends true
+	? EmptyLinkField
+	:
+			| ExtendedLinkToDocumentField
+			| ExtendedLinkToWebField
+			| ExtendedLinkToMediaField;
 
 /**
  * Link field that points to media
  */
 export type LinkToMediaField<
 	ExtendedLinkToMediaField extends FilledMinimalLinkToMediaField = FilledMinimalLinkToMediaField,
-> = ExtendedLinkToMediaField | EmptyLinkField;
+	IsEmpty extends boolean = boolean,
+> = IsEmpty extends true ? EmptyLinkField : ExtendedLinkToMediaField;
