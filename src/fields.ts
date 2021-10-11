@@ -3,7 +3,7 @@ type EmptyObjectField = Record<string, never>;
 /**
  * Valid states for fields. Not all fields use this type (e.g. BooleanField).
  */
-type FieldState = "empty" | "filled";
+export type FieldState = "empty" | "filled";
 
 /**
  * Types for RichTextNodes
@@ -300,6 +300,7 @@ export type RichTextField = RTNode[];
  * An individual image within an Image field. The base image and each thumbnail
  * uses this type.
  *
+ * @typeParam State - State of the field which determines its shape.
  * @see {@link ImageField} for a full Image field type.
  */
 export type ImageFieldImage<State extends FieldState = FieldState> =
@@ -325,6 +326,7 @@ export interface EmptyImageFieldImage {
 /**
  * Image Field
  *
+ * @typeParam State - State of the field which determines its shape.
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export type ImageField<
@@ -399,6 +401,12 @@ export interface FilledLinkToMediaField {
 
 /**
  * Field for related documents
+ *
+ * @typeParam TypeEnum - Type API ID of the document.
+ * @typeParam LangEnum - Language API ID of the document.
+ * @typeParam DataInterface - Data fields for the document (filled in via
+ *   GraphQuery of `fetchLinks`).
+ * @typeParam State - State of the field which determines its shape.
  */
 export type RelationField<
 	TypeEnum = string,
@@ -411,6 +419,12 @@ export type RelationField<
 
 /**
  * Link Field
+ *
+ * @typeParam TypeEnum - Type API ID of the document.
+ * @typeParam LangEnum - Language API ID of the document.
+ * @typeParam DataInterface - Data fields for the document (filled in via
+ *   GraphQuery of `fetchLinks`).
+ * @typeParam State - State of the field which determines its shape.
  */
 export type LinkField<
 	TypeEnum = string,
@@ -426,6 +440,8 @@ export type LinkField<
 
 /**
  * Link field that points to media
+ *
+ * @typeParam State - State of the field which determines its shape.
  */
 export type LinkToMediaField<State extends FieldState = FieldState> =
 	State extends "empty"
@@ -437,13 +453,16 @@ export type LinkToMediaField<State extends FieldState = FieldState> =
 /**
  * A Date field.
  *
- * More details: {@link https://prismic.io/docs/core-concepts/date}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/date}
  */
 export type DateField<State extends FieldState = FieldState> =
 	State extends "empty" ? null : string;
 
 /**
  * Simple Timestamp Field
+ *
+ * @typeParam State - State of the field which determines its shape.
  */
 export type TimestampField<State extends FieldState = FieldState> =
 	State extends "empty" ? null : string;
@@ -451,7 +470,8 @@ export type TimestampField<State extends FieldState = FieldState> =
 /**
  * A Color field.
  *
- * More details: {@link https://prismic.io/docs/core-concepts/color}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/color}
  */
 export type ColorField<State extends FieldState = FieldState> =
 	State extends "empty" ? null : `#${string}`;
@@ -459,7 +479,8 @@ export type ColorField<State extends FieldState = FieldState> =
 /**
  * A Number field
  *
- * More details: {@link https://prismic.io/docs/core-concepts/number}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export type NumberField<State extends FieldState = FieldState> =
 	State extends "empty" ? null : number;
@@ -467,7 +488,8 @@ export type NumberField<State extends FieldState = FieldState> =
 /**
  * A Key text field
  *
- * More details: {@link https://prismic.io/docs/core-concepts/key-text}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/key-text}
  */
 export type KeyTextField<State extends FieldState = FieldState> =
 	State extends "empty" ? null : string;
@@ -475,7 +497,9 @@ export type KeyTextField<State extends FieldState = FieldState> =
 /**
  * A Select field
  *
- * More details: {@link https://prismic.io/docs/core-concepts/select}
+ * @typeParam Enum - Selectable options for the field.
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/select}
  */
 export type SelectField<
 	Enum = string,
@@ -485,7 +509,7 @@ export type SelectField<
 /**
  * A Boolean field.
  *
- * More details: {@link https://prismic.io/docs/core-concepts/boolean}
+ * @see More details: {@link https://prismic.io/docs/core-concepts/boolean}
  */
 export type BooleanField = boolean;
 
@@ -500,7 +524,8 @@ export enum EmbedType {
 /**
  * An Embed field.
  *
- * More details: {@link https://prismic.io/docs/core-concepts/embed}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
 export type EmbedField<State extends FieldState = FieldState> =
 	State extends "empty"
@@ -530,7 +555,8 @@ export type EmbedField<State extends FieldState = FieldState> =
 /**
  * A Geopoint field.
  *
- * More details: {@link https://prismic.io/docs/core-concepts/geopoint}
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/geopoint}
  */
 export type GeoPointField<State extends FieldState = FieldState> =
 	State extends "empty"
@@ -556,6 +582,8 @@ export type GroupField<
 /**
  * Integration Fields for Custom APIs
  *
+ * @typeParam Blob - Data from the integrated API.
+ * @typeParam State - State of the field which determines its shape.
  * @see More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
 export type IntegrationFields<
