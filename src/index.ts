@@ -74,6 +74,8 @@ export type {
 	SliceZone,
 	// Misc
 	AnyRegularField,
+	// Meta
+	FieldState,
 } from "./fields";
 
 export {
