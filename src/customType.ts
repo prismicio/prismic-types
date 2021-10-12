@@ -195,12 +195,14 @@ export interface CustomTypeModelGroupField<
  *
  * More details: {@link https://prismic.io/docs/core-concepts/image}
  */
-export interface CustomTypeModelImageField {
+export interface CustomTypeModelImageField<
+	ThumbnailNames extends string = string,
+> {
 	type: CustomTypeModelFieldType.Image;
 	config: {
 		label: string;
 		constraint: CustomTypeModelImageConstraint | Record<string, never>;
-		thumbnails: readonly CustomTypeModelImageThumbnail[];
+		thumbnails: readonly CustomTypeModelImageThumbnail<ThumbnailNames>[];
 	};
 }
 
@@ -219,9 +221,9 @@ export interface CustomTypeModelImageConstraint {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/image}
  */
-export interface CustomTypeModelImageThumbnail
+export interface CustomTypeModelImageThumbnail<Name extends string = string>
 	extends CustomTypeModelImageConstraint {
-	name: string;
+	name: Name;
 }
 
 /**
@@ -253,14 +255,17 @@ export enum CustomTypeModelLinkSelectType {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/link-content-relationship}
  */
-export interface CustomTypeModelContentRelationshipField {
+export interface CustomTypeModelContentRelationshipField<
+	CustomTypeIDs extends string = string,
+	Tags extends string = string,
+> {
 	type: CustomTypeModelFieldType.Link;
 	config: {
 		label: string;
 		placeholder?: string;
 		select: CustomTypeModelLinkSelectType.Document;
-		customtypes?: string[];
-		tags?: string[];
+		customtypes?: readonly CustomTypeIDs[];
+		tags?: readonly Tags[];
 	};
 }
 
@@ -426,7 +431,7 @@ export interface CustomTypeModelSliceZoneField<
 	type: CustomTypeModelFieldType.Slices;
 	fieldset: "Slice zone";
 	config: {
-		labels: Record<keyof Slices, readonly CustomTypeModelSliceLabel[]>;
+		labels: Record<string, readonly CustomTypeModelSliceLabel[]>;
 		choices: Slices;
 	};
 }
@@ -533,6 +538,7 @@ export interface SharedSliceModel<
  * @typeParam ItemFields - A record of fields that can be repeated.
  */
 export interface SharedSliceModelVariation<
+	ID extends string = string,
 	PrimaryFields extends Record<string, CustomTypeModelFieldForGroup> = Record<
 		string,
 		CustomTypeModelFieldForGroup
@@ -542,7 +548,7 @@ export interface SharedSliceModelVariation<
 		CustomTypeModelFieldForGroup
 	>,
 > {
-	id: string;
+	id: ID;
 	name: string;
 	docURL: string;
 	version: string;
