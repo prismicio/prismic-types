@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/prismicio/prismic-types/compare/v0.1.14...v0.1.15) (2021-10-12)
+
+
+### Features
+
+* add `State` generic to field types ([#13](https://github.com/prismicio/prismic-types/issues/13)) ([368d968](https://github.com/prismicio/prismic-types/commit/368d968f289a09708da488842840d302735797ec))
+* add ThumbnailNames generic to CustomTypeModelImageField ([28b58a0](https://github.com/prismicio/prismic-types/commit/28b58a09069f83f7fc8b08a0a14b9decb015913b))
+* export `FieldState` ([97cee39](https://github.com/prismicio/prismic-types/commit/97cee39e0e251ceee96e0436bcbb0fcbc4999e88))
+
+
+### Chore
+
+* **deps:** update dependencies ([646a4ce](https://github.com/prismicio/prismic-types/commit/646a4ceed66311a53106ea548cb89873c2d6fabe))
+* mark package as side effect free ([8ad52cf](https://github.com/prismicio/prismic-types/commit/8ad52cf7292ac93753a5d8e64ff079dbd5f821e3))
+* sort package.json ([7e233f3](https://github.com/prismicio/prismic-types/commit/7e233f3c54c04e0fba5e3942f023635de00ba334))
+
 ### [0.1.14](https://github.com/prismicio/prismic-types/compare/v0.1.13...v0.1.14) (2021-10-05)
 
 
