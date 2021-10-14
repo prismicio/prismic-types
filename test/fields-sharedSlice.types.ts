@@ -39,7 +39,7 @@ expectType<prismicT.SharedSlice<"foo">>({
 	items: [],
 });
 expectType<prismicT.SharedSlice<"foo">>({
-	// @ts-expect-error
+	// @ts-expect-error - Slice type must match the given type.
 	slice_type: "string",
 	slice_label: null,
 	variation: "string",
@@ -62,7 +62,7 @@ expectType<prismicT.SharedSlice<string, prismicT.SharedSliceVariation<"foo">>>({
 expectType<prismicT.SharedSlice<string, prismicT.SharedSliceVariation<"foo">>>({
 	slice_type: "string",
 	slice_label: null,
-	// @ts-expect-error
+	// @ts-expect-error - Variation type must match the given type.
 	variation: "string",
 	version: "string",
 	primary: {},

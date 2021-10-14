@@ -45,7 +45,7 @@ expectType<prismicT.Slice<"foo">>({
 	items: [],
 });
 expectType<prismicT.Slice<"foo">>({
-	// @ts-expect-error
+	// @ts-expect-error - Slice type must match the given type.
 	slice_type: "string",
 	slice_label: "string",
 	primary: {},
@@ -60,7 +60,7 @@ expectType<prismicT.Slice<string, { foo: prismicT.BooleanField }>>({
 	slice_label: "string",
 	primary: {
 		foo: true,
-		// @ts-expect-error
+		// @ts-expect-error - Only given fields are valid.
 		bar: false,
 	},
 	items: [],
@@ -72,7 +72,7 @@ expectType<prismicT.Slice<string, { foo: prismicT.BooleanField }>>({
 expectType<
 	prismicT.Slice<
 		string,
-		// @ts-expect-error
+		// @ts-expect-error - Groups are invalid within primary fields.
 		{
 			group: prismicT.GroupField;
 		}
@@ -88,7 +88,7 @@ expectType<
 expectType<
 	prismicT.Slice<
 		string,
-		// @ts-expect-error
+		// @ts-expect-error - Slice Zones are invalid within primary fields.
 		{
 			sliceZone: prismicT.SliceZone;
 		}
@@ -120,7 +120,7 @@ expectType<
 	items: [
 		{
 			bar: "string",
-			// @ts-expect-error
+			// @ts-expect-error - Only given fields are valid.
 			baz: false,
 		},
 	],
@@ -133,7 +133,7 @@ expectType<
 	prismicT.Slice<
 		string,
 		{ foo: prismicT.BooleanField },
-		// @ts-expect-error
+		// @ts-expect-error - Groups are invalid within item fields.
 		{
 			group: prismicT.GroupField;
 		}
@@ -150,7 +150,7 @@ expectType<
 	prismicT.Slice<
 		string,
 		{ foo: prismicT.BooleanField },
-		// @ts-expect-error
+		// @ts-expect-error - Slice Zones are invalid within item fields.
 		{
 			sliceZone: prismicT.SliceZone;
 		}

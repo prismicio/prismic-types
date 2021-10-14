@@ -48,7 +48,7 @@ expectType<prismicT.GroupField<{ boolean: prismicT.BooleanField }>>([
 ]);
 expectType<prismicT.GroupField<{ boolean: prismicT.BooleanField }>>([
 	{
-		// @ts-expect-error
+		// @ts-expect-error - Fields must match the given type definition.
 		boolean: "string",
 	},
 ]);
@@ -57,13 +57,13 @@ expectType<prismicT.GroupField<{ boolean: prismicT.BooleanField }>>([
  * Custom fields may only contain group-compatible fields.
  */
 expectType<
-	prismicT.GroupField<// @ts-expect-error
+	prismicT.GroupField<// @ts-expect-error - Groups are invalid within group fields.
 	{
 		group: prismicT.GroupField;
 	}>
 >([]);
 expectType<
-	prismicT.GroupField<// @ts-expect-error
+	prismicT.GroupField<// @ts-expect-error - Slice Zones are invalid within group fields.
 	{
 		sliceZone: prismicT.SliceZone;
 	}>

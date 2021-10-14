@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<prismicT.NumberField>(0);
 expectType<prismicT.NumberField<"filled">>(0);
 expectType<prismicT.NumberField<"empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	0,
 );
 
@@ -34,6 +34,6 @@ expectType<prismicT.NumberField<"empty">>(
 expectType<prismicT.NumberField>(null);
 expectType<prismicT.NumberField<"empty">>(null);
 expectType<prismicT.NumberField<"filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );

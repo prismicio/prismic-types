@@ -30,9 +30,9 @@ expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "filled">>({
 	type: prismicT.EmbedType.Link,
 });
 expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "empty">>({
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	embed_url: "url",
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	type: prismicT.EmbedType.Link,
 });
 
@@ -42,7 +42,7 @@ expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "empty">>({
 expectType<prismicT.EmbedField>({});
 expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "empty">>({});
 expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	{},
 );
 

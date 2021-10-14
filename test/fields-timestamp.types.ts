@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<prismicT.TimestampField>("1984-01-24T05:00:00+0000");
 expectType<prismicT.TimestampField<"filled">>("1984-01-24T05:00:00+0000");
 expectType<prismicT.TimestampField<"empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	"1984-01-24T05:00:00+0000",
 );
 
@@ -34,7 +34,7 @@ expectType<prismicT.TimestampField<"empty">>(
 expectType<prismicT.TimestampField>(null);
 expectType<prismicT.TimestampField<"empty">>(null);
 expectType<prismicT.TimestampField<"filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );
 
@@ -42,6 +42,6 @@ expectType<prismicT.TimestampField<"filled">>(
  * Must be in YYYY-MM-DDTHH:MM:SS+ZZZZ format.
  */
 expectType<prismicT.TimestampField>(
-	// @ts-expect-error
+	// @ts-expect-error - Arbitrary strings are invalid.
 	"1984-01-24",
 );

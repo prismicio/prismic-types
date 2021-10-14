@@ -64,7 +64,7 @@ expectType<prismicT.SliceZone<prismicT.Slice<"foo">>>([
 ]);
 expectType<prismicT.SliceZone<prismicT.Slice<"foo">>>([
 	{
-		// @ts-expect-error
+		// @ts-expect-error - Slice must match the given type.
 		slice_type: "string",
 		slice_label: "string",
 		primary: {},
@@ -87,7 +87,7 @@ expectType<prismicT.SliceZone<prismicT.SharedSlice<"foo">>>([
 ]);
 expectType<prismicT.SliceZone<prismicT.SharedSlice<"foo">>>([
 	{
-		// @ts-expect-error
+		// @ts-expect-error - Slice must match the given type.
 		slice_type: "string",
 		slice_label: null,
 		variation: "string",

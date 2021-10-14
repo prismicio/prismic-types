@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<prismicT.SelectField>("foo");
 expectType<prismicT.SelectField<string, "filled">>("foo");
 expectType<prismicT.SelectField<string, "empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	"foo",
 );
 
@@ -34,7 +34,7 @@ expectType<prismicT.SelectField<string, "empty">>(
 expectType<prismicT.SelectField>(null);
 expectType<prismicT.SelectField<string, "empty">>(null);
 expectType<prismicT.SelectField<string, "filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );
 

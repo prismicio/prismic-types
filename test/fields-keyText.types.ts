@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<prismicT.KeyTextField>("foo");
 expectType<prismicT.KeyTextField<"filled">>("foo");
 expectType<prismicT.KeyTextField<"empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	"foo",
 );
 
@@ -34,6 +34,6 @@ expectType<prismicT.KeyTextField<"empty">>(
 expectType<prismicT.KeyTextField>(null);
 expectType<prismicT.KeyTextField<"empty">>(null);
 expectType<prismicT.KeyTextField<"filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );

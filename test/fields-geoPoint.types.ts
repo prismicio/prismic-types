@@ -30,9 +30,9 @@ expectType<prismicT.GeoPointField<"filled">>({
 	latitude: 0,
 });
 expectType<prismicT.GeoPointField<"empty">>({
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	longitude: 0,
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	latitude: 0,
 });
 
@@ -42,6 +42,6 @@ expectType<prismicT.GeoPointField<"empty">>({
 expectType<prismicT.GeoPointField>({});
 expectType<prismicT.GeoPointField<"empty">>({});
 expectType<prismicT.GeoPointField<"filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	{},
 );

@@ -38,7 +38,7 @@ expectType<prismicT.IntegrationFields<unknown, "filled">>({
 	blob: null,
 });
 expectType<prismicT.IntegrationFields<unknown, "empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	{
 		id: "string",
 		title: "string",
@@ -55,7 +55,7 @@ expectType<prismicT.IntegrationFields<unknown, "empty">>(
 expectType<prismicT.IntegrationFields>(null);
 expectType<prismicT.IntegrationFields<unknown, "empty">>(null);
 expectType<prismicT.IntegrationFields<unknown, "filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );
 
@@ -78,6 +78,6 @@ expectType<prismicT.IntegrationFields<{ foo: "bar" }>>({
 	description: "string",
 	image_url: "string",
 	last_update: 0,
-	// @ts-expect-error
+	// @ts-expect-error - Blob should match the given type.
 	blob: null,
 });

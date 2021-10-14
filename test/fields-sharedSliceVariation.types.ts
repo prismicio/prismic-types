@@ -35,7 +35,7 @@ expectType<prismicT.SharedSliceVariation<"foo">>({
 	items: [],
 });
 expectType<prismicT.SharedSliceVariation<"foo">>({
-	// @ts-expect-error
+	// @ts-expect-error - Variation type must match the given type.
 	variation: "string",
 	version: "string",
 	primary: {},
@@ -52,7 +52,7 @@ expectType<
 	version: "string",
 	primary: {
 		foo: true,
-		// @ts-expect-error
+		// @ts-expect-error - Only given fields are valid.
 		bar: false,
 	},
 	items: [],
@@ -76,7 +76,7 @@ expectType<
 	items: [
 		{
 			bar: "string",
-			// @ts-expect-error
+			// @ts-expect-error - Only given fields are valid.
 			baz: false,
 		},
 	],

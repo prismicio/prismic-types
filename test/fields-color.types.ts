@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<prismicT.ColorField>("#FF00FF");
 expectType<prismicT.ColorField<"filled">>("#FF00FF");
 expectType<prismicT.ColorField<"empty">>(
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	"#FF00FF",
 );
 
@@ -34,7 +34,7 @@ expectType<prismicT.ColorField<"empty">>(
 expectType<prismicT.ColorField>(null);
 expectType<prismicT.ColorField<"empty">>(null);
 expectType<prismicT.ColorField<"filled">>(
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	null,
 );
 
@@ -42,10 +42,10 @@ expectType<prismicT.ColorField<"filled">>(
  * Must be in hex triplet format.
  */
 expectType<prismicT.ColorField>(
-	// @ts-expect-error
+	// @ts-expect-error - Arbitrary strings are invalid.
 	"yellow",
 );
 expectType<prismicT.ColorField>(
-	// @ts-expect-error
+	// @ts-expect-error - Non-hex-triplet color formats are invalid.
 	"rgb(255, 0, 255)",
 );

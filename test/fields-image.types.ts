@@ -34,13 +34,13 @@ expectType<prismicT.ImageField<null, "filled">>({
 	copyright: "copyright",
 });
 expectType<prismicT.ImageField<null, "empty">>({
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	url: "url",
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	dimensions: { width: 1, height: 1 },
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	alt: "alt",
-	// @ts-expect-error
+	// @ts-expect-error - Empty fields cannot contain a filled value.
 	copyright: "copyright",
 });
 
@@ -61,9 +61,9 @@ expectType<prismicT.ImageField<null, "empty">>({
 	copyright: null,
 });
 expectType<prismicT.ImageField<null, "filled">>({
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	url: null,
-	// @ts-expect-error
+	// @ts-expect-error - Filled fields cannot contain an empty value.
 	dimensions: null,
 	alt: null,
 	copyright: null,
@@ -87,7 +87,7 @@ expectType<prismicT.ImageField>({
 	dimensions: { width: 1, height: 1 },
 	alt: "alt",
 	copyright: "copyright",
-	// @ts-expect-error
+	// @ts-expect-error - No thumbnails are included by default.
 	Foo: {},
 });
 
@@ -121,7 +121,7 @@ expectType<prismicT.ImageField<null>>({
 	dimensions: { width: 1, height: 1 },
 	alt: null,
 	copyright: null,
-	// @ts-expect-error
+	// @ts-expect-error - No thumbnails should be included when set to `null`.
 	Foo: {
 		url: "url",
 		dimensions: { width: 1, height: 1 },
