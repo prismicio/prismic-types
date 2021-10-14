@@ -64,6 +64,7 @@ export type {
 	SelectField,
 	BooleanField,
 	EmbedField,
+	CommonEmbedData,
 	GeoPointField,
 	// Complex
 	GroupField,
