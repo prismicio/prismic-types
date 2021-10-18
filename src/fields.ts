@@ -368,7 +368,10 @@ export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 export interface FilledLinkToDocumentField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 > {
 	link_type: LinkType.Document;
 	id: string;
@@ -381,6 +384,7 @@ export interface FilledLinkToDocumentField<
 	isBroken?: boolean;
 	data?: DataInterface;
 }
+
 /**
  * Link that points to external website
  */
@@ -415,7 +419,10 @@ export interface FilledLinkToMediaField {
 export type RelationField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
 	? EmptyLinkField<LinkType.Document>
@@ -433,14 +440,17 @@ export type RelationField<
 export type LinkField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
 	? EmptyLinkField<LinkType.Any>
 	:
-			| RelationField<TypeEnum, LangEnum, DataInterface>
+			| RelationField<TypeEnum, LangEnum, DataInterface, State>
 			| FilledLinkToWebField
-			| LinkToMediaField;
+			| LinkToMediaField<State>;
 
 /**
  * Link field that points to media
