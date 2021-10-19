@@ -136,3 +136,14 @@ export type {
 	FormField,
 	Tags,
 } from "./api";
+
+export { WebhookType } from "./webhook";
+
+export type {
+	WebhookBody,
+	WebhookBodyApiUpdate,
+	WebhookBodyTestTrigger,
+	WebhookRelease,
+	WebhookMask,
+	WebhookTag,
+} from "./webhook";
