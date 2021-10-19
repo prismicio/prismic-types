@@ -283,16 +283,23 @@ export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
  *
  * @see Title field documentation: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
-export type TitleField = [
-	| RTHeading1Node
-	| RTHeading2Node
-	| RTHeading3Node
-	| RTHeading4Node
-	| RTHeading5Node
-	| RTHeading6Node,
-];
+export type TitleField<State extends FieldState = FieldState> =
+	State extends "empty"
+		? []
+		: [
+				Omit<
+					| RTHeading1Node
+					| RTHeading2Node
+					| RTHeading3Node
+					| RTHeading4Node
+					| RTHeading5Node
+					| RTHeading6Node,
+					"spans"
+				>,
+		  ];
 
-export type RichTextField = RTNode[];
+export type RichTextField<State extends FieldState = FieldState> =
+	State extends "empty" ? [] : [RTNode, ...RTNode[]];
 
 // Image
 
