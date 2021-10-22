@@ -8,7 +8,6 @@ export enum LinkType {
 /**
  * Represents a link field without a value.
  */
-
 export type EmptyLinkField = null;
 
 /**
