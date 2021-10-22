@@ -50,10 +50,12 @@ export type CustomTypeModelDefinition<TabName extends string = string> = Record<
  *
  * @typeParam FieldName - API IDs of the fields.
  */
-export type CustomTypeModelTab<FieldName extends string = string> = Record<
-	FieldName,
-	CustomTypeModelField
->;
+export type CustomTypeModelTab<
+	Fields extends Record<string, CustomTypeModelField> = Record<
+		string,
+		CustomTypeModelField
+	>,
+> = Fields;
 
 /**
  * A Custom Type field.

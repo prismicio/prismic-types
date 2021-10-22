@@ -283,16 +283,23 @@ export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
  *
  * @see Title field documentation: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
-export type TitleField = [
-	| RTHeading1Node
-	| RTHeading2Node
-	| RTHeading3Node
-	| RTHeading4Node
-	| RTHeading5Node
-	| RTHeading6Node,
-];
+export type TitleField<State extends FieldState = FieldState> =
+	State extends "empty"
+		? []
+		: [
+				Omit<
+					| RTHeading1Node
+					| RTHeading2Node
+					| RTHeading3Node
+					| RTHeading4Node
+					| RTHeading5Node
+					| RTHeading6Node,
+					"spans"
+				>,
+		  ];
 
-export type RichTextField = RTNode[];
+export type RichTextField<State extends FieldState = FieldState> =
+	State extends "empty" ? [] : [RTNode, ...RTNode[]];
 
 // Image
 
@@ -326,17 +333,21 @@ export interface EmptyImageFieldImage {
 /**
  * Image Field
  *
+ * @typeParam ThumbnailNames - Names of thumbnails. If the field does not
+ *   contain thumbnails, `null` can be used to "disable" thumbnail fields.
  * @typeParam State - State of the field which determines its shape.
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export type ImageField<
-	ThumbnailNames extends string = string,
+	ThumbnailNames extends string | null = null,
 	State extends FieldState = FieldState,
-> = ImageFieldImage<State> &
-	Record<
-		Exclude<ThumbnailNames, keyof ImageFieldImage>,
-		ImageFieldImage<State>
-	>;
+> = ThumbnailNames extends string
+	? ImageFieldImage<State> &
+			Record<
+				Exclude<ThumbnailNames, keyof ImageFieldImage>,
+				ImageFieldImage<State>
+			>
+	: ImageFieldImage<State>;
 
 // Links
 /**
@@ -364,7 +375,10 @@ export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
 export interface FilledLinkToDocumentField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 > {
 	link_type: LinkType.Document;
 	id: string;
@@ -377,6 +391,7 @@ export interface FilledLinkToDocumentField<
 	isBroken?: boolean;
 	data?: DataInterface;
 }
+
 /**
  * Link that points to external website
  */
@@ -411,7 +426,10 @@ export interface FilledLinkToMediaField {
 export type RelationField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
 	? EmptyLinkField<LinkType.Document>
@@ -429,14 +447,17 @@ export type RelationField<
 export type LinkField<
 	TypeEnum = string,
 	LangEnum = string,
-	DataInterface = never,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
 	? EmptyLinkField<LinkType.Any>
 	:
-			| RelationField<TypeEnum, LangEnum, DataInterface>
+			| RelationField<TypeEnum, LangEnum, DataInterface, State>
 			| FilledLinkToWebField
-			| LinkToMediaField;
+			| LinkToMediaField<State>;
 
 /**
  * Link field that points to media
@@ -457,7 +478,7 @@ export type LinkToMediaField<State extends FieldState = FieldState> =
  * @see More details: {@link https://prismic.io/docs/core-concepts/date}
  */
 export type DateField<State extends FieldState = FieldState> =
-	State extends "empty" ? null : string;
+	State extends "empty" ? null : `${number}-${number}-${number}`;
 
 /**
  * Simple Timestamp Field
@@ -465,7 +486,9 @@ export type DateField<State extends FieldState = FieldState> =
  * @typeParam State - State of the field which determines its shape.
  */
 export type TimestampField<State extends FieldState = FieldState> =
-	State extends "empty" ? null : string;
+	State extends "empty"
+		? null
+		: `${DateField<"filled">}T${number}:${number}:${number}+${number}`;
 
 /**
  * A Color field.
@@ -522,35 +545,47 @@ export enum EmbedType {
 }
 
 /**
+ * A common set of oEmbed data supported by most providers.
+ *
+ * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
+ */
+export type CommonEmbedData = {
+	url?: string;
+	version?: string;
+	title?: string | null;
+
+	html?: string | null;
+
+	width?: number | null;
+	height?: number | null;
+
+	author_name?: string | null;
+	author_url?: string | null;
+
+	provider_name?: string;
+	cache_age?: number | null;
+
+	thumbnail_url?: string | null;
+	thumbnail_width?: number | null;
+	thumbnail_height?: number | null;
+};
+
+/**
  * An Embed field.
  *
+ * @typeParam Data - Data provided by the URL's oEmbed provider.
  * @typeParam State - State of the field which determines its shape.
  * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
-export type EmbedField<State extends FieldState = FieldState> =
-	State extends "empty"
-		? EmptyObjectField
-		: {
-				url: string;
-				width?: number | null;
-				height?: number | null;
-				embed_url: string;
-				type: EmbedType;
-				version: string;
-				title: string | null;
-
-				author_name: string | null;
-				author_url: string | null;
-
-				provider_name: string;
-				cache_age: number | null;
-
-				thumbnail_url: string | null;
-				thumbnail_width: number | null;
-				thumbnail_height: number | null;
-
-				html: string | null;
-		  };
+export type EmbedField<
+	Data extends Record<string, unknown> = CommonEmbedData,
+	State extends FieldState = FieldState,
+> = State extends "empty"
+	? EmptyObjectField
+	: {
+			embed_url: string;
+			type: EmbedType;
+	  } & Data;
 
 /**
  * A Geopoint field.
@@ -632,7 +667,7 @@ export type SharedSlice<
 	Variations extends SharedSliceVariation = SharedSliceVariation,
 > = {
 	slice_type: SliceType;
-	slice_label: string | null;
+	slice_label: null;
 } & Variations;
 
 export interface SharedSliceVariation<
