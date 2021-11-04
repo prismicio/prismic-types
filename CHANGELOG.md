@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/prismicio/prismic-types/compare/v0.1.15...v0.1.16) (2021-11-04)
+
+
+### Features
+
+* support stateful Rich Text and Title fields ([367ea03](https://github.com/prismicio/prismic-types/commit/367ea0392374375bc51bef09d6de1af366adbb7e))
+
+
+### Bug Fixes
+
+* narrow link `data` field type ([3c7fdca](https://github.com/prismicio/prismic-types/commit/3c7fdca99a657953772af30e5bfc1dd21f559705))
+
+
+### Chore
+
+* maintain template ([b17ae84](https://github.com/prismicio/prismic-types/commit/b17ae8460c21aa16172d826e954488c2268720b0))
+* separate type tests into `types` script ([d4ea1e9](https://github.com/prismicio/prismic-types/commit/d4ea1e96194f2467fa59166bf3c0a52f0156174f))
+
 ### [0.1.15](https://github.com/prismicio/prismic-types/compare/v0.1.14...v0.1.15) (2021-10-12)
 
 
