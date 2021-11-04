@@ -34,12 +34,14 @@ expectType<prismicT.TitleField>([
 	{
 		type: prismicT.RichTextNodeType.heading1,
 		text: "string",
+		spans: [],
 	},
 ]);
 expectType<prismicT.TitleField<"filled">>([
 	{
 		type: prismicT.RichTextNodeType.heading1,
 		text: "string",
+		spans: [],
 	},
 ]);
 expectType<prismicT.TitleField<"empty">>(
@@ -48,6 +50,7 @@ expectType<prismicT.TitleField<"empty">>(
 		{
 			type: prismicT.RichTextNodeType.heading1,
 			text: "string",
+			spans: [],
 		},
 	],
 );
@@ -66,22 +69,22 @@ expectType<prismicT.TitleField<"filled">>(
  * Supports all heading Structured Text block types.
  */
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading1, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading1, text: "string", spans: [] },
 ]);
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading2, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading2, text: "string", spans: [] },
 ]);
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading3, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading3, text: "string", spans: [] },
 ]);
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading4, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading4, text: "string", spans: [] },
 ]);
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading5, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading5, text: "string", spans: [] },
 ]);
 expectType<prismicT.TitleField>([
-	{ type: prismicT.RichTextNodeType.heading5, text: "string" },
+	{ type: prismicT.RichTextNodeType.heading5, text: "string", spans: [] },
 ]);
 
 /**
@@ -161,13 +164,19 @@ expectType<prismicT.TitleField>([
 ]);
 
 /**
- * Does not allow spans.
+ * Does not allow spans elements.
  */
 expectType<prismicT.TitleField>([
 	{
 		type: prismicT.RichTextNodeType.heading1,
 		text: "string",
-		// @ts-expect-error - Does not allow spans.
-		spans: [],
+		// @ts-expect-error - Does not allow span elements.
+		spans: [
+			{
+				type: prismicT.RichTextNodeType.strong,
+				start: 0,
+				end: 1,
+			},
+		],
 	},
 ]);

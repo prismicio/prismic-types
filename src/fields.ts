@@ -295,7 +295,9 @@ export type TitleField<State extends FieldState = FieldState> =
 					| RTHeading5Node
 					| RTHeading6Node,
 					"spans"
-				>,
+				> & {
+					spans: [];
+				},
 		  ];
 
 export type RichTextField<State extends FieldState = FieldState> =
