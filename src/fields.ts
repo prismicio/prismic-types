@@ -365,7 +365,9 @@ export const LinkType = {
  *
  * @typeParam Type - The type of link.
  */
-export type EmptyLinkField<Type extends typeof LinkType[keyof typeof LinkType] = typeof LinkType.Any> = {
+export type EmptyLinkField<
+	Type extends typeof LinkType[keyof typeof LinkType] = typeof LinkType.Any,
+> = {
 	link_type: Type | string;
 };
 

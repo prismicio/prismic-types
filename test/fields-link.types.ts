@@ -27,9 +27,7 @@ const ForeignLinkType = {
 	Document: "Document",
 	Breaking: "Breaking",
 } as const;
-expectType<typeof prismicT.LinkType.Document>(
-	ForeignLinkType.Document,
-);
+expectType<typeof prismicT.LinkType.Document>(ForeignLinkType.Document);
 expectType<typeof prismicT.LinkType.Document>(
 	// @ts-expect-error - `LinkType` should still fail with breaking changes
 	ForeignLinkType.Breaking,

@@ -27,9 +27,7 @@ const ForeignEmbedType = {
 	Link: "link",
 	Breaking: "breaking",
 } as const;
-expectType<typeof prismicT.EmbedType.Link>(
-	ForeignEmbedType.Link,
-);
+expectType<typeof prismicT.EmbedType.Link>(ForeignEmbedType.Link);
 expectType<typeof prismicT.EmbedType.Link>(
 	// @ts-expect-error - `EmbedType` should still fail with breaking changes
 	ForeignEmbedType.Breaking,
