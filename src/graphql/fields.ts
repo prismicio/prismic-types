@@ -1,9 +1,9 @@
-export enum LinkType {
-	Document = "Link.document",
-	File = "Link.file",
-	Image = "Link.image",
-	Web = "Link.web",
-}
+export const LinkType = {
+	Document: "Link.document",
+	File: "Link.file",
+	Image: "Link.image",
+	Web: "Link.web",
+} as const;
 
 /**
  * Represents a link field without a value.
@@ -14,14 +14,14 @@ export type EmptyLinkField = null;
  * Link that point to Documents
  */
 export interface FilledMinimalLinkToDocumentField {
-	_linkType: LinkType.Document | string;
+	_linkType: typeof LinkType.Document | string;
 }
 
 /**
  * Link that points to external website
  */
 export interface FilledMinimalLinkToWebField {
-	_linkType: LinkType.Web | string;
+	_linkType: typeof LinkType.Web | string;
 	url: string;
 }
 
@@ -29,7 +29,7 @@ export interface FilledMinimalLinkToWebField {
  * Link that points to media (images, PDFs, or any file in the Media Library)
  */
 export interface FilledMinimalLinkToMediaField {
-	_linkType: LinkType.File | LinkType.Image | string;
+	_linkType: typeof LinkType.File | typeof LinkType.Image | string;
 	url: string;
 }
 

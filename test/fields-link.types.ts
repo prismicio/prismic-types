@@ -19,6 +19,23 @@ import * as prismicT from "../src";
 };
 
 /**
+ * `LinkType` keeps compatibility with other versions.
+ *
+ * @see Related issue {@link https://github.com/prismicio/prismic-types/issues/16}
+ */
+const ForeignLinkType = {
+	Document: "Document",
+	Breaking: "Breaking",
+} as const;
+expectType<typeof prismicT.LinkType.Document>(
+	ForeignLinkType.Document,
+);
+expectType<typeof prismicT.LinkType.Document>(
+	// @ts-expect-error - `LinkType` should still fail with breaking changes
+	ForeignLinkType.Breaking,
+);
+
+/**
  * Filled state.
  */
 // Web link

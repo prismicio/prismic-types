@@ -19,6 +19,23 @@ import * as prismicT from "../src";
 };
 
 /**
+ * `EmbedType` keeps compatibility with other versions.
+ *
+ * @see Related issue {@link https://github.com/prismicio/prismic-types/issues/16}
+ */
+const ForeignEmbedType = {
+	Link: "link",
+	Breaking: "breaking",
+} as const;
+expectType<typeof prismicT.EmbedType.Link>(
+	ForeignEmbedType.Link,
+);
+expectType<typeof prismicT.EmbedType.Link>(
+	// @ts-expect-error - `EmbedType` should still fail with breaking changes
+	ForeignEmbedType.Breaking,
+);
+
+/**
  * Filled state.
  */
 expectType<prismicT.EmbedField>({

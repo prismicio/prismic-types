@@ -353,19 +353,19 @@ export type ImageField<
 /**
  * Link Types
  */
-export enum LinkType {
-	Any = "Any",
-	Document = "Document",
-	Media = "Media",
-	Web = "Web",
-}
+export const LinkType = {
+	Any: "Any",
+	Document: "Document",
+	Media: "Media",
+	Web: "Web",
+} as const;
 
 /**
  * For link fields that haven't been filled
  *
  * @typeParam Type - The type of link.
  */
-export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
+export type EmptyLinkField<Type extends typeof LinkType[keyof typeof LinkType] = typeof LinkType.Any> = {
 	link_type: Type | string;
 };
 
@@ -380,7 +380,7 @@ export interface FilledLinkToDocumentField<
 		AnyRegularField | GroupField | SliceZone
 	> = never,
 > {
-	link_type: LinkType.Document;
+	link_type: typeof LinkType.Document;
 	id: string;
 	uid?: string;
 	type: TypeEnum;
@@ -396,7 +396,7 @@ export interface FilledLinkToDocumentField<
  * Link that points to external website
  */
 export interface FilledLinkToWebField {
-	link_type: LinkType.Web;
+	link_type: typeof LinkType.Web;
 	url: string;
 	target?: string;
 }
@@ -405,7 +405,7 @@ export interface FilledLinkToWebField {
  * Link that points to media
  */
 export interface FilledLinkToMediaField {
-	link_type: LinkType.Media;
+	link_type: typeof LinkType.Media;
 	name: string;
 	kind: string;
 	url: string;
@@ -432,7 +432,7 @@ export type RelationField<
 	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
-	? EmptyLinkField<LinkType.Document>
+	? EmptyLinkField<typeof LinkType.Document>
 	: FilledLinkToDocumentField<TypeEnum, LangEnum, DataInterface>;
 
 /**
@@ -453,7 +453,7 @@ export type LinkField<
 	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
-	? EmptyLinkField<LinkType.Any>
+	? EmptyLinkField<typeof LinkType.Any>
 	:
 			| RelationField<TypeEnum, LangEnum, DataInterface, State>
 			| FilledLinkToWebField
@@ -466,7 +466,7 @@ export type LinkField<
  */
 export type LinkToMediaField<State extends FieldState = FieldState> =
 	State extends "empty"
-		? EmptyLinkField<LinkType.Media>
+		? EmptyLinkField<typeof LinkType.Media>
 		: FilledLinkToMediaField;
 
 // Simple Fields
@@ -539,10 +539,10 @@ export type BooleanField = boolean;
 /**
  * Embed Type - Link or RichText Field
  */
-export enum EmbedType {
-	Link = "link",
-	Rich = "rich",
-}
+export const EmbedType = {
+	Link: "link",
+	Rich: "rich",
+} as const;
 
 /**
  * A common set of oEmbed data supported by most providers.
@@ -584,7 +584,7 @@ export type EmbedField<
 	? EmptyObjectField
 	: {
 			embed_url: string;
-			type: EmbedType;
+			type: typeof EmbedType[keyof typeof EmbedType];
 	  } & Data;
 
 /**
