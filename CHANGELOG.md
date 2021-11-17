@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.18](https://github.com/prismicio/prismic-types/compare/v0.1.17...v0.1.18) (2021-11-17)
+
+
+### Bug Fixes
+
+* prevent compatibility issues with enum types ([#18](https://github.com/prismicio/prismic-types/issues/18)) ([508fb73](https://github.com/prismicio/prismic-types/commit/508fb73ff2806b669c3292aaf6c40c780a551c59))
+
 ### [0.1.17](https://github.com/prismicio/prismic-types/compare/v0.1.16...v0.1.17) (2021-11-04)
 
 
