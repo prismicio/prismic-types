@@ -24,7 +24,7 @@ import * as prismicT from "../src";
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.BooleanField>>(true);
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.ColorField>>(true);
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.DateField>>(true);
-expectType<TypeOf<prismicT.AnyRegularField, prismicT.EmbedType>>(true);
+expectType<TypeOf<prismicT.AnyRegularField, prismicT.EmbedField>>(true);
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.GeoPointField>>(true);
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.ImageField>>(true);
 expectType<TypeOf<prismicT.AnyRegularField, prismicT.IntegrationFields>>(true);

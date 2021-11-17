@@ -28,6 +28,23 @@ import * as prismicT from "../src";
 };
 
 /**
+ * `RichTextNodeType` keeps compatibility with other versions.
+ *
+ * @see Related issue {@link https://github.com/prismicio/prismic-types/issues/16}
+ */
+const ForeignRichTextNodeType = {
+	heading1: "heading1",
+	breaking: "breaking",
+} as const;
+expectType<typeof prismicT.RichTextNodeType.heading1>(
+	ForeignRichTextNodeType.heading1,
+);
+expectType<typeof prismicT.RichTextNodeType.heading1>(
+	// @ts-expect-error - `RichTextNodeType` should still fail with breaking changes
+	ForeignRichTextNodeType.breaking,
+);
+
+/**
  * Filled state.
  */
 expectType<prismicT.RichTextField>([

@@ -90,24 +90,24 @@ export type CustomTypeModelFieldForGroup =
 /**
  * Type identifier for a Custom Type field.
  */
-export enum CustomTypeModelFieldType {
-	Boolean = "Boolean",
-	Color = "Color",
-	Date = "Date",
-	Embed = "Embed",
-	GeoPoint = "GeoPoint",
-	Group = "Group",
-	Image = "Image",
-	IntegrationFields = "IntegrationFields",
-	Link = "Link",
-	Number = "Number",
-	Select = "Select",
-	Slices = "Slices",
-	StructuredText = "StructuredText",
-	Text = "Text",
-	Timestamp = "Timestamp",
-	UID = "UID",
-}
+export const CustomTypeModelFieldType = {
+	Boolean: "Boolean",
+	Color: "Color",
+	Date: "Date",
+	Embed: "Embed",
+	GeoPoint: "GeoPoint",
+	Group: "Group",
+	Image: "Image",
+	IntegrationFields: "IntegrationFields",
+	Link: "Link",
+	Number: "Number",
+	Select: "Select",
+	Slices: "Slices",
+	StructuredText: "StructuredText",
+	Text: "Text",
+	Timestamp: "Timestamp",
+	UID: "UID",
+} as const;
 
 /**
  * A Boolean Custom Type field.
@@ -115,7 +115,7 @@ export enum CustomTypeModelFieldType {
  * More details: {@link https://prismic.io/docs/core-concepts/boolean}
  */
 export interface CustomTypeModelBooleanField {
-	type: CustomTypeModelFieldType.Boolean;
+	type: typeof CustomTypeModelFieldType.Boolean;
 	config: {
 		label: string;
 	};
@@ -127,7 +127,7 @@ export interface CustomTypeModelBooleanField {
  * More details: {@link https://prismic.io/docs/core-concepts/color}
  */
 export interface CustomTypeModelColorField {
-	type: CustomTypeModelFieldType.Color;
+	type: typeof CustomTypeModelFieldType.Color;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -140,7 +140,7 @@ export interface CustomTypeModelColorField {
  * More details: {@link https://prismic.io/docs/core-concepts/date}
  */
 export interface CustomTypeModelDateField {
-	type: CustomTypeModelFieldType.Date;
+	type: typeof CustomTypeModelFieldType.Date;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -153,7 +153,7 @@ export interface CustomTypeModelDateField {
  * More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
 export interface CustomTypeModelEmbedField {
-	type: CustomTypeModelFieldType.Embed;
+	type: typeof CustomTypeModelFieldType.Embed;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -166,7 +166,7 @@ export interface CustomTypeModelEmbedField {
  * More details: {@link https://prismic.io/docs/core-concepts/geopoint}
  */
 export interface CustomTypeModelGeoPointField {
-	type: CustomTypeModelFieldType.GeoPoint;
+	type: typeof CustomTypeModelFieldType.GeoPoint;
 	config: {
 		label: string;
 	};
@@ -185,7 +185,7 @@ export interface CustomTypeModelGroupField<
 		CustomTypeModelFieldForGroup
 	>,
 > {
-	type: CustomTypeModelFieldType.Group;
+	type: typeof CustomTypeModelFieldType.Group;
 	config: {
 		label: string;
 		fields: Fields;
@@ -200,7 +200,7 @@ export interface CustomTypeModelGroupField<
 export interface CustomTypeModelImageField<
 	ThumbnailNames extends string = string,
 > {
-	type: CustomTypeModelFieldType.Image;
+	type: typeof CustomTypeModelFieldType.Image;
 	config: {
 		label: string;
 		constraint: CustomTypeModelImageConstraint | Record<string, never>;
@@ -234,7 +234,7 @@ export interface CustomTypeModelImageThumbnail<Name extends string = string>
  * More details: {@link https://prismic.io/docs/core-concepts/integration-fields}
  */
 export interface CustomTypeModelIntegrationFieldsField {
-	type: CustomTypeModelFieldType.IntegrationFields;
+	type: typeof CustomTypeModelFieldType.IntegrationFields;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -247,10 +247,10 @@ export interface CustomTypeModelIntegrationFieldsField {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/link-content-relationship}
  */
-export enum CustomTypeModelLinkSelectType {
-	Document = "document",
-	Media = "media",
-}
+export const CustomTypeModelLinkSelectType = {
+	Document: "document",
+	Media: "media",
+} as const;
 
 /**
  * A Content Relationship Custom Type field.
@@ -261,11 +261,11 @@ export interface CustomTypeModelContentRelationshipField<
 	CustomTypeIDs extends string = string,
 	Tags extends string = string,
 > {
-	type: CustomTypeModelFieldType.Link;
+	type: typeof CustomTypeModelFieldType.Link;
 	config: {
 		label: string;
 		placeholder?: string;
-		select: CustomTypeModelLinkSelectType.Document;
+		select: typeof CustomTypeModelLinkSelectType.Document;
 		customtypes?: readonly CustomTypeIDs[];
 		tags?: readonly Tags[];
 	};
@@ -277,7 +277,7 @@ export interface CustomTypeModelContentRelationshipField<
  * More details: {@link https://prismic.io/docs/core-concepts/link-content-relationship}
  */
 export interface CustomTypeModelLinkField {
-	type: CustomTypeModelFieldType.Link;
+	type: typeof CustomTypeModelFieldType.Link;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -292,11 +292,11 @@ export interface CustomTypeModelLinkField {
  * More details: {@link https://prismic.io/docs/core-concepts/link-content-relationship}
  */
 export interface CustomTypeModelLinkToMediaField {
-	type: CustomTypeModelFieldType.Link;
+	type: typeof CustomTypeModelFieldType.Link;
 	config: {
 		label: string;
 		placeholder?: string;
-		select: CustomTypeModelLinkSelectType.Media;
+		select: typeof CustomTypeModelLinkSelectType.Media;
 	};
 }
 
@@ -306,7 +306,7 @@ export interface CustomTypeModelLinkToMediaField {
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export interface CustomTypeModelNumberField {
-	type: CustomTypeModelFieldType.Number;
+	type: typeof CustomTypeModelFieldType.Number;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -325,7 +325,7 @@ export interface CustomTypeModelSelectField<
 	Option extends string = string,
 	DefaultValue extends Option = Option,
 > {
-	type: CustomTypeModelFieldType.Select;
+	type: typeof CustomTypeModelFieldType.Select;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -349,7 +349,7 @@ export type CustomTypeModelRichTextField =
  * More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export interface CustomTypeModelRichTextMultiField {
-	type: CustomTypeModelFieldType.StructuredText;
+	type: typeof CustomTypeModelFieldType.StructuredText;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -364,7 +364,7 @@ export interface CustomTypeModelRichTextMultiField {
  * More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
 export interface CustomTypeModelRichTextSingleField {
-	type: CustomTypeModelFieldType.StructuredText;
+	type: typeof CustomTypeModelFieldType.StructuredText;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -386,7 +386,7 @@ export type CustomTypeModelTitleField = CustomTypeModelRichTextSingleField;
  * More details: {@link https://prismic.io/docs/core-concepts/key-text}
  */
 export interface CustomTypeModelKeyTextField {
-	type: CustomTypeModelFieldType.Text;
+	type: typeof CustomTypeModelFieldType.Text;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -399,7 +399,7 @@ export interface CustomTypeModelKeyTextField {
  * More details: {@link https://prismic.io/docs/core-concepts/timestamp}
  */
 export interface CustomTypeModelTimestampField {
-	type: CustomTypeModelFieldType.Timestamp;
+	type: typeof CustomTypeModelFieldType.Timestamp;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -412,7 +412,7 @@ export interface CustomTypeModelTimestampField {
  * More details: {@link https://prismic.io/docs/core-concepts/uid}
  */
 export interface CustomTypeModelUIDField {
-	type: CustomTypeModelFieldType.UID;
+	type: typeof CustomTypeModelFieldType.UID;
 	config: {
 		label: string;
 		placeholder?: string;
@@ -430,7 +430,7 @@ export interface CustomTypeModelSliceZoneField<
 		CustomTypeModelSlice | CustomTypeModelSharedSlice
 	> = Record<string, CustomTypeModelSlice | CustomTypeModelSharedSlice>,
 > {
-	type: CustomTypeModelFieldType.Slices;
+	type: typeof CustomTypeModelFieldType.Slices;
 	fieldset: "Slice zone";
 	config: {
 		labels: Record<string, readonly CustomTypeModelSliceLabel[]>;
@@ -453,20 +453,20 @@ export interface CustomTypeModelSliceLabel {
  *
  * More details: {@link https://prismic.io/docs/core-concepts/slices}
  */
-export enum CustomTypeModelSliceDisplay {
-	List = "list",
-	Grid = "grid",
-}
+export const CustomTypeModelSliceDisplay = {
+	List: "list",
+	Grid: "grid",
+} as const;
 
 /**
  * Type identifier for a Slice.
  *
  * More details: {@link https://prismic.io/docs/core-concepts/slices}
  */
-export enum CustomTypeModelSliceType {
-	Slice = "Slice",
-	SharedSlice = "SharedSlice",
-}
+export const CustomTypeModelSliceType = {
+	Slice: "Slice",
+	SharedSlice: "SharedSlice",
+} as const;
 
 /**
  * A Slice for a Custom Type.
@@ -486,11 +486,11 @@ export interface CustomTypeModelSlice<
 		CustomTypeModelFieldForGroup
 	>,
 > {
-	type: CustomTypeModelSliceType.Slice;
+	type: typeof CustomTypeModelSliceType.Slice;
 	fieldset: string;
 	description: string;
 	icon: string;
-	display: CustomTypeModelSliceDisplay;
+	display: typeof CustomTypeModelSliceDisplay[keyof typeof CustomTypeModelSliceDisplay];
 	"non-repeat": NonRepeatFields;
 	repeat: RepeatFields;
 }
@@ -504,7 +504,7 @@ export interface CustomTypeModelSlice<
  * - {@link https://prismic.io/docs/core-concepts/reusing-slices}
  */
 export interface CustomTypeModelSharedSlice {
-	type: CustomTypeModelSliceType.SharedSlice;
+	type: typeof CustomTypeModelSliceType.SharedSlice;
 }
 
 /**
@@ -521,7 +521,7 @@ export interface SharedSliceModel<
 	ID extends string = string,
 	Variation extends SharedSliceModelVariation = SharedSliceModelVariation,
 > {
-	type: CustomTypeModelSliceType.SharedSlice;
+	type: typeof CustomTypeModelSliceType.SharedSlice;
 	id: ID;
 	name: string;
 	description: string;

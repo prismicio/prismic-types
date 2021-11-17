@@ -10,27 +10,27 @@ export type FieldState = "empty" | "filled";
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/rich-text-title}
  */
-export enum RichTextNodeType {
-	heading1 = "heading1",
-	heading2 = "heading2",
-	heading3 = "heading3",
-	heading4 = "heading4",
-	heading5 = "heading5",
-	heading6 = "heading6",
-	paragraph = "paragraph",
-	preformatted = "preformatted",
-	strong = "strong",
-	em = "em",
-	listItem = "list-item",
-	oListItem = "o-list-item",
-	list = "group-list-item",
-	oList = "group-o-list-item",
-	image = "image",
-	embed = "embed",
-	hyperlink = "hyperlink",
-	label = "label",
-	span = "span",
-}
+export const RichTextNodeType = {
+	heading1: "heading1",
+	heading2: "heading2",
+	heading3: "heading3",
+	heading4: "heading4",
+	heading5: "heading5",
+	heading6: "heading6",
+	paragraph: "paragraph",
+	preformatted: "preformatted",
+	strong: "strong",
+	em: "em",
+	listItem: "list-item",
+	oListItem: "o-list-item",
+	list: "group-list-item",
+	oList: "group-o-list-item",
+	image: "image",
+	embed: "embed",
+	hyperlink: "hyperlink",
+	label: "label",
+	span: "span",
+} as const;
 
 // Text nodes
 
@@ -46,70 +46,70 @@ export interface RTTextNodeBase {
  * Rich Text `heading1` node
  */
 export interface RTHeading1Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading1;
+	type: typeof RichTextNodeType.heading1;
 }
 
 /**
  * Rich Text `heading2` node
  */
 export interface RTHeading2Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading2;
+	type: typeof RichTextNodeType.heading2;
 }
 
 /**
  * Rich Text `heading3` node
  */
 export interface RTHeading3Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading3;
+	type: typeof RichTextNodeType.heading3;
 }
 
 /**
  * Rich Text `heading4` node
  */
 export interface RTHeading4Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading4;
+	type: typeof RichTextNodeType.heading4;
 }
 
 /**
  * Rich Text `heading5` node
  */
 export interface RTHeading5Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading5;
+	type: typeof RichTextNodeType.heading5;
 }
 
 /**
  * Rich Text `heading6` node
  */
 export interface RTHeading6Node extends RTTextNodeBase {
-	type: RichTextNodeType.heading6;
+	type: typeof RichTextNodeType.heading6;
 }
 
 /**
  * Rich Text `paragraph` node
  */
 export interface RTParagraphNode extends RTTextNodeBase {
-	type: RichTextNodeType.paragraph;
+	type: typeof RichTextNodeType.paragraph;
 }
 
 /**
  * Rich Text `preformatted` node
  */
 export interface RTPreformattedNode extends RTTextNodeBase {
-	type: RichTextNodeType.preformatted;
+	type: typeof RichTextNodeType.preformatted;
 }
 
 /**
  * Rich Text `list-item` node
  */
 export interface RTListItemNode extends RTTextNodeBase {
-	type: RichTextNodeType.listItem;
+	type: typeof RichTextNodeType.listItem;
 }
 
 /**
  * Rich Text `o-list-item` node for ordered lists
  */
 export interface RTOListItemNode extends RTTextNodeBase {
-	type: RichTextNodeType.oListItem;
+	type: typeof RichTextNodeType.oListItem;
 }
 
 // Span nodes
@@ -125,21 +125,21 @@ export interface RTSpanNodeBase {
  * Rich Text `strong` node
  */
 export interface RTStrongNode extends RTSpanNodeBase {
-	type: RichTextNodeType.strong;
+	type: typeof RichTextNodeType.strong;
 }
 
 /**
  * Rich Text `embed` node
  */
 export interface RTEmNode extends RTSpanNodeBase {
-	type: RichTextNodeType.em;
+	type: typeof RichTextNodeType.em;
 }
 
 /**
  * Rich Text `label` node
  */
 export interface RTLabelNode extends RTSpanNodeBase {
-	type: RichTextNodeType.label;
+	type: typeof RichTextNodeType.label;
 	data: {
 		label: string;
 	};
@@ -152,7 +152,7 @@ export interface RTLabelNode extends RTSpanNodeBase {
  * links and media fields
  */
 export type RTImageNode = {
-	type: RichTextNodeType.image;
+	type: typeof RichTextNodeType.image;
 	url: string;
 	alt: string | null;
 	copyright: string | null;
@@ -170,7 +170,7 @@ export type RTImageNode = {
  * Rich Text `embed` node
  */
 export type RTEmbedNode = {
-	type: RichTextNodeType.embed;
+	type: typeof RichTextNodeType.embed;
 	oembed: EmbedField;
 };
 
@@ -182,7 +182,7 @@ export type RTEmbedNode = {
  * @see More details: {@link https://prismic.io/docs/core-concepts/edit-rich-text#add-links}
  */
 export interface RTLinkNode extends RTSpanNodeBase {
-	type: RichTextNodeType.hyperlink;
+	type: typeof RichTextNodeType.hyperlink;
 	data:
 		| FilledLinkToDocumentField
 		| FilledLinkToWebField
@@ -195,7 +195,7 @@ export interface RTLinkNode extends RTSpanNodeBase {
  * Rich Text `list` node
  */
 export interface RTListNode {
-	type: RichTextNodeType.list;
+	type: typeof RichTextNodeType.list;
 	items: RTListItemNode[];
 }
 
@@ -203,7 +203,7 @@ export interface RTListNode {
  * Rich Text o-lost node
  */
 export interface RTOListNode {
-	type: RichTextNodeType.oList;
+	type: typeof RichTextNodeType.oList;
 	items: RTOListItemNode[];
 }
 
@@ -212,7 +212,7 @@ export interface RTOListNode {
  * Rich Text `span` node
  */
 export interface RTSpanNode extends RTTextNodeBase {
-	type: RichTextNodeType.span;
+	type: typeof RichTextNodeType.span;
 }
 
 // Helpers
@@ -355,19 +355,21 @@ export type ImageField<
 /**
  * Link Types
  */
-export enum LinkType {
-	Any = "Any",
-	Document = "Document",
-	Media = "Media",
-	Web = "Web",
-}
+export const LinkType = {
+	Any: "Any",
+	Document: "Document",
+	Media: "Media",
+	Web: "Web",
+} as const;
 
 /**
  * For link fields that haven't been filled
  *
  * @typeParam Type - The type of link.
  */
-export type EmptyLinkField<Type extends LinkType = LinkType.Any> = {
+export type EmptyLinkField<
+	Type extends typeof LinkType[keyof typeof LinkType] = typeof LinkType.Any,
+> = {
 	link_type: Type | string;
 };
 
@@ -382,7 +384,7 @@ export interface FilledLinkToDocumentField<
 		AnyRegularField | GroupField | SliceZone
 	> = never,
 > {
-	link_type: LinkType.Document;
+	link_type: typeof LinkType.Document;
 	id: string;
 	uid?: string;
 	type: TypeEnum;
@@ -398,7 +400,7 @@ export interface FilledLinkToDocumentField<
  * Link that points to external website
  */
 export interface FilledLinkToWebField {
-	link_type: LinkType.Web;
+	link_type: typeof LinkType.Web;
 	url: string;
 	target?: string;
 }
@@ -407,7 +409,7 @@ export interface FilledLinkToWebField {
  * Link that points to media
  */
 export interface FilledLinkToMediaField {
-	link_type: LinkType.Media;
+	link_type: typeof LinkType.Media;
 	name: string;
 	kind: string;
 	url: string;
@@ -434,7 +436,7 @@ export type RelationField<
 	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
-	? EmptyLinkField<LinkType.Document>
+	? EmptyLinkField<typeof LinkType.Document>
 	: FilledLinkToDocumentField<TypeEnum, LangEnum, DataInterface>;
 
 /**
@@ -455,7 +457,7 @@ export type LinkField<
 	> = never,
 	State extends FieldState = FieldState,
 > = State extends "empty"
-	? EmptyLinkField<LinkType.Any>
+	? EmptyLinkField<typeof LinkType.Any>
 	:
 			| RelationField<TypeEnum, LangEnum, DataInterface, State>
 			| FilledLinkToWebField
@@ -468,7 +470,7 @@ export type LinkField<
  */
 export type LinkToMediaField<State extends FieldState = FieldState> =
 	State extends "empty"
-		? EmptyLinkField<LinkType.Media>
+		? EmptyLinkField<typeof LinkType.Media>
 		: FilledLinkToMediaField;
 
 // Simple Fields
@@ -541,10 +543,10 @@ export type BooleanField = boolean;
 /**
  * Embed Type - Link or RichText Field
  */
-export enum EmbedType {
-	Link = "link",
-	Rich = "rich",
-}
+export const EmbedType = {
+	Link: "link",
+	Rich: "rich",
+} as const;
 
 /**
  * A common set of oEmbed data supported by most providers.
@@ -586,7 +588,7 @@ export type EmbedField<
 	? EmptyObjectField
 	: {
 			embed_url: string;
-			type: EmbedType;
+			type: typeof EmbedType[keyof typeof EmbedType];
 	  } & Data;
 
 /**
