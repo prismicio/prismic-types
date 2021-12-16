@@ -529,7 +529,7 @@ export type KeyTextField<State extends FieldState = FieldState> =
  * @see More details: {@link https://prismic.io/docs/core-concepts/select}
  */
 export type SelectField<
-	Enum = string,
+	Enum extends string = string,
 	State extends FieldState = FieldState,
 > = State extends "empty" ? null : Enum;
 
