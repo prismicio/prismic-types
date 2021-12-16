@@ -616,7 +616,8 @@ export type GroupField<
 		string,
 		AnyRegularField
 	>,
-> = Fields[];
+	State extends FieldState = FieldState,
+> = State extends "empty" ? [] : [Fields, ...Fields[]];
 
 /**
  * Integration Fields for Custom APIs
@@ -700,7 +701,8 @@ export interface SharedSliceVariation<
  */
 export type SliceZone<
 	Slices extends Slice | SharedSlice = Slice | SharedSlice,
-> = Slices[];
+	State extends FieldState = FieldState,
+> = State extends "empty" ? [] : [Slices, ...Slices[]];
 
 // Misc
 

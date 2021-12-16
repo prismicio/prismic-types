@@ -16,6 +16,11 @@ import * as prismicT from "../src";
 			return true;
 		}
 
+		// When the field is empty, value[0] is undefined.
+		case "undefined": {
+			return true;
+		}
+
 		default: {
 			return expectNever(value[0]);
 		}
