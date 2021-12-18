@@ -1,6 +1,8 @@
 export type {
 	PrismicDocumentHeader,
 	PrismicDocument,
+	PrismicDocumentWithUID,
+	PrismicDocumentWithoutUID,
 	AlternateLanguage,
 } from "./document";
 

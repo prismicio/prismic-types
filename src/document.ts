@@ -15,11 +15,13 @@ export interface AlternateLanguage<TypeEnum = string, LangEnum = string> {
  */
 export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 	/**
-	 * The unique identifier for the document.
+	 * The unique identifier for the document. Guaranteed to be unique among all
+	 * documents in the Prismic repository.
 	 */
 	id: string;
 	/**
-	 * The unique identifier for the document.
+	 * The unique identifier for the document. Guaranteed to be unique among all
+	 * Prismic documents of the same type.
 	 */
 	uid: string | null;
 	/**
@@ -74,5 +76,47 @@ export interface PrismicDocument<
 	TypeEnum = string,
 	LangEnum = string,
 > extends PrismicDocumentHeader<TypeEnum, LangEnum> {
+	/**
+	 * Data contained in the document.
+	 */
 	data: DataInterface;
+}
+
+/**
+ * A Prismic document served through REST API v2. Does not contain a UID (a
+ * unique identifier).
+ *
+ * @see More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
+ * @see More details on the UID field: {@link https://prismic.io/docs/core-concepts/uid}
+ */
+export interface PrismicDocumentWithoutUID<
+	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
+	TypeEnum = string,
+	LangEnum = string,
+> extends PrismicDocument<DataInterface, TypeEnum, LangEnum> {
+	/**
+	 * This document does not have a UID field. This property will always be `null`.
+	 *
+	 * The unique identifier for the document. Guaranteed to be unique among all
+	 * Prismic documents of the same type.
+	 */
+	uid: null;
+}
+
+/**
+ * A Prismic document served through REST API v2. Contains a UID (a unique identifier).
+ *
+ * @see More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
+ * @see More details on the UID field: {@link https://prismic.io/docs/core-concepts/uid}
+ */
+export interface PrismicDocumentWithUID<
+	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
+	TypeEnum = string,
+	LangEnum = string,
+> extends PrismicDocument<DataInterface, TypeEnum, LangEnum> {
+	/**
+	 * The unique identifier for the document. Guaranteed to be unique among all
+	 * Prismic documents of the same type.
+	 */
+	uid: string;
 }
