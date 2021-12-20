@@ -83,10 +83,3 @@ test("custom type slice type mapping", (t) => {
 		SharedSlice: "SharedSlice",
 	});
 });
-
-test("webhook type mapping", (t) => {
-	t.deepEqual(prismicT.WebhookType, {
-		APIUpdate: "api-update",
-		TestTrigger: "test-trigger",
-	});
-});
