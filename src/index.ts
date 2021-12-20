@@ -143,9 +143,6 @@ export { WebhookType } from "./webhook";
 
 export type {
 	WebhookBody,
-	WebhookBodyApiUpdate,
+	WebhookBodyAPIUpdate,
 	WebhookBodyTestTrigger,
-	WebhookRelease,
-	WebhookMask,
-	WebhookTag,
 } from "./webhook";

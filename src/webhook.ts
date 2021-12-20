@@ -1,17 +1,17 @@
-export type WebhookBody = WebhookBodyApiUpdate | WebhookBodyTestTrigger;
+export type WebhookBody = WebhookBodyAPIUpdate | WebhookBodyTestTrigger;
 
 /**
  * Types of Prismic Webhooks.
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/webhooks}
  */
-export enum WebhookType {
-	APIUpdate = "api-update",
-	TestTrigger = "test-trigger",
-}
+export const WebhookType = {
+	APIUpdate: "api-update",
+	TestTrigger: "test-trigger",
+} as const;
 
 interface WebhookBodyBase {
-	type: WebhookType;
+	type: typeof WebhookType[keyof typeof WebhookType];
 	domain: string;
 	apiUrl: string;
 	secret: string | null;
@@ -22,17 +22,17 @@ interface WebhookBodyBase {
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/webhooks}
  */
-export interface WebhookBodyApiUpdate extends WebhookBodyBase {
-	type: WebhookType.APIUpdate;
+export interface WebhookBodyAPIUpdate extends WebhookBodyBase {
+	type: typeof WebhookType.APIUpdate;
 	masterRef?: string;
-	releases: WebhookOperations<WebhookRelease>;
-	masks: WebhookOperations<WebhookMask>;
-	tags: WebhookOperations<WebhookTag>;
+	releases: WebhookBodyAPIUpdateOperations<WebhookBodyAPIUpdateRelease>;
+	masks: WebhookBodyAPIUpdateOperations<WebhookBodyAPIUpdateMask>;
+	tags: WebhookBodyAPIUpdateOperations<WebhookBodyAPIUpdateTag>;
 	documents: string[];
 	/**
 	 * @deprecated Experiments are no longer supported by Prismic.
 	 */
-	experiments?: WebhookOperations<unknown>;
+	experiments?: WebhookBodyAPIUpdateOperations<unknown>;
 }
 
 /**
@@ -41,10 +41,10 @@ export interface WebhookBodyApiUpdate extends WebhookBodyBase {
  * @see More details: {@link https://prismic.io/docs/core-concepts/webhooks}
  */
 export interface WebhookBodyTestTrigger extends WebhookBodyBase {
-	type: WebhookType.TestTrigger;
+	type: typeof WebhookType.TestTrigger;
 }
 
-interface WebhookOperations<T> {
+interface WebhookBodyAPIUpdateOperations<T> {
 	update?: T[];
 	addition?: T[];
 	deletion?: T[];
@@ -55,7 +55,7 @@ interface WebhookOperations<T> {
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/custom-types}
  */
-export interface WebhookMask {
+interface WebhookBodyAPIUpdateMask {
 	id: string;
 	label: string;
 }
@@ -65,7 +65,7 @@ export interface WebhookMask {
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/document-tags}
  */
-export interface WebhookTag {
+interface WebhookBodyAPIUpdateTag {
 	id: string;
 }
 
@@ -74,7 +74,7 @@ export interface WebhookTag {
  *
  * @see More details: {@link https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases}
  */
-export interface WebhookRelease {
+interface WebhookBodyAPIUpdateRelease {
 	id: string;
 	ref: string;
 	label: string;
