@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.21](https://github.com/prismicio/prismic-types/compare/v0.1.20...v0.1.21) (2021-12-20)
+
+
+### Features
+
+* add PrismicDocumentWithUID and PrismicDocumentWithoutUID ([49b4f1b](https://github.com/prismicio/prismic-types/commit/49b4f1b599fa2a48d728d8ba3a02e52767a05e0d))
+* add webhook types ([60d709d](https://github.com/prismicio/prismic-types/commit/60d709d803e884c372179f39217b5b832a68d0f9))
+
+
+### Refactor
+
+* webhook types ([38b1b03](https://github.com/prismicio/prismic-types/commit/38b1b03e78f70bb37fae674c978170e1b13787cc))
+
 ### [0.1.20](https://github.com/prismicio/prismic-types/compare/v0.1.19...v0.1.20) (2021-12-16)
 
 
