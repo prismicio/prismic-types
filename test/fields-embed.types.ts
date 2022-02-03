@@ -70,6 +70,7 @@ expectType<prismicT.EmbedField>({
 	url: "string",
 	version: "string",
 	title: "string",
+	description: "string",
 	html: "string",
 	width: 0,
 	height: 0,
@@ -80,6 +81,15 @@ expectType<prismicT.EmbedField>({
 	thumbnail_url: "string",
 	thumbnail_width: 0,
 	thumbnail_height: 0,
+});
+
+/**
+ * Supports unknown keys by default.
+ */
+expectType<prismicT.EmbedField>({
+	embed_url: "url",
+	type: prismicT.EmbedType.Link,
+	unknown_key: "string",
 });
 
 /**
