@@ -51,7 +51,7 @@ expectType<prismicT.EmbedField>({
 	thumbnail_height: null,
 	html: null,
 });
-expectType<prismicT.EmbedField<Record<string, unknown>, "filled">>({
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "filled">>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",
@@ -66,7 +66,7 @@ expectType<prismicT.EmbedField<Record<string, unknown>, "filled">>({
 	thumbnail_height: null,
 	html: null,
 });
-expectType<prismicT.EmbedField<Record<string, unknown>, "empty">>({
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "empty">>({
 	// @ts-expect-error - Empty fields cannot contain a filled value.
 	embed_url: "https://example.com",
 	// @ts-expect-error - Empty fields cannot contain a filled value.
@@ -99,8 +99,8 @@ expectType<prismicT.EmbedField<Record<string, unknown>, "empty">>({
  * Empty state.
  */
 expectType<prismicT.EmbedField>({});
-expectType<prismicT.EmbedField<Record<string, unknown>, "empty">>({});
-expectType<prismicT.EmbedField<Record<string, unknown>, "filled">>(
+expectType<prismicT.EmbedField<prismicT.AnyOEmbed, "empty">>({});
+expectType<prismicT.EmbedField<prismicT.AnyOEmbed, "filled">>(
 	// @ts-expect-error - Filled fields cannot contain an empty value.
 	{},
 );
@@ -147,7 +147,7 @@ expectType<prismicT.EmbedField>({
 /**
  * Supports custom oEmbed data.
  */
-expectType<prismicT.EmbedField<{ foo: "bar" }>>({
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",
@@ -167,7 +167,7 @@ expectType<prismicT.EmbedField<{ foo: "bar" }>>({
 /**
  * Gives priority to custom oEmbed data.
  */
-expectType<prismicT.EmbedField<{ foo: "bar" }>>({
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",

@@ -65,10 +65,10 @@ export type {
 	LinkField,
 	LinkToMediaField,
 	// Embed
-	OEmbedPhoto,
-	OEmbedVideo,
-	OEmbedLink,
-	OEmbedRich,
+	PhotoOEmbed,
+	VideoOEmbed,
+	LinkOEmbed,
+	RichOEmbed,
 	AnyOEmbed,
 	EmbedField,
 	// Simple
@@ -94,12 +94,20 @@ export type {
 } from "./fields";
 
 // Deprecations (unused import for @link references)
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { AnyOEmbed, EmbedField } from "./fields";
+import type {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	PhotoOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	VideoOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	LinkOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	RichOEmbed,
+	AnyOEmbed,
+} from "./fields";
 /**
- * @deprecated You don't need to extend this type anymore when creating custom
- *   embed fields, just provide the extra properties you need to the first
- *   generic of {@link EmbedField}.
+ * @deprecated Use {@link PhotoOEmbed}, {@link VideoOEmbed}, {@link LinkOEmbed},
+ *   {@link RichOEmbed}, or {@link AnyOEmbed} instead.
  */
 export type CommonEmbedData = AnyOEmbed;
 

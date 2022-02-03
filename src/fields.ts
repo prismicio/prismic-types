@@ -559,7 +559,7 @@ type OEmbedBase<TType extends typeof OEmbedType[keyof typeof OEmbedType]> = {
  *
  * @see oEmbed specification: {@link https://oembed.com}
  */
-export type OEmbedPhoto = OEmbedBase<typeof OEmbedType.Photo> & {
+export type PhotoOEmbed = OEmbedBase<typeof OEmbedType.Photo> & {
 	/**
 	 * OEmbed source URL of the image.
 	 */
@@ -579,7 +579,7 @@ export type OEmbedPhoto = OEmbedBase<typeof OEmbedType.Photo> & {
  *
  * @see oEmbed specification: {@link https://oembed.com}
  */
-export type OEmbedVideo = OEmbedBase<typeof OEmbedType.Video> & {
+export type VideoOEmbed = OEmbedBase<typeof OEmbedType.Video> & {
 	/**
 	 * OEmbed HTML required to embed a video player.
 	 */
@@ -599,14 +599,14 @@ export type OEmbedVideo = OEmbedBase<typeof OEmbedType.Video> & {
  *
  * @see oEmbed specification: {@link https://oembed.com}
  */
-export type OEmbedLink = OEmbedBase<typeof OEmbedType.Link>;
+export type LinkOEmbed = OEmbedBase<typeof OEmbedType.Link>;
 
 /**
  * OEmbed rich type.
  *
  * @see oEmbed specification: {@link https://oembed.com}
  */
-export type OEmbedRich = OEmbedBase<typeof OEmbedType.Rich> & {
+export type RichOEmbed = OEmbedBase<typeof OEmbedType.Rich> & {
 	/**
 	 * OEmbed HTML required to display the resource.
 	 */
@@ -626,24 +626,24 @@ export type OEmbedRich = OEmbedBase<typeof OEmbedType.Rich> & {
  *
  * @see oEmbed specification: {@link https://oembed.com}
  */
-export type AnyOEmbed = OEmbedPhoto | OEmbedVideo | OEmbedLink | OEmbedRich;
+export type AnyOEmbed = PhotoOEmbed | VideoOEmbed | LinkOEmbed | RichOEmbed;
 
 /**
  * An Embed field.
  *
- * @typeParam ExtraData - Known extra data provided by the URL's oEmbed provider.
+ * @typeParam Data - Data provided by the URL's oEmbed provider.
  * @typeParam State - State of the field which determines its shape.
  * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
  */
 export type EmbedField<
-	ExtraData extends Record<string, unknown> = Record<string, unknown>,
+	Data extends AnyOEmbed = AnyOEmbed,
 	State extends FieldState = FieldState,
 > = State extends "empty"
 	? EmptyObjectField
-	: AnyOEmbed & {
+	: Data & {
 			embed_url: string;
 			html: string | null;
-	  } & ExtraData;
+	  };
 
 // Simple Fields
 
