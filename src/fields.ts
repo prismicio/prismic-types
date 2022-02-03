@@ -557,6 +557,7 @@ export type CommonEmbedData = {
 	url?: string;
 	version?: string;
 	title?: string | null;
+	description?: string | null;
 
 	html?: string | null;
 
@@ -572,6 +573,8 @@ export type CommonEmbedData = {
 	thumbnail_url?: string | null;
 	thumbnail_width?: number | null;
 	thumbnail_height?: number | null;
+
+	[key: string]: unknown | null;
 };
 
 /**
