@@ -132,8 +132,19 @@ expectType<prismicT.RichTextField>([
 	{
 		type: prismicT.RichTextNodeType.embed,
 		oembed: {
-			type: prismicT.EmbedType.Rich,
-			embed_url: "string",
+			embed_url: "https://example.com",
+			type: prismicT.OEmbedType.Link,
+			version: "1.0",
+			title: null,
+			author_name: null,
+			author_url: null,
+			provider_name: null,
+			provider_url: null,
+			cache_age: null,
+			thumbnail_url: null,
+			thumbnail_width: null,
+			thumbnail_height: null,
+			html: null,
 		},
 	},
 ]);

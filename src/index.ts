@@ -6,7 +6,7 @@ export type {
 	AlternateLanguage,
 } from "./document";
 
-export { RichTextNodeType, LinkType, EmbedType } from "./fields";
+export { RichTextNodeType, LinkType, OEmbedType } from "./fields";
 
 export type {
 	// RichText & Title
@@ -57,6 +57,13 @@ export type {
 	RelationField,
 	LinkField,
 	LinkToMediaField,
+	// Embed
+	OEmbedPhoto,
+	OEmbedVideo,
+	OEmbedLink,
+	OEmbedRich,
+	AnyOEmbed,
+	EmbedField,
 	// Simple
 	DateField,
 	TimestampField,
@@ -65,8 +72,6 @@ export type {
 	KeyTextField,
 	SelectField,
 	BooleanField,
-	EmbedField,
-	CommonEmbedData,
 	GeoPointField,
 	// Complex
 	GroupField,

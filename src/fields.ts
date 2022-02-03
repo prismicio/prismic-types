@@ -352,6 +352,7 @@ export type ImageField<
 	: ImageFieldImage<State>;
 
 // Links
+
 /**
  * Link Types
  */
@@ -473,6 +474,177 @@ export type LinkToMediaField<State extends FieldState = FieldState> =
 		? EmptyLinkField<typeof LinkType.Media>
 		: FilledLinkToMediaField;
 
+// Embed
+
+/**
+ * OEmbed 1.0 possible types.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export const OEmbedType = {
+	Photo: "photo",
+	Video: "video",
+	Link: "link",
+	Rich: "rich",
+} as const;
+
+/**
+ * OEmbed response base fields.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+type OEmbedBase<TType extends typeof OEmbedType[keyof typeof OEmbedType]> = {
+	/**
+	 * OEmbed resource type.
+	 */
+	type: TType;
+	/**
+	 * OEmbed version number, this must be "1.0".
+	 */
+	version: string;
+
+	/**
+	 * OEmbed text title, describing the resource.
+	 */
+	title: string | null;
+
+	/**
+	 * OEmbed resource author/owner name.
+	 */
+	author_name: string | null;
+	/**
+	 * OEmbed resource author/owner URL.
+	 */
+	author_url: string | null;
+
+	/**
+	 * OEmbed resource provider name.
+	 */
+	provider_name: string | null;
+	/**
+	 * OEmbed resource provider URL.
+	 */
+	provider_url: string | null;
+
+	/**
+	 * OEmbed suggested cache lifetime for the resource, in seconds.
+	 */
+	cache_age: number | null;
+
+	/**
+	 * OEmbed resource thumbnail URL.
+	 */
+	thumbnail_url: string | null;
+	/**
+	 * OEmbed resource thumbnail width.
+	 */
+	thumbnail_width: number | null;
+	/**
+	 * OEmbed resource thumbnail height.
+	 */
+	thumbnail_height: number | null;
+
+	/**
+	 * Providers may optionally include any parameters not specified in this
+	 * document (so long as they use the same key-value format) and consumers may
+	 * choose to ignore these. Consumers must ignore parameters they do not understand.
+	 *
+	 * @see oEmbed specification: {@link https://oembed.com}
+	 */
+	[key: string]: unknown;
+};
+
+/**
+ * OEmbed photo type.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export type OEmbedPhoto = OEmbedBase<typeof OEmbedType.Photo> & {
+	/**
+	 * OEmbed source URL of the image.
+	 */
+	url: string;
+	/**
+	 * OEmbed width in pixels of the image.
+	 */
+	width: number;
+	/**
+	 * OEmbed height in pixels of the image.
+	 */
+	height: number;
+};
+
+/**
+ * OEmbed video type.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export type OEmbedVideo = OEmbedBase<typeof OEmbedType.Video> & {
+	/**
+	 * OEmbed HTML required to embed a video player.
+	 */
+	html: string;
+	/**
+	 * OEmbed width in pixels required to display the HTML.
+	 */
+	width: number;
+	/**
+	 * OEmbed height in pixels required to display the HTML.
+	 */
+	height: number;
+};
+
+/**
+ * OEmbed link type.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export type OEmbedLink = OEmbedBase<typeof OEmbedType.Link>;
+
+/**
+ * OEmbed rich type.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export type OEmbedRich = OEmbedBase<typeof OEmbedType.Rich> & {
+	/**
+	 * OEmbed HTML required to display the resource.
+	 */
+	html: string;
+	/**
+	 * OEmbed width in pixels required to display the HTML.
+	 */
+	width: number;
+	/**
+	 * OEmbed height in pixels required to display the HTML.
+	 */
+	height: number;
+};
+
+/**
+ * Any of the possible types of oEmbed response.
+ *
+ * @see oEmbed specification: {@link https://oembed.com}
+ */
+export type AnyOEmbed = OEmbedPhoto | OEmbedVideo | OEmbedLink | OEmbedRich;
+
+/**
+ * An Embed field.
+ *
+ * @typeParam ExtraData - Known extra data provided by the URL's oEmbed provider.
+ * @typeParam State - State of the field which determines its shape.
+ * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
+ */
+export type EmbedField<
+	ExtraData extends Record<string, unknown> = Record<string, unknown>,
+	State extends FieldState = FieldState,
+> = State extends "empty"
+	? EmptyObjectField
+	: AnyOEmbed & {
+			embed_url: string;
+			html: string | null;
+	  } & ExtraData;
+
 // Simple Fields
 
 /**
@@ -539,60 +711,6 @@ export type SelectField<
  * @see More details: {@link https://prismic.io/docs/core-concepts/boolean}
  */
 export type BooleanField = boolean;
-
-/**
- * Embed Type - Link or RichText Field
- */
-export const EmbedType = {
-	Link: "link",
-	Rich: "rich",
-} as const;
-
-/**
- * A common set of oEmbed data supported by most providers.
- *
- * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
- */
-export type CommonEmbedData = {
-	url?: string;
-	version?: string;
-	title?: string | null;
-	description?: string | null;
-
-	html?: string | null;
-
-	width?: number | null;
-	height?: number | null;
-
-	author_name?: string | null;
-	author_url?: string | null;
-
-	provider_name?: string;
-	cache_age?: number | null;
-
-	thumbnail_url?: string | null;
-	thumbnail_width?: number | null;
-	thumbnail_height?: number | null;
-
-	[key: string]: unknown | null;
-};
-
-/**
- * An Embed field.
- *
- * @typeParam Data - Data provided by the URL's oEmbed provider.
- * @typeParam State - State of the field which determines its shape.
- * @see More details: {@link https://prismic.io/docs/core-concepts/embed}
- */
-export type EmbedField<
-	Data extends Record<string, unknown> = CommonEmbedData,
-	State extends FieldState = FieldState,
-> = State extends "empty"
-	? EmptyObjectField
-	: {
-			embed_url: string;
-			type: typeof EmbedType[keyof typeof EmbedType];
-	  } & Data;
 
 /**
  * A Geopoint field.
