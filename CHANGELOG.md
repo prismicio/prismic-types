@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/prismicio/prismic-types/compare/v0.1.22...v0.1.23) (2022-02-03)
+
+
+### Features
+
+* support unknown `EmbedField` properties by default ([#23](https://github.com/prismicio/prismic-types/issues/23)) ([de4880d](https://github.com/prismicio/prismic-types/commit/de4880d8f3f8956e6d2871c6c6935616e3393009))
+
 ### [0.1.22](https://github.com/prismicio/prismic-types/compare/v0.1.21...v0.1.22) (2022-01-28)
 
 
