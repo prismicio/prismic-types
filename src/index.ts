@@ -8,6 +8,13 @@ export type {
 
 export { RichTextNodeType, LinkType, OEmbedType } from "./fields";
 
+// Deprecations
+import { OEmbedType } from "./fields";
+/**
+ * @deprecated Use {@link OEmbedType} instead.
+ */
+export const EmbedType = OEmbedType;
+
 export type {
 	// RichText & Title
 	TitleField,
@@ -85,6 +92,16 @@ export type {
 	// Meta
 	FieldState,
 } from "./fields";
+
+// Deprecations (unused import for @link references)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { AnyOEmbed, EmbedField } from "./fields";
+/**
+ * @deprecated You don't need to extend this type anymore when creating custom
+ *   embed fields, just provide the extra properties you need to the first
+ *   generic of {@link EmbedField}.
+ */
+export type CommonEmbedData = AnyOEmbed;
 
 export {
 	CustomTypeModelFieldType,
