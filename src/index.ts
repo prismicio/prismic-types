@@ -65,6 +65,7 @@ export type {
 	LinkField,
 	LinkToMediaField,
 	// Embed
+	OEmbedExtra,
 	PhotoOEmbed,
 	VideoOEmbed,
 	LinkOEmbed,
@@ -95,6 +96,7 @@ export type {
 
 // Deprecations (unused import for @link references)
 import type {
+	OEmbedExtra,
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	PhotoOEmbed,
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -109,7 +111,7 @@ import type {
  * @deprecated Use {@link PhotoOEmbed}, {@link VideoOEmbed}, {@link LinkOEmbed},
  *   {@link RichOEmbed}, or {@link AnyOEmbed} instead.
  */
-export type CommonEmbedData = AnyOEmbed;
+export type CommonEmbedData = AnyOEmbed & OEmbedExtra;
 
 export {
 	CustomTypeModelFieldType,

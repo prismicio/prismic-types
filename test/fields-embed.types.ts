@@ -55,15 +55,6 @@ expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "filled">>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",
-	title: null,
-	author_name: null,
-	author_url: null,
-	provider_name: null,
-	provider_url: null,
-	cache_age: null,
-	thumbnail_url: null,
-	thumbnail_width: null,
-	thumbnail_height: null,
 	html: null,
 });
 expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "empty">>({
@@ -73,24 +64,6 @@ expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "empty">>({
 	type: prismicT.OEmbedType.Link,
 	// @ts-expect-error - Empty fields cannot contain a filled value.
 	version: "1.0",
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	title: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	author_name: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	author_url: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	provider_name: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	provider_url: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	cache_age: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	thumbnail_url: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	thumbnail_width: null,
-	// @ts-expect-error - Empty fields cannot contain a filled value.
-	thumbnail_height: null,
 	// @ts-expect-error - Empty fields cannot contain a filled value.
 	html: null,
 });
@@ -151,15 +124,6 @@ expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",
-	title: null,
-	author_name: null,
-	author_url: null,
-	provider_name: null,
-	provider_url: null,
-	cache_age: null,
-	thumbnail_url: null,
-	thumbnail_width: null,
-	thumbnail_height: null,
 	html: null,
 	foo: "bar",
 });
@@ -171,15 +135,6 @@ expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
 	embed_url: "https://example.com",
 	type: prismicT.OEmbedType.Link,
 	version: "1.0",
-	title: null,
-	author_name: null,
-	author_url: null,
-	provider_name: null,
-	provider_url: null,
-	cache_age: null,
-	thumbnail_url: null,
-	thumbnail_width: null,
-	thumbnail_height: null,
 	html: null,
 	// @ts-expect-error - Now expects `foo` to be `"bar"`.
 	foo: "baz",
