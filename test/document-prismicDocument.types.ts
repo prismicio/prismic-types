@@ -113,7 +113,7 @@ expectType<
 /**
  * Supports custom type.
  */
-expectType<prismicT.PrismicDocument<unknown, "foo">>({
+expectType<prismicT.PrismicDocument<Record<string, never>, "foo">>({
 	id: "string",
 	uid: "string",
 	url: "string",
@@ -128,7 +128,7 @@ expectType<prismicT.PrismicDocument<unknown, "foo">>({
 	alternate_languages: [],
 	data: {},
 });
-expectType<prismicT.PrismicDocument<unknown, "foo">>({
+expectType<prismicT.PrismicDocument<Record<string, never>, "foo">>({
 	id: "string",
 	uid: "string",
 	url: "string",
@@ -148,7 +148,7 @@ expectType<prismicT.PrismicDocument<unknown, "foo">>({
 /**
  * Supports custom language.
  */
-expectType<prismicT.PrismicDocument<unknown, string, "fr-fr">>({
+expectType<prismicT.PrismicDocument<Record<string, never>, string, "fr-fr">>({
 	id: "string",
 	uid: "string",
 	url: "string",
@@ -163,7 +163,7 @@ expectType<prismicT.PrismicDocument<unknown, string, "fr-fr">>({
 	alternate_languages: [],
 	data: {},
 });
-expectType<prismicT.PrismicDocument<unknown, string, "fr-fr">>({
+expectType<prismicT.PrismicDocument<Record<string, string>, string, "fr-fr">>({
 	id: "string",
 	uid: "string",
 	url: "string",
