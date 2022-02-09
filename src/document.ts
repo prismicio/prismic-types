@@ -72,7 +72,11 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
  * @see More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
  */
 export interface PrismicDocument<
-	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	> = Record<string, any>,
 	TypeEnum = string,
 	LangEnum = string,
 > extends PrismicDocumentHeader<TypeEnum, LangEnum> {
@@ -90,7 +94,11 @@ export interface PrismicDocument<
  * @see More details on the UID field: {@link https://prismic.io/docs/core-concepts/uid}
  */
 export interface PrismicDocumentWithoutUID<
-	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	> = Record<string, any>,
 	TypeEnum = string,
 	LangEnum = string,
 > extends PrismicDocument<DataInterface, TypeEnum, LangEnum> {
@@ -110,7 +118,11 @@ export interface PrismicDocumentWithoutUID<
  * @see More details on the UID field: {@link https://prismic.io/docs/core-concepts/uid}
  */
 export interface PrismicDocumentWithUID<
-	DataInterface = Record<string, AnyRegularField | GroupField | SliceZone>,
+	DataInterface extends Record<
+		string,
+		AnyRegularField | GroupField | SliceZone
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	> = Record<string, any>,
 	TypeEnum = string,
 	LangEnum = string,
 > extends PrismicDocument<DataInterface, TypeEnum, LangEnum> {
