@@ -36,9 +36,11 @@ test("link type mapping", (t) => {
 });
 
 test("embed type mapping", (t) => {
-	t.deepEqual(prismicT.EmbedType, {
-		Rich: "rich",
+	t.deepEqual(prismicT.OEmbedType, {
+		Photo: "photo",
+		Video: "video",
 		Link: "link",
+		Rich: "rich",
 	});
 });
 

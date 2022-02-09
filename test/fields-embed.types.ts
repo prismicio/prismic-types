@@ -27,8 +27,8 @@ const ForeignEmbedType = {
 	Link: "link",
 	Breaking: "breaking",
 } as const;
-expectType<typeof prismicT.EmbedType.Link>(ForeignEmbedType.Link);
-expectType<typeof prismicT.EmbedType.Link>(
+expectType<typeof prismicT.OEmbedType.Link>(ForeignEmbedType.Link);
+expectType<typeof prismicT.OEmbedType.Link>(
 	// @ts-expect-error - `EmbedType` should still fail with breaking changes
 	ForeignEmbedType.Breaking,
 );
@@ -37,26 +37,43 @@ expectType<typeof prismicT.EmbedType.Link>(
  * Filled state.
  */
 expectType<prismicT.EmbedField>({
-	embed_url: "url",
-	type: prismicT.EmbedType.Link,
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	title: null,
+	author_name: null,
+	author_url: null,
+	provider_name: null,
+	provider_url: null,
+	cache_age: null,
+	thumbnail_url: null,
+	thumbnail_width: null,
+	thumbnail_height: null,
+	html: null,
 });
-expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "filled">>({
-	embed_url: "url",
-	type: prismicT.EmbedType.Link,
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "filled">>({
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	html: null,
 });
-expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "empty">>({
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed, "empty">>({
 	// @ts-expect-error - Empty fields cannot contain a filled value.
-	embed_url: "url",
+	embed_url: "https://example.com",
 	// @ts-expect-error - Empty fields cannot contain a filled value.
-	type: prismicT.EmbedType.Link,
+	type: prismicT.OEmbedType.Link,
+	// @ts-expect-error - Empty fields cannot contain a filled value.
+	version: "1.0",
+	// @ts-expect-error - Empty fields cannot contain a filled value.
+	html: null,
 });
 
 /**
  * Empty state.
  */
 expectType<prismicT.EmbedField>({});
-expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "empty">>({});
-expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "filled">>(
+expectType<prismicT.EmbedField<prismicT.AnyOEmbed, "empty">>({});
+expectType<prismicT.EmbedField<prismicT.AnyOEmbed, "filled">>(
 	// @ts-expect-error - Filled fields cannot contain an empty value.
 	{},
 );
@@ -65,38 +82,60 @@ expectType<prismicT.EmbedField<prismicT.CommonEmbedData, "filled">>(
  * Includes common oEmbed data by default.
  */
 expectType<prismicT.EmbedField>({
-	embed_url: "url",
-	type: prismicT.EmbedType.Link,
-	url: "string",
-	version: "string",
-	title: "string",
-	description: "string",
-	html: "string",
-	width: 0,
-	height: 0,
-	author_name: "string",
-	author_url: "string",
-	provider_name: "string",
-	cache_age: 0,
-	thumbnail_url: "string",
-	thumbnail_width: 0,
-	thumbnail_height: 0,
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	title: "title",
+	author_name: "author_name",
+	author_url: "author_url",
+	provider_name: "provider_name",
+	provider_url: "provider_url",
+	cache_age: 42,
+	thumbnail_url: "thumbnail_url",
+	thumbnail_width: 666,
+	thumbnail_height: 999,
+	html: "html",
 });
 
 /**
  * Supports unknown keys by default.
  */
 expectType<prismicT.EmbedField>({
-	embed_url: "url",
-	type: prismicT.EmbedType.Link,
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	title: null,
+	author_name: null,
+	author_url: null,
+	provider_name: null,
+	provider_url: null,
+	cache_age: null,
+	thumbnail_url: null,
+	thumbnail_width: null,
+	thumbnail_height: null,
+	html: null,
 	unknown_key: "string",
 });
 
 /**
  * Supports custom oEmbed data.
  */
-expectType<prismicT.EmbedField<{ foo: "bar" }>>({
-	embed_url: "url",
-	type: prismicT.EmbedType.Link,
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	html: null,
 	foo: "bar",
+});
+
+/**
+ * Gives priority to custom oEmbed data.
+ */
+expectType<prismicT.EmbedField<prismicT.LinkOEmbed & { foo: "bar" }>>({
+	embed_url: "https://example.com",
+	type: prismicT.OEmbedType.Link,
+	version: "1.0",
+	html: null,
+	// @ts-expect-error - Now expects `foo` to be `"bar"`.
+	foo: "baz",
 });

@@ -6,7 +6,14 @@ export type {
 	AlternateLanguage,
 } from "./document";
 
-export { RichTextNodeType, LinkType, EmbedType } from "./fields";
+export { RichTextNodeType, LinkType, OEmbedType } from "./fields";
+
+// Deprecations
+import { OEmbedType } from "./fields";
+/**
+ * @deprecated Use {@link OEmbedType} instead.
+ */
+export const EmbedType = OEmbedType;
 
 export type {
 	// RichText & Title
@@ -57,6 +64,14 @@ export type {
 	RelationField,
 	LinkField,
 	LinkToMediaField,
+	// Embed
+	OEmbedExtra,
+	PhotoOEmbed,
+	VideoOEmbed,
+	LinkOEmbed,
+	RichOEmbed,
+	AnyOEmbed,
+	EmbedField,
 	// Simple
 	DateField,
 	TimestampField,
@@ -65,8 +80,6 @@ export type {
 	KeyTextField,
 	SelectField,
 	BooleanField,
-	EmbedField,
-	CommonEmbedData,
 	GeoPointField,
 	// Complex
 	GroupField,
@@ -80,6 +93,25 @@ export type {
 	// Meta
 	FieldState,
 } from "./fields";
+
+// Deprecations (unused import for @link references)
+import type {
+	OEmbedExtra,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	PhotoOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	VideoOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	LinkOEmbed,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	RichOEmbed,
+	AnyOEmbed,
+} from "./fields";
+/**
+ * @deprecated Use {@link PhotoOEmbed}, {@link VideoOEmbed}, {@link LinkOEmbed},
+ *   {@link RichOEmbed}, or {@link AnyOEmbed} instead.
+ */
+export type CommonEmbedData = AnyOEmbed & OEmbedExtra;
 
 export {
 	CustomTypeModelFieldType,
