@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.24](https://github.com/prismicio/prismic-types/compare/v0.1.23...v0.1.24) (2022-02-09)
+
+
+### Features
+
+* **document:** use looser default data ([60e0283](https://github.com/prismicio/prismic-types/commit/60e0283569d623d99373f9881e4053bbcbca4942))
+
+
+### Refactor
+
+* **fields:** use oembed specs for embed field ([#24](https://github.com/prismicio/prismic-types/issues/24)) ([8e254a2](https://github.com/prismicio/prismic-types/commit/8e254a29054f40dcd9aa0fc0472c36dbdde01530))
+
 ### [0.1.23](https://github.com/prismicio/prismic-types/compare/v0.1.22...v0.1.23) (2022-02-03)
 
 
