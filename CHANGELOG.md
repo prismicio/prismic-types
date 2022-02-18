@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/prismicio/prismic-types/compare/v0.1.24...v0.1.25) (2022-02-18)
+
+
+### Bug Fixes
+
+* **fields:** api can yield an empty string for keytext field in certain cases ([#26](https://github.com/prismicio/prismic-types/issues/26)) ([70fec9f](https://github.com/prismicio/prismic-types/commit/70fec9fae71ea895fd1c9fa072ee2d37de9c217e))
+
+
+### Chore
+
+* **deps:** update dependencies ([ca8fe00](https://github.com/prismicio/prismic-types/commit/ca8fe00a2248097d8da66895fdaae66967c3be47))
+* update license ([0695135](https://github.com/prismicio/prismic-types/commit/0695135c671c5404e0358581d208430f7518ba75))
+
 ### [0.1.24](https://github.com/prismicio/prismic-types/compare/v0.1.23...v0.1.24) (2022-02-09)
 
 
