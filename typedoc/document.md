@@ -8,18 +8,18 @@
 
 Document metadata for a translation of a Prismic document.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `TypeEnum` | `string` |
 | `LangEnum` | `string` |
 
-#### Defined in
+**Defined in**
 
-[document.ts:6](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/document.ts#L6)
+[document.ts:6](https://github.com/prismicio/prismic-types/blob/5270069/src/document.ts#L6)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -40,7 +40,7 @@ A Prismic document served through REST API v2.
 
 **`see`** More details on Custom Types: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api](https://prismic.io/docs/technologies/introduction-to-the-content-query-api)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -48,11 +48,11 @@ A Prismic document served through REST API v2.
 | `TypeEnum` | `string` |
 | `LangEnum` | `string` |
 
-#### Defined in
+**Defined in**
 
-[document.ts:74](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/document.ts#L74)
+[document.ts:74](https://github.com/prismicio/prismic-types/blob/5270069/src/document.ts#L74)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -80,18 +80,18 @@ ___
 
 Metadata for Prismic Document
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `TypeEnum` | `string` |
 | `LangEnum` | `string` |
 
-#### Defined in
+**Defined in**
 
-[document.ts:16](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/document.ts#L16)
+[document.ts:16](https://github.com/prismicio/prismic-types/blob/5270069/src/document.ts#L16)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -122,7 +122,7 @@ A Prismic document served through REST API v2. Contains a UID (a unique identifi
 
 **`see`** More details on the UID field: [https://prismic.io/docs/core-concepts/uid](https://prismic.io/docs/core-concepts/uid)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -130,11 +130,11 @@ A Prismic document served through REST API v2. Contains a UID (a unique identifi
 | `TypeEnum` | `string` |
 | `LangEnum` | `string` |
 
-#### Defined in
+**Defined in**
 
-[document.ts:120](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/document.ts#L120)
+[document.ts:120](https://github.com/prismicio/prismic-types/blob/5270069/src/document.ts#L120)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -167,7 +167,7 @@ unique identifier).
 
 **`see`** More details on the UID field: [https://prismic.io/docs/core-concepts/uid](https://prismic.io/docs/core-concepts/uid)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -175,11 +175,11 @@ unique identifier).
 | `TypeEnum` | `string` |
 | `LangEnum` | `string` |
 
-#### Defined in
+**Defined in**
 
-[document.ts:96](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/document.ts#L96)
+[document.ts:96](https://github.com/prismicio/prismic-types/blob/5270069/src/document.ts#L96)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |

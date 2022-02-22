@@ -8,18 +8,18 @@
 
 A Prismic Custom Type model.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `ID` | extends `string` = `string` | API ID of the Custom Type. |
 | `Definition` | extends [`CustomTypeModelDefinition`](#customtypemodeldefinition) = [`CustomTypeModelDefinition`](#customtypemodeldefinition) | The Custom Type's tabs and their fields. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:7](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L7)
+[customType.ts:7](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L7)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -41,11 +41,11 @@ A Boolean Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/boolean](https://prismic.io/docs/core-concepts/boolean)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:117](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L117)
+[customType.ts:117](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L117)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -65,11 +65,11 @@ A Color Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/color](https://prismic.io/docs/core-concepts/color)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:129](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L129)
+[customType.ts:129](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L129)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -90,18 +90,18 @@ A Content Relationship Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/link-content-relationship](https://prismic.io/docs/core-concepts/link-content-relationship)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `CustomTypeIDs` | extends `string` = `string` |
 | `Tags` | extends `string` = `string` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:260](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L260)
+[customType.ts:260](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L260)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -125,11 +125,11 @@ A Date Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/date](https://prismic.io/docs/core-concepts/date)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:142](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L142)
+[customType.ts:142](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L142)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -150,11 +150,11 @@ An Embed Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/embed](https://prismic.io/docs/core-concepts/embed)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:155](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L155)
+[customType.ts:155](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L155)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -175,11 +175,11 @@ A GeoPoint Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/geopoint](https://prismic.io/docs/core-concepts/geopoint)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:168](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L168)
+[customType.ts:168](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L168)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -199,17 +199,17 @@ A Group Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/group](https://prismic.io/docs/core-concepts/group)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Fields` | extends `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> = `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> | A record of fields that can be repeated. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:182](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L182)
+[customType.ts:182](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L182)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -230,11 +230,11 @@ Dimension constraints for an Image Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/image](https://prismic.io/docs/core-concepts/image)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:216](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L216)
+[customType.ts:216](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L216)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -253,17 +253,17 @@ An Image Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/image](https://prismic.io/docs/core-concepts/image)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `ThumbnailNames` | extends `string` = `string` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:200](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L200)
+[customType.ts:200](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L200)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -285,17 +285,17 @@ A thumbnail for an Image Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/image](https://prismic.io/docs/core-concepts/image)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `Name` | extends `string` = `string` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:226](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L226)
+[customType.ts:226](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L226)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -315,11 +315,11 @@ An Integration Fields Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/integration-fields](https://prismic.io/docs/core-concepts/integration-fields)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:236](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L236)
+[customType.ts:236](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L236)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -341,11 +341,11 @@ A Key Text Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/key-text](https://prismic.io/docs/core-concepts/key-text)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:388](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L388)
+[customType.ts:388](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L388)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -366,11 +366,11 @@ A Link Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/link-content-relationship](https://prismic.io/docs/core-concepts/link-content-relationship)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:279](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L279)
+[customType.ts:279](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L279)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -393,11 +393,11 @@ A Link to Media Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/link-content-relationship](https://prismic.io/docs/core-concepts/link-content-relationship)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:294](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L294)
+[customType.ts:294](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L294)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -419,11 +419,11 @@ A Number Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/number](https://prismic.io/docs/core-concepts/number)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:308](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L308)
+[customType.ts:308](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L308)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -444,11 +444,11 @@ A Rich Text Custom Type field which supports multiple blocks of content.
 
 More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:351](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L351)
+[customType.ts:351](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L351)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -471,11 +471,11 @@ A Rich Text Custom Type field which supports one block of content.
 
 More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:366](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L366)
+[customType.ts:366](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L366)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -500,18 +500,18 @@ More details: [https://prismic.io/docs/core-concepts/select](https://prismic.io/
 
 **`typeparam`** Options for the field.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Option` | extends `string` = `string` | - |
 | `DefaultValue` | extends `Option` = `Option` | Default value for the field. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:324](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L324)
+[customType.ts:324](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L324)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -537,11 +537,11 @@ More details:
 - [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 - [https://prismic.io/docs/core-concepts/reusing-slices](https://prismic.io/docs/core-concepts/reusing-slices)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:506](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L506)
+[customType.ts:506](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L506)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -559,18 +559,18 @@ A Slice for a Custom Type.
 
 More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `NonRepeatFields` | extends `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> = `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> | A record of fields that cannnot be repeated. |
 | `RepeatFields` | extends `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> = `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> | A record of fields that can be repeated. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:479](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L479)
+[customType.ts:479](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L479)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -594,11 +594,11 @@ Label for a Slice.
 
 More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:446](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L446)
+[customType.ts:446](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L446)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -617,17 +617,17 @@ A Slice Zone Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `Slices` | extends `Record`<`string`, [`CustomTypeModelSlice`](#customtypemodelslice) \| [`CustomTypeModelSharedSlice`](#customtypemodelsharedslice)\> = `Record`<`string`, [`CustomTypeModelSlice`](#customtypemodelslice) \| [`CustomTypeModelSharedSlice`](#customtypemodelsharedslice)\> |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:427](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L427)
+[customType.ts:427](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L427)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -649,11 +649,11 @@ A Timestamp Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/timestamp](https://prismic.io/docs/core-concepts/timestamp)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:401](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L401)
+[customType.ts:401](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L401)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -674,11 +674,11 @@ A UID Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/uid](https://prismic.io/docs/core-concepts/uid)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:414](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L414)
+[customType.ts:414](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L414)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -702,18 +702,18 @@ More details:
 - [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 - [https://prismic.io/docs/core-concepts/reusing-slices](https://prismic.io/docs/core-concepts/reusing-slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `ID` | extends `string` = `string` | - |
 | `Variation` | extends [`SharedSliceModelVariation`](#sharedslicemodelvariation) = [`SharedSliceModelVariation`](#sharedslicemodelvariation) | A variation for the Shared Slice. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:520](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L520)
+[customType.ts:520](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L520)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -738,7 +738,7 @@ More details:
 - [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 - [https://prismic.io/docs/core-concepts/reusing-slices](https://prismic.io/docs/core-concepts/reusing-slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -746,11 +746,11 @@ More details:
 | `PrimaryFields` | extends `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> = `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> | A record of fields that cannnot be repeated. |
 | `ItemFields` | extends `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> = `Record`<`string`, [`CustomTypeModelFieldForGroup`](#customtypemodelfieldforgroup)\> | A record of fields that can be repeated. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:542](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L542)
+[customType.ts:542](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L542)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -772,15 +772,15 @@ More details:
 
 A Prismic Custom Type's tabs and their fields.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `TabName` | extends `string` = `string` | Names of Custom Type tabs. |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:42](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L42)
+[customType.ts:42](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L42)
 
 ___
 
@@ -790,9 +790,9 @@ ___
 
 A Custom Type field.
 
-#### Defined in
+**Defined in**
 
-[customType.ts:63](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L63)
+[customType.ts:63](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L63)
 
 ___
 
@@ -802,9 +802,9 @@ ___
 
 Any Custom Type field that is valid for a Group field.
 
-#### Defined in
+**Defined in**
 
-[customType.ts:72](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L72)
+[customType.ts:72](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L72)
 
 ___
 
@@ -816,9 +816,9 @@ A Rich Text Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:342](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L342)
+[customType.ts:342](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L342)
 
 ___
 
@@ -831,15 +831,15 @@ to one Slice Zone.
 
 **`typeparam`** API IDs of the fields.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `Fields` | extends `Record`<`string`, [`CustomTypeModelField`](#customtypemodelfield)\> = `Record`<`string`, [`CustomTypeModelField`](#customtypemodelfield)\> |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:53](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L53)
+[customType.ts:53](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L53)
 
 ___
 
@@ -851,9 +851,9 @@ A Title Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Defined in
+**Defined in**
 
-[customType.ts:381](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L381)
+[customType.ts:381](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L381)
 
 ## Variables
 
@@ -863,7 +863,7 @@ More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://pr
 
 Type identifier for a Custom Type field.
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -884,9 +884,9 @@ Type identifier for a Custom Type field.
 | `Timestamp` | ``"Timestamp"`` |
 | `UID` | ``"UID"`` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:93](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L93)
+[customType.ts:93](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L93)
 
 ___
 
@@ -898,16 +898,16 @@ Type of a Link Custom Type field.
 
 More details: [https://prismic.io/docs/core-concepts/link-content-relationship](https://prismic.io/docs/core-concepts/link-content-relationship)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `Document` | ``"document"`` |
 | `Media` | ``"media"`` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:250](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L250)
+[customType.ts:250](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L250)
 
 ___
 
@@ -919,16 +919,16 @@ Display type for a Slice.
 
 More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `Grid` | ``"grid"`` |
 | `List` | ``"list"`` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:456](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L456)
+[customType.ts:456](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L456)
 
 ___
 
@@ -940,13 +940,13 @@ Type identifier for a Slice.
 
 More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `SharedSlice` | ``"SharedSlice"`` |
 | `Slice` | ``"Slice"`` |
 
-#### Defined in
+**Defined in**
 
-[customType.ts:466](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/customType.ts#L466)
+[customType.ts:466](https://github.com/prismicio/prismic-types/blob/5270069/src/customType.ts#L466)

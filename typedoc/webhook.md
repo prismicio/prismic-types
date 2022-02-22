@@ -10,11 +10,11 @@ Webhook payload sent when a Prismic repository content is updated.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/webhooks](https://prismic.io/docs/core-concepts/webhooks)
 
-#### Defined in
+**Defined in**
 
-[webhook.ts:25](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/webhook.ts#L25)
+[webhook.ts:25](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L25)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -41,11 +41,11 @@ Webhook payload sent when a test webhook action is triggered.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/webhooks](https://prismic.io/docs/core-concepts/webhooks)
 
-#### Defined in
+**Defined in**
 
-[webhook.ts:43](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/webhook.ts#L43)
+[webhook.ts:43](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L43)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -62,9 +62,9 @@ Webhook payload sent when a test webhook action is triggered.
 
 Ƭ **WebhookBody**: [`WebhookBodyAPIUpdate`](#webhookbodyapiupdate) \| [`WebhookBodyTestTrigger`](#webhookbodytesttrigger)
 
-#### Defined in
+**Defined in**
 
-[webhook.ts:1](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/webhook.ts#L1)
+[webhook.ts:1](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L1)
 
 ## Variables
 
@@ -76,13 +76,13 @@ Types of Prismic Webhooks.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/webhooks](https://prismic.io/docs/core-concepts/webhooks)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `APIUpdate` | ``"api-update"`` |
 | `TestTrigger` | ``"test-trigger"`` |
 
-#### Defined in
+**Defined in**
 
-[webhook.ts:8](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/webhook.ts#L8)
+[webhook.ts:8](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L8)

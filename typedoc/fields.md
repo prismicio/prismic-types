@@ -6,11 +6,11 @@
 
 • **EmptyImageFieldImage**: `Object`
 
-#### Defined in
+**Defined in**
 
-[fields.ts:328](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L328)
+[fields.ts:328](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L328)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -27,11 +27,11 @@ ___
 
 • **FilledImageFieldImage**: `Object`
 
-#### Defined in
+**Defined in**
 
-[fields.ts:318](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L318)
+[fields.ts:318](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L318)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -52,7 +52,7 @@ ___
 
 Links that refer to Documents
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -60,11 +60,11 @@ Links that refer to Documents
 | `LangEnum` | `string` |
 | `DataInterface` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield) \| [`GroupField`](#groupfield) \| [`SliceZone`](#slicezone)\> = `never` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:380](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L380)
+[fields.ts:380](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L380)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -89,11 +89,11 @@ ___
 
 Link that points to media
 
-#### Defined in
+**Defined in**
 
-[fields.ts:412](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L412)
+[fields.ts:412](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L412)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -115,11 +115,11 @@ ___
 
 Link that points to external website
 
-#### Defined in
+**Defined in**
 
-[fields.ts:403](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L403)
+[fields.ts:403](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L403)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -137,11 +137,11 @@ ___
 
 Rich Text `embed` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:134](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L134)
+[fields.ts:134](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L134)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -159,11 +159,11 @@ ___
 
 Rich Text `heading1` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:48](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L48)
+[fields.ts:48](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L48)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -181,11 +181,11 @@ ___
 
 Rich Text `heading2` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:55](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L55)
+[fields.ts:55](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L55)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -203,11 +203,11 @@ ___
 
 Rich Text `heading3` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:62](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L62)
+[fields.ts:62](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L62)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -225,11 +225,11 @@ ___
 
 Rich Text `heading4` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:69](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L69)
+[fields.ts:69](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L69)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -247,11 +247,11 @@ ___
 
 Rich Text `heading5` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:76](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L76)
+[fields.ts:76](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L76)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -269,11 +269,11 @@ ___
 
 Rich Text `heading6` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:83](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L83)
+[fields.ts:83](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L83)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -291,11 +291,11 @@ ___
 
 Rich Text `label` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:141](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L141)
+[fields.ts:141](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L141)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -317,11 +317,11 @@ Rich Text `a` node
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/edit-rich-text#add-links](https://prismic.io/docs/core-concepts/edit-rich-text#add-links)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:184](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L184)
+[fields.ts:184](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L184)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -340,11 +340,11 @@ ___
 
 Rich Text `list-item` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:104](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L104)
+[fields.ts:104](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L104)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -362,11 +362,11 @@ ___
 
 Rich Text `list` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:197](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L197)
+[fields.ts:197](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L197)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -383,11 +383,11 @@ ___
 
 Rich Text `o-list-item` node for ordered lists
 
-#### Defined in
+**Defined in**
 
-[fields.ts:111](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L111)
+[fields.ts:111](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L111)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -405,11 +405,11 @@ ___
 
 Rich Text o-lost node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:205](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L205)
+[fields.ts:205](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L205)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -426,11 +426,11 @@ ___
 
 Rich Text `paragraph` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:90](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L90)
+[fields.ts:90](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L90)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -448,11 +448,11 @@ ___
 
 Rich Text `preformatted` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:97](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L97)
+[fields.ts:97](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L97)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -470,11 +470,11 @@ ___
 
 Rich Text `span` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:214](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L214)
+[fields.ts:214](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L214)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -492,11 +492,11 @@ ___
 
 **`internal`** Span Node base to be extended for other Span nodes
 
-#### Defined in
+**Defined in**
 
-[fields.ts:120](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L120)
+[fields.ts:120](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L120)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -513,11 +513,11 @@ ___
 
 Rich Text `strong` node
 
-#### Defined in
+**Defined in**
 
-[fields.ts:127](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L127)
+[fields.ts:127](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L127)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -535,11 +535,11 @@ ___
 
 Base to be extended by other RT Nodes.
 
-#### Defined in
+**Defined in**
 
-[fields.ts:40](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L40)
+[fields.ts:40](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L40)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -554,7 +554,7 @@ ___
 
 • **SharedSliceVariation**<`Variation`, `PrimaryFields`, `ItemsFields`\>: `Object`
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -562,11 +562,11 @@ ___
 | `PrimaryFields` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> = `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> |
 | `ItemsFields` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> = `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:824](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L824)
+[fields.ts:824](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L824)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -587,7 +587,7 @@ Slice - Sections of your website
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/slices](https://prismic.io/docs/core-concepts/slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -595,11 +595,11 @@ Slice - Sections of your website
 | `PrimaryFields` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> = `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> |
 | `ItemsFields` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> = `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:794](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L794)
+[fields.ts:794](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L794)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -621,9 +621,9 @@ fields their respective oEmbed response type must feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:654](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L654)
+[fields.ts:654](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L654)
 
 ___
 
@@ -631,9 +631,9 @@ ___
 
 Ƭ **AnyRegularField**: [`TitleField`](#titlefield) \| [`RichTextField`](#richtextfield) \| [`ImageField`](#imagefield) \| [`RelationField`](#relationfield) \| [`LinkField`](#linkfield) \| [`LinkToMediaField`](#linktomediafield) \| [`DateField`](#datefield) \| [`TimestampField`](#timestampfield) \| [`ColorField`](#colorfield) \| [`NumberField`](#numberfield) \| [`KeyTextField`](#keytextfield) \| [`SelectField`](#selectfield) \| [`BooleanField`](#booleanfield) \| [`EmbedField`](#embedfield) \| [`GeoPointField`](#geopointfield) \| [`IntegrationFields`](#integrationfields)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:855](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L855)
+[fields.ts:855](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L855)
 
 ___
 
@@ -645,9 +645,9 @@ A Boolean field.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/boolean](https://prismic.io/docs/core-concepts/boolean)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:738](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L738)
+[fields.ts:738](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L738)
 
 ___
 
@@ -659,15 +659,15 @@ A Color field.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/color](https://prismic.io/docs/core-concepts/color)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:700](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L700)
+[fields.ts:700](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L700)
 
 ___
 
@@ -679,15 +679,15 @@ A Date field.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/date](https://prismic.io/docs/core-concepts/date)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:681](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L681)
+[fields.ts:681](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L681)
 
 ___
 
@@ -699,16 +699,16 @@ An Embed field.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/embed](https://prismic.io/docs/core-concepts/embed)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Data` | extends [`AnyOEmbed`](#anyoembed) = [`AnyOEmbed`](#anyoembed) & [`OEmbedExtra`](#oembedextra) | Data provided by the URL's oEmbed provider. |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:663](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L663)
+[fields.ts:663](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L663)
 
 ___
 
@@ -718,21 +718,21 @@ ___
 
 For link fields that haven't been filled
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Type` | extends typeof [`LinkType`](#linktype)[keyof typeof [`LinkType`](#linktype)] = typeof [`Any`](#any) | The type of link. |
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `link_type` | `Type` \| `string` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:371](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L371)
+[fields.ts:371](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L371)
 
 ___
 
@@ -742,9 +742,9 @@ ___
 
 Valid states for fields. Not all fields use this type (e.g. BooleanField).
 
-#### Defined in
+**Defined in**
 
-[fields.ts:6](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L6)
+[fields.ts:6](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L6)
 
 ___
 
@@ -756,15 +756,15 @@ A Geopoint field.
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/geopoint](https://prismic.io/docs/core-concepts/geopoint)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:746](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L746)
+[fields.ts:746](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L746)
 
 ___
 
@@ -776,16 +776,16 @@ A Group field.
 
 More details: [https://prismic.io/docs/core-concepts/group](https://prismic.io/docs/core-concepts/group)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `Fields` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> = `Record`<`string`, [`AnyRegularField`](#anyregularfield)\> |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:760](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L760)
+[fields.ts:760](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L760)
 
 ___
 
@@ -797,16 +797,16 @@ Image Field
 
 **`see`** Image field documentation: [https://prismic.io/docs/core-concepts/image](https://prismic.io/docs/core-concepts/image)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `ThumbnailNames` | extends `string` \| ``null`` = ``null`` | Names of thumbnails. If the field does not   contain thumbnails, `null` can be used to "disable" thumbnail fields. |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:343](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L343)
+[fields.ts:343](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L343)
 
 ___
 
@@ -819,15 +819,15 @@ uses this type.
 
 **`see`** [ImageField](#imagefield) for a full Image field type.
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:315](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L315)
+[fields.ts:315](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L315)
 
 ___
 
@@ -839,16 +839,16 @@ Integration Fields for Custom APIs
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/integration-fields-setup](https://prismic.io/docs/core-concepts/integration-fields-setup)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Blob` | `unknown` | Data from the integrated API. |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:775](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L775)
+[fields.ts:775](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L775)
 
 ___
 
@@ -860,15 +860,15 @@ A Key text field
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/key-text](https://prismic.io/docs/core-concepts/key-text)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:718](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L718)
+[fields.ts:718](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L718)
 
 ___
 
@@ -878,7 +878,7 @@ ___
 
 Link Field
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -887,9 +887,9 @@ Link Field
 | `DataInterface` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield) \| [`GroupField`](#groupfield) \| [`SliceZone`](#slicezone)\> = `never` | Data fields for the document (filled in via   GraphQuery of `fetchLinks`). |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:452](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L452)
+[fields.ts:452](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L452)
 
 ___
 
@@ -902,9 +902,9 @@ must feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:623](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L623)
+[fields.ts:623](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L623)
 
 ___
 
@@ -914,15 +914,15 @@ ___
 
 Link field that points to media
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:472](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L472)
+[fields.ts:472](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L472)
 
 ___
 
@@ -934,15 +934,15 @@ A Number field
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/number](https://prismic.io/docs/core-concepts/number)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:709](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L709)
+[fields.ts:709](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L709)
 
 ___
 
@@ -955,7 +955,7 @@ fields an oEmbed response can feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Index signature
+**Index signature**
 
 ▪ [key: `string`]: `unknown` \| ``null``
 
@@ -965,7 +965,7 @@ choose to ignore these. Consumers must ignore parameters they do not understand.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -979,9 +979,9 @@ choose to ignore these. Consumers must ignore parameters they do not understand.
 | `thumbnail_width?` | `number` \| ``null`` | oEmbed resource thumbnail width. |
 | `title?` | `string` \| ``null`` | oEmbed text title, describing the resource. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:515](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L515)
+[fields.ts:515](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L515)
 
 ___
 
@@ -994,9 +994,9 @@ must feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:577](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L577)
+[fields.ts:577](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L577)
 
 ___
 
@@ -1006,9 +1006,9 @@ ___
 
 All Rich Text nodes
 
-#### Defined in
+**Defined in**
 
-[fields.ts:279](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L279)
+[fields.ts:279](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L279)
 
 ___
 
@@ -1018,9 +1018,9 @@ ___
 
 Rich Text block nodes
 
-#### Defined in
+**Defined in**
 
-[fields.ts:255](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L255)
+[fields.ts:255](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L255)
 
 ___
 
@@ -1030,16 +1030,16 @@ ___
 
 Rich Text `embed` node
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
 | `oembed` | [`EmbedField`](#embedfield) |
 | `type` | typeof [`embed`](#embed) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:172](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L172)
+[fields.ts:172](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L172)
 
 ___
 
@@ -1050,7 +1050,7 @@ ___
 Rich Text `image` nodes. They could link to other documents, external web
 links and media fields
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -1063,9 +1063,9 @@ links and media fields
 | `type` | typeof [`image`](#image) |
 | `url` | `string` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:154](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L154)
+[fields.ts:154](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L154)
 
 ___
 
@@ -1075,9 +1075,9 @@ ___
 
 Inline Rich Text Nodes
 
-#### Defined in
+**Defined in**
 
-[fields.ts:274](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L274)
+[fields.ts:274](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L274)
 
 ___
 
@@ -1087,9 +1087,9 @@ ___
 
 Nodes from a Rich Text Field
 
-#### Defined in
+**Defined in**
 
-[fields.ts:223](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L223)
+[fields.ts:223](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L223)
 
 ___
 
@@ -1099,9 +1099,9 @@ ___
 
 Rich text nodes with text
 
-#### Defined in
+**Defined in**
 
-[fields.ts:240](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L240)
+[fields.ts:240](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L240)
 
 ___
 
@@ -1111,7 +1111,7 @@ ___
 
 Field for related documents
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -1120,9 +1120,9 @@ Field for related documents
 | `DataInterface` | extends `Record`<`string`, [`AnyRegularField`](#anyregularfield) \| [`GroupField`](#groupfield) \| [`SliceZone`](#slicezone)\> = `never` | Data fields for the document (filled in via   GraphQuery of `fetchLinks`). |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:431](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L431)
+[fields.ts:431](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L431)
 
 ___
 
@@ -1135,9 +1135,9 @@ must feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:631](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L631)
+[fields.ts:631](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L631)
 
 ___
 
@@ -1145,15 +1145,15 @@ ___
 
 Ƭ **RichTextField**<`State`\>: `State` extends ``"empty"`` ? [] : [[`RTNode`](#rtnode), ...RTNode[]]
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:303](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L303)
+[fields.ts:303](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L303)
 
 ___
 
@@ -1165,16 +1165,16 @@ A Select field
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/select](https://prismic.io/docs/core-concepts/select)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Enum` | extends `string` = `string` | Selectable options for the field. |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:728](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L728)
+[fields.ts:728](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L728)
 
 ___
 
@@ -1186,16 +1186,16 @@ Shared Slice
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/reusing-slices#shared-slices](https://prismic.io/docs/core-concepts/reusing-slices#shared-slices)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `SliceType` | `string` |
 | `Variations` | extends [`SharedSliceVariation`](#sharedslicevariation) = [`SharedSliceVariation`](#sharedslicevariation) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:816](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L816)
+[fields.ts:816](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L816)
 
 ___
 
@@ -1210,16 +1210,16 @@ landing pages, case studies, and tutorials.
 
 **`see`** More details: [https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs](https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `Slices` | extends [`Slice`](#slice) \| [`SharedSlice`](#sharedslice) = [`Slice`](#slice) \| [`SharedSlice`](#sharedslice) |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:848](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L848)
+[fields.ts:848](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L848)
 
 ___
 
@@ -1229,15 +1229,15 @@ ___
 
 Simple Timestamp Field
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) | State of the field which determines its shape. |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:689](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L689)
+[fields.ts:689](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L689)
 
 ___
 
@@ -1249,15 +1249,15 @@ All Rich Text Title Nodes
 
 **`see`** Title field documentation: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `State` | extends [`FieldState`](#fieldstate) = [`FieldState`](#fieldstate) |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:286](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L286)
+[fields.ts:286](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L286)
 
 ___
 
@@ -1270,9 +1270,9 @@ must feature.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Defined in
+**Defined in**
 
-[fields.ts:600](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L600)
+[fields.ts:600](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L600)
 
 ## Variables
 
@@ -1282,7 +1282,7 @@ must feature.
 
 Link Types
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -1291,9 +1291,9 @@ Link Types
 | `Media` | ``"Media"`` |
 | `Web` | ``"Web"`` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:359](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L359)
+[fields.ts:359](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L359)
 
 ___
 
@@ -1305,7 +1305,7 @@ oEmbed 1.0 possible types.
 
 **`see`** oEmbed specification: [https://oembed.com](https://oembed.com)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -1314,9 +1314,9 @@ oEmbed 1.0 possible types.
 | `Rich` | ``"rich"`` |
 | `Video` | ``"video"`` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:484](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L484)
+[fields.ts:484](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L484)
 
 ___
 
@@ -1328,7 +1328,7 @@ Types for RichTextNodes
 
 **`see`** More details: [https://prismic.io/docs/core-concepts/rich-text-title](https://prismic.io/docs/core-concepts/rich-text-title)
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -1352,6 +1352,6 @@ Types for RichTextNodes
 | `span` | ``"span"`` |
 | `strong` | ``"strong"`` |
 
-#### Defined in
+**Defined in**
 
-[fields.ts:13](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/fields.ts#L13)
+[fields.ts:13](https://github.com/prismicio/prismic-types/blob/5270069/src/fields.ts#L13)

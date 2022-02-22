@@ -11,11 +11,11 @@ metadata about the feature and how to interact with it via the API.
 
 **`internal`**
 
-#### Defined in
+**Defined in**
 
-[api.ts:191](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L191)
+[api.ts:191](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L191)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -39,11 +39,11 @@ the feature's field and how to interact with it via the API.
 
 **`internal`**
 
-#### Defined in
+**Defined in**
 
-[api.ts:206](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L206)
+[api.ts:206](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L206)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -61,11 +61,11 @@ ___
 
 Metadata for a language that has been configured for a repository.
 
-#### Defined in
+**Defined in**
 
-[api.ts:124](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L124)
+[api.ts:124](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L124)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -85,17 +85,17 @@ paginated metadata and a list of matching results for the query.
 
 **`see`** More details on querying: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api](https://prismic.io/docs/technologies/introduction-to-the-content-query-api)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Document` | extends [`PrismicDocument`](#prismicdocument) = [`PrismicDocument`](#prismicdocument) | The type(s) of Prismic document that can be returned. |
 
-#### Defined in
+**Defined in**
 
-[api.ts:143](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L143)
+[api.ts:143](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L143)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -120,11 +120,11 @@ Metadata for a reference to a version of a repository's content.
 
 **`see`** More details on refs: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref)
 
-#### Defined in
+**Defined in**
 
-[api.ts:80](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L80)
+[api.ts:80](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L80)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -147,11 +147,11 @@ fetched by sending a `GET` a request to a repository's `/api/v2` endpoint.
 
 **`see`** More details on the `/api/v2` endpoint: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2)
 
-#### Defined in
+**Defined in**
 
-[api.ts:9](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L9)
+[api.ts:9](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L9)
 
-#### Properties
+**Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -185,9 +185,9 @@ This is an alias for `Ref`.
 
 **`see`** More details on Releases: [https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases](https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases)
 
-#### Defined in
+**Defined in**
 
-[api.ts:119](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L119)
+[api.ts:119](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L119)
 
 ___
 
@@ -200,12 +200,12 @@ sending a `GET` request to a repository's `/api/tags` endpoint.
 
 **`see`** More details on the Tags API: [https://prismic.io/docs/technologies/tags-api-technical-reference](https://prismic.io/docs/technologies/tags-api-technical-reference)
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `Tag` | extends `string` = `string` | Tags that are returned by the Tags API. |
 
-#### Defined in
+**Defined in**
 
-[api.ts:219](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/api.ts#L219)
+[api.ts:219](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L219)

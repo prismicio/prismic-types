@@ -8,11 +8,11 @@
 
 Link that point to Documents
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:16](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L16)
+[graphql/fields.ts:16](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L16)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -28,11 +28,11 @@ ___
 
 Link that points to media (images, PDFs, or any file in the Media Library)
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:31](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L31)
+[graphql/fields.ts:31](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L31)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -49,11 +49,11 @@ ___
 
 Link that points to external website
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:23](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L23)
+[graphql/fields.ts:23](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L23)
 
-#### Properties
+**Properties**
 
 | Name | Type |
 | :------ | :------ |
@@ -70,9 +70,9 @@ Link that points to external website
 
 Represents a link field without a value.
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:11](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L11)
+[graphql/fields.ts:11](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L11)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 Link Field
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
@@ -91,9 +91,9 @@ Link Field
 | `ExtendedLinkToMediaField` | extends [`FilledMinimalLinkToMediaField`](#filledminimallinktomediafield) = [`FilledMinimalLinkToMediaField`](#filledminimallinktomediafield) |
 | `IsEmpty` | extends `boolean` = `boolean` |
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:47](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L47)
+[graphql/fields.ts:47](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L47)
 
 ___
 
@@ -103,16 +103,16 @@ ___
 
 Link field that points to media
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `ExtendedLinkToMediaField` | extends [`FilledMinimalLinkToMediaField`](#filledminimallinktomediafield) = [`FilledMinimalLinkToMediaField`](#filledminimallinktomediafield) |
 | `IsEmpty` | extends `boolean` = `boolean` |
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:62](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L62)
+[graphql/fields.ts:62](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L62)
 
 ___
 
@@ -122,16 +122,16 @@ ___
 
 Field for related documents
 
-#### Type parameters
+**Type parameters**
 
 | Name | Type |
 | :------ | :------ |
 | `ExtendedLinkToDocumentField` | extends [`FilledMinimalLinkToWebField`](#filledminimallinktowebfield) = [`FilledMinimalLinkToWebField`](#filledminimallinktowebfield) |
 | `IsEmpty` | extends `boolean` = `boolean` |
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:39](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L39)
+[graphql/fields.ts:39](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L39)
 
 ## Variables
 
@@ -139,7 +139,7 @@ Field for related documents
 
 • `Const` **LinkType**: `Object`
 
-#### Type declaration
+**Type declaration**
 
 | Name | Type |
 | :------ | :------ |
@@ -148,6 +148,6 @@ Field for related documents
 | `Image` | ``"Link.image"`` |
 | `Web` | ``"Link.web"`` |
 
-#### Defined in
+**Defined in**
 
-[graphql/fields.ts:1](https://github.com/prismicio/prismic-types/blob/c4fbec2/src/graphql/fields.ts#L1)
+[graphql/fields.ts:1](https://github.com/prismicio/prismic-types/blob/5270069/src/graphql/fields.ts#L1)
