@@ -12,22 +12,22 @@ Webhook payload sent when a Prismic repository content is updated.
 
 **Defined in**
 
-[webhook.ts:25](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L25)
+[webhook.ts:25](https://github.com/prismicio/prismic-types/blob/d15dccd/src/webhook.ts#L25)
 
 **Properties**
 
 | Name | Type |
 | :------ | :------ |
-| `apiUrl` | `string` |
-| `documents` | `string`[] |
 | `domain` | `string` |
-| `experiments?` | `WebhookBodyAPIUpdateOperations`<`unknown`\> |
-| `masks` | `WebhookBodyAPIUpdateOperations`<`WebhookBodyAPIUpdateMask`\> |
+| `apiUrl` | `string` |
+| `secret` | `string` |
+| `type` | ``"api-update"`` |
 | `masterRef?` | `string` |
 | `releases` | `WebhookBodyAPIUpdateOperations`<`WebhookBodyAPIUpdateRelease`\> |
-| `secret` | `string` |
+| `masks` | `WebhookBodyAPIUpdateOperations`<`WebhookBodyAPIUpdateMask`\> |
 | `tags` | `WebhookBodyAPIUpdateOperations`<`WebhookBodyAPIUpdateTag`\> |
-| `type` | ``"api-update"`` |
+| `documents` | `string`[] |
+| `experiments?` | `WebhookBodyAPIUpdateOperations`<`unknown`\> |
 
 </details>
 
@@ -43,14 +43,14 @@ Webhook payload sent when a test webhook action is triggered.
 
 **Defined in**
 
-[webhook.ts:43](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L43)
+[webhook.ts:43](https://github.com/prismicio/prismic-types/blob/d15dccd/src/webhook.ts#L43)
 
 **Properties**
 
 | Name | Type |
 | :------ | :------ |
-| `apiUrl` | `string` |
 | `domain` | `string` |
+| `apiUrl` | `string` |
 | `secret` | `string` |
 | `type` | ``"test-trigger"`` |
 
@@ -64,7 +64,7 @@ Webhook payload sent when a test webhook action is triggered.
 
 **Defined in**
 
-[webhook.ts:1](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L1)
+[webhook.ts:1](https://github.com/prismicio/prismic-types/blob/d15dccd/src/webhook.ts#L1)
 
 ## Variables
 
@@ -85,4 +85,4 @@ Types of Prismic Webhooks.
 
 **Defined in**
 
-[webhook.ts:8](https://github.com/prismicio/prismic-types/blob/5270069/src/webhook.ts#L8)
+[webhook.ts:8](https://github.com/prismicio/prismic-types/blob/d15dccd/src/webhook.ts#L8)

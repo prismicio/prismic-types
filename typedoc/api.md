@@ -2,54 +2,61 @@
 
 ## Interfaces
 
-### Form
+### Repository
 
-• **Form**: `Object`
+• **Repository**: `Object`
 
-A Prismic REST API V2 feature supported by the repository. It contains
-metadata about the feature and how to interact with it via the API.
+Repository metadata returned from the Prismic REST API V2. This data can be
+fetched by sending a `GET` a request to a repository's `/api/v2` endpoint.
 
-**`internal`**
+**`see`** More details on the `/api/v2` endpoint: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2)
 
 **Defined in**
 
-[api.ts:191](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L191)
+[api.ts:9](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L9)
 
 **Properties**
 
-| Name | Type |
-| :------ | :------ |
-| `action` | `string` |
-| `enctype` | `string` |
-| `fields` | `Record`<`string`, [`FormField`](#formfield)\> |
-| `method` | ``"GET"`` |
-| `name?` | `string` |
-| `rel?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `refs` | [`Ref`](#ref)[] | A list of refs for the repository.  **`see`** [Ref](#ref) |
+| `integrationFieldsRef` | `string` | An identifier used to query content with the latest Integration Fields data. |
+| `languages` | [`Language`](#language)[] | A list of languages for the repository.  **`see`** [Language](#language) |
+| `types` | `Record`<`string`, `string`\> | A list of the repository's Custom Type API IDs mapped to their human-readable name. |
+| `tags` | `string`[] | A list of tags for the repository. |
+| `forms` | `Record`<`string`, [`Form`](#form)\> | An internally-used list of REST API features for the repository.  **`internal`** |
+| `oauth_initiate` | `string` | The URL used to begin the OAuth process for the repository. |
+| `oauth_token` | `string` | - |
+| `version` | `string` | The version of the API. |
+| `license` | `string` | Licensing information for the repository content. |
+| `experiments` | `unknown` | **`deprecated`** Experiments are no longer part of Prismic. |
+| `bookmarks` | `Record`<`string`, `string`\> | **`deprecated`** Bookmarks are not longer part of Prismic. |
 
 </details>
 
 ___
 
-### FormField
+### Ref
 
-• **FormField**: `Object`
+• **Ref**: `Object`
 
-A field for a feature of the Prismic REST API V2. It contains metadata about
-the feature's field and how to interact with it via the API.
+Metadata for a reference to a version of a repository's content.
 
-**`internal`**
+**`see`** More details on refs: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref)
 
 **Defined in**
 
-[api.ts:206](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L206)
+[api.ts:80](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L80)
 
 **Properties**
 
-| Name | Type |
-| :------ | :------ |
-| `default?` | `string` |
-| `multiple` | `boolean` |
-| `type` | ``"String"`` \| ``"Integer"`` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The unique identifier for the ref. |
+| `ref` | `string` | The identifier that should be provided to the API to select a content version. |
+| `label` | `string` | A human-readable name for the ref. The master ref is always named "Master". |
+| `isMasterRef` | `boolean` | Determines if the ref is the master ref. The master ref contains the latest published content. |
+| `scheduledAt?` | `string` | If the ref is associated with a Release, this field contains the timestamp at which the Release will be automatically published, if set.  **`see`** More details on Releases: [https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases](https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases) |
 
 </details>
 
@@ -63,7 +70,7 @@ Metadata for a language that has been configured for a repository.
 
 **Defined in**
 
-[api.ts:124](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L124)
+[api.ts:124](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L124)
 
 **Properties**
 
@@ -93,80 +100,73 @@ paginated metadata and a list of matching results for the query.
 
 **Defined in**
 
-[api.ts:143](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L143)
+[api.ts:143](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L143)
 
 **Properties**
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `next_page` | `string` | The Prismic REST API V2 URL to the next page, if one exists. |
 | `page` | `number` | The page number for this page of results. |
-| `prev_page` | `string` | The Prismic REST API V2 URL to the previous page, if one exists. |
-| `results` | `Document`[] | A paginated list of documents matching the query. |
 | `results_per_page` | `number` | Maximum number of results per page. |
 | `results_size` | `number` | Number of results in this page. |
-| `total_pages` | `number` | Total number of pages. |
 | `total_results_size` | `number` | Total number of results within all pages. |
+| `total_pages` | `number` | Total number of pages. |
+| `next_page` | `string` | The Prismic REST API V2 URL to the next page, if one exists. |
+| `prev_page` | `string` | The Prismic REST API V2 URL to the previous page, if one exists. |
+| `results` | `Document`[] | A paginated list of documents matching the query. |
 
 </details>
 
 ___
 
-### Ref
+### Form
 
-• **Ref**: `Object`
+• **Form**: `Object`
 
-Metadata for a reference to a version of a repository's content.
+A Prismic REST API V2 feature supported by the repository. It contains
+metadata about the feature and how to interact with it via the API.
 
-**`see`** More details on refs: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#prismic-api-ref)
+**`internal`**
 
 **Defined in**
 
-[api.ts:80](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L80)
+[api.ts:191](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L191)
 
 **Properties**
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | The unique identifier for the ref. |
-| `isMasterRef` | `boolean` | Determines if the ref is the master ref. The master ref contains the latest published content. |
-| `label` | `string` | A human-readable name for the ref. The master ref is always named "Master". |
-| `ref` | `string` | The identifier that should be provided to the API to select a content version. |
-| `scheduledAt?` | `string` | If the ref is associated with a Release, this field contains the timestamp at which the Release will be automatically published, if set.  **`see`** More details on Releases: [https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases](https://prismic.io/docs/core-concepts/draft-plan-and-schedule-content#releases) |
+| Name | Type |
+| :------ | :------ |
+| `method` | ``"GET"`` |
+| `enctype` | `string` |
+| `action` | `string` |
+| `name?` | `string` |
+| `rel?` | `string` |
+| `fields` | `Record`<`string`, [`FormField`](#formfield)\> |
 
 </details>
 
 ___
 
-### Repository
+### FormField
 
-• **Repository**: `Object`
+• **FormField**: `Object`
 
-Repository metadata returned from the Prismic REST API V2. This data can be
-fetched by sending a `GET` a request to a repository's `/api/v2` endpoint.
+A field for a feature of the Prismic REST API V2. It contains metadata about
+the feature's field and how to interact with it via the API.
 
-**`see`** More details on the `/api/v2` endpoint: [https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2](https://prismic.io/docs/technologies/introduction-to-the-content-query-api#the-api-endpoint-2)
+**`internal`**
 
 **Defined in**
 
-[api.ts:9](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L9)
+[api.ts:206](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L206)
 
 **Properties**
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bookmarks` | `Record`<`string`, `string`\> | **`deprecated`** Bookmarks are not longer part of Prismic. |
-| `experiments` | `unknown` | **`deprecated`** Experiments are no longer part of Prismic. |
-| `forms` | `Record`<`string`, [`Form`](#form)\> | An internally-used list of REST API features for the repository.  **`internal`** |
-| `integrationFieldsRef` | `string` | An identifier used to query content with the latest Integration Fields data. |
-| `languages` | [`Language`](#language)[] | A list of languages for the repository.  **`see`** [Language](#language) |
-| `license` | `string` | Licensing information for the repository content. |
-| `oauth_initiate` | `string` | The URL used to begin the OAuth process for the repository. |
-| `oauth_token` | `string` | - |
-| `refs` | [`Ref`](#ref)[] | A list of refs for the repository.  **`see`** [Ref](#ref) |
-| `tags` | `string`[] | A list of tags for the repository. |
-| `types` | `Record`<`string`, `string`\> | A list of the repository's Custom Type API IDs mapped to their human-readable name. |
-| `version` | `string` | The version of the API. |
+| Name | Type |
+| :------ | :------ |
+| `type` | ``"String"`` \| ``"Integer"`` |
+| `multiple` | `boolean` |
+| `default?` | `string` |
 
 </details>
 
@@ -187,7 +187,7 @@ This is an alias for `Ref`.
 
 **Defined in**
 
-[api.ts:119](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L119)
+[api.ts:119](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L119)
 
 ___
 
@@ -208,4 +208,4 @@ sending a `GET` request to a repository's `/api/tags` endpoint.
 
 **Defined in**
 
-[api.ts:219](https://github.com/prismicio/prismic-types/blob/5270069/src/api.ts#L219)
+[api.ts:219](https://github.com/prismicio/prismic-types/blob/d15dccd/src/api.ts#L219)
