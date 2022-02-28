@@ -341,15 +341,19 @@ export interface EmptyImageFieldImage {
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export type ImageField<
-	ThumbnailNames extends string | null = null,
+	ThumbnailNames extends string | null = never,
 	State extends FieldState = FieldState,
-> = ThumbnailNames extends string
-	? ImageFieldImage<State> &
-			Record<
-				Exclude<ThumbnailNames, keyof ImageFieldImage>,
-				ImageFieldImage<State>
-			>
-	: ImageFieldImage<State>;
+	// `Omit<>` is used to prevent TypeScript from considering the refactored type as an array, see #29
+> = Omit<
+	ImageFieldImage<State> &
+		Record<
+			ThumbnailNames extends string
+				? Exclude<ThumbnailNames, keyof ImageFieldImage>
+				: never,
+			ImageFieldImage
+		>,
+	never
+>;
 
 // Links
 
