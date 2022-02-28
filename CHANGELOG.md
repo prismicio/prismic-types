@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.26](https://github.com/prismicio/prismic-types/compare/v0.1.25...v0.1.26) (2022-02-28)
+
+
+### Bug Fixes
+
+* support union with image thumbnails, fixes [#27](https://github.com/prismicio/prismic-types/issues/27) ([#29](https://github.com/prismicio/prismic-types/issues/29)) ([32d0a9a](https://github.com/prismicio/prismic-types/commit/32d0a9a1fb06a2629ff4e1627e8c23a24964afd6))
+
 ### [0.1.25](https://github.com/prismicio/prismic-types/compare/v0.1.24...v0.1.25) (2022-02-18)
 
 
