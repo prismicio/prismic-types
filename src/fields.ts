@@ -343,17 +343,24 @@ export interface EmptyImageFieldImage {
 export type ImageField<
 	ThumbnailNames extends string | null = never,
 	State extends FieldState = FieldState,
-	// `Omit<>` is used to prevent TypeScript from considering the refactored type as an array, see #29
-> = Omit<
-	ImageFieldImage<State> &
-		Record<
-			ThumbnailNames extends string
-				? Exclude<ThumbnailNames, keyof ImageFieldImage>
-				: never,
-			ImageFieldImage<State>
-		>,
-	never
->;
+> = ImageFieldImage<State> &
+	Record<
+		ThumbnailNames extends string
+			? Exclude<ThumbnailNames, keyof ImageFieldImage>
+			: never,
+		ImageFieldImage<State>
+	> &
+	// This is used to prevent TypeScript from considering the refactored type as an array, see #29, #31
+	("length" extends ThumbnailNames
+		? { length: ImageFieldImage<State> }
+		: {
+				/**
+				 * @deprecated This key does not exists in your current Image field. It
+				 *   is used to handle some TypeScript edge-cases.
+				 * @internal
+				 */
+				length?: never;
+		  });
 
 // Links
 

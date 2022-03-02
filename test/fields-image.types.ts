@@ -1,4 +1,4 @@
-import { expectType, expectNever } from "ts-expect";
+import { expectType, expectNever, TypeOf } from "ts-expect";
 
 import * as prismicT from "../src";
 
@@ -138,3 +138,56 @@ const withoutThumbnails = {} as prismicT.ImageField<null>;
 withoutThumbnails.Foo;
 // @ts-expect-error - No thumbnails should be included when set to `null`.
 withoutThumbnails.Bar;
+
+/**
+ * Thumbnail name can be `"length"` (edge case, see: #31)
+ */
+expectType<prismicT.ImageField>({
+	url: "url",
+	dimensions: { width: 1, height: 1 },
+	alt: "alt",
+	copyright: "copyright",
+	// @ts-expect-error - `"length"` shouldn't be available as a thumbnail name by default
+	length: {
+		url: "url",
+		dimensions: { width: 1, height: 1 },
+		alt: "alt",
+		copyright: "copyright",
+	},
+});
+expectType<prismicT.ImageField<"length">>({
+	url: "url",
+	dimensions: { width: 1, height: 1 },
+	alt: "alt",
+	copyright: "copyright",
+	length: {
+		url: "url",
+		dimensions: { width: 1, height: 1 },
+		alt: "alt",
+		copyright: "copyright",
+	},
+});
+
+/**
+ * ImageFields are valid ImageFieldImage extends.
+ */
+expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField>>(true);
+expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<null>>>(true);
+expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<"Foo">>>(true);
+expectType<
+	TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<"Foo" | "Bar">>
+>(true);
+const _ImageFieldIsValidImageFieldImageExtendDebug: prismicT.ImageFieldImage =
+	{} as prismicT.ImageField;
+
+/**
+ * ImageFieldImages are valid ImageField extends with no thumbnails.
+ */
+expectType<TypeOf<prismicT.ImageField, prismicT.ImageFieldImage>>(true);
+expectType<TypeOf<prismicT.ImageField<null>, prismicT.ImageFieldImage>>(true);
+expectType<TypeOf<prismicT.ImageField<"Foo">, prismicT.ImageFieldImage>>(false);
+expectType<
+	TypeOf<prismicT.ImageField<"Foo" | "Bar">, prismicT.ImageFieldImage>
+>(false);
+const _ImageFieldImageIsValidImageFieldExtendDebug: prismicT.ImageField =
+	{} as prismicT.ImageFieldImage;
