@@ -352,7 +352,7 @@ type Simplify<T> = { [P in keyof T]: T[P] };
  * @see Image field documentation: {@link https://prismic.io/docs/core-concepts/image}
  */
 export type ImageField<
-	ThumbnailNames extends string | null = null,
+	ThumbnailNames extends string | null = never,
 	State extends FieldState = FieldState,
 > = Simplify<
 	ImageFieldImage<State> &

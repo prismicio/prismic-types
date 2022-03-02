@@ -112,6 +112,10 @@ expectType<prismicT.ImageField<"Foo" | "Bar">>({
 		copyright: "copyright",
 	},
 });
+// See: #27
+const withThumbnails = {} as prismicT.ImageField<"Foo" | "Bar">;
+withThumbnails.Foo;
+withThumbnails.Bar;
 
 /**
  * Thumbnails can be disabled with `null` ThumbnailNames.
@@ -129,3 +133,8 @@ expectType<prismicT.ImageField<null>>({
 		copyright: "copyright",
 	},
 });
+const withoutThumbnails = {} as prismicT.ImageField<null>;
+// @ts-expect-error - No thumbnails should be included when set to `null`.
+withoutThumbnails.Foo;
+// @ts-expect-error - No thumbnails should be included when set to `null`.
+withoutThumbnails.Bar;
