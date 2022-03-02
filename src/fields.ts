@@ -350,7 +350,7 @@ export type ImageField<
 			ThumbnailNames extends string
 				? Exclude<ThumbnailNames, keyof ImageFieldImage>
 				: never,
-			ImageFieldImage
+			ImageFieldImage<State>
 		>,
 	never
 >;
