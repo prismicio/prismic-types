@@ -1,6 +1,6 @@
 {
 	"name": "@prismicio/types",
-	"version": "0.1.26",
+	"version": "0.1.27",
 	"description": "Type definitions for Prismic related structure",
 	"keywords": [
 		"typescript",

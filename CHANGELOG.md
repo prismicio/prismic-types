@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/prismicio/prismic-types/compare/v0.1.26...v0.1.27) (2022-03-03)
+
+
+### Bug Fixes
+
+* `ImageField` should be a valid `ImageFieldImage` extension ([#32](https://github.com/prismicio/prismic-types/issues/32)) ([87681d4](https://github.com/prismicio/prismic-types/commit/87681d454dc057a125cdcb508a3a83e13c0a12ab))
+* image thumbnail state should be the same as the master image ([82ee5c6](https://github.com/prismicio/prismic-types/commit/82ee5c68a32c7a7d31dfce89a8b67f22437d0c82))
+
 ### [0.1.26](https://github.com/prismicio/prismic-types/compare/v0.1.25...v0.1.26) (2022-02-28)
 
 
