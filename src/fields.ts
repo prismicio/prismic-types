@@ -333,6 +333,17 @@ export interface EmptyImageFieldImage {
 }
 
 /**
+ * Useful to flatten the type output to improve type hints shown in editors. And
+ * also to transform an interface into a type to aide with assignability.
+ *
+ * Taken from the `type-fest` package.
+ *
+ * @typeParam T - The type to simplify.
+ * @see https://github.com/sindresorhus/type-fest/blob/cbd7ec510bd136ac045bbc74e391ee686b8a9a2f/source/simplify.d.ts
+ */
+type Simplify<T> = { [P in keyof T]: T[P] };
+
+/**
  * Image Field
  *
  * @typeParam ThumbnailNames - Names of thumbnails. If the field does not
@@ -343,16 +354,14 @@ export interface EmptyImageFieldImage {
 export type ImageField<
 	ThumbnailNames extends string | null = never,
 	State extends FieldState = FieldState,
-	// `Omit<>` is used to prevent TypeScript from considering the refactored type as an array, see #29
-> = Omit<
+> = Simplify<
 	ImageFieldImage<State> &
 		Record<
 			ThumbnailNames extends string
 				? Exclude<ThumbnailNames, keyof ImageFieldImage>
 				: never,
 			ImageFieldImage<State>
-		>,
-	never
+		>
 >;
 
 // Links
