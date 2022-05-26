@@ -50,6 +50,10 @@ export interface PrismicDocumentHeader<TypeEnum = string, LangEnum = string> {
 	last_publication_date: string;
 	/**
 	 * Slugs associated with document.
+	 *
+	 * @deprecated Slugs are a deprecated feature used before the UID field was
+	 *   introduced. Migrate to the UID field. For more details, see
+	 *   https://community.prismic.io/t/what-are-slugs/6493
 	 */
 	slugs: string[];
 	/**
