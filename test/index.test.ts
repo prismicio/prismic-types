@@ -1,9 +1,9 @@
-import test from "ava";
+import { test, expect } from "vitest";
 
 import * as prismicT from "../src";
 
-test("rich text node type mapping", (t) => {
-	t.deepEqual(prismicT.RichTextNodeType, {
+test("rich text node type mapping", () => {
+	expect(prismicT.RichTextNodeType).toMatchObject({
 		heading1: "heading1",
 		heading2: "heading2",
 		heading3: "heading3",
@@ -26,8 +26,8 @@ test("rich text node type mapping", (t) => {
 	});
 });
 
-test("link type mapping", (t) => {
-	t.deepEqual(prismicT.LinkType, {
+test("link type mapping", () => {
+	expect(prismicT.LinkType).toMatchObject({
 		Any: "Any",
 		Web: "Web",
 		Media: "Media",
@@ -35,8 +35,8 @@ test("link type mapping", (t) => {
 	});
 });
 
-test("embed type mapping", (t) => {
-	t.deepEqual(prismicT.OEmbedType, {
+test("embed type mapping", () => {
+	expect(prismicT.OEmbedType).toMatchObject({
 		Photo: "photo",
 		Video: "video",
 		Link: "link",
@@ -44,8 +44,8 @@ test("embed type mapping", (t) => {
 	});
 });
 
-test("custom type field type mapping", (t) => {
-	t.deepEqual(prismicT.CustomTypeModelFieldType, {
+test("custom type field type mapping", () => {
+	expect(prismicT.CustomTypeModelFieldType).toMatchObject({
 		Boolean: "Boolean",
 		Color: "Color",
 		Date: "Date",
@@ -65,29 +65,29 @@ test("custom type field type mapping", (t) => {
 	});
 });
 
-test("custom type link select mapping", (t) => {
-	t.deepEqual(prismicT.CustomTypeModelLinkSelectType, {
+test("custom type link select mapping", () => {
+	expect(prismicT.CustomTypeModelLinkSelectType).toMatchObject({
 		Document: "document",
 		Media: "media",
 	});
 });
 
-test("custom type slice display mapping", (t) => {
-	t.deepEqual(prismicT.CustomTypeModelSliceDisplay, {
+test("custom type slice display mapping", () => {
+	expect(prismicT.CustomTypeModelSliceDisplay).toMatchObject({
 		Grid: "grid",
 		List: "list",
 	});
 });
 
-test("custom type slice type mapping", (t) => {
-	t.deepEqual(prismicT.CustomTypeModelSliceType, {
+test("custom type slice type mapping", () => {
+	expect(prismicT.CustomTypeModelSliceType).toMatchObject({
 		Slice: "Slice",
 		SharedSlice: "SharedSlice",
 	});
 });
 
-test("webhook type mapping", (t) => {
-	t.deepEqual(prismicT.WebhookType, {
+test("webhook type mapping", () => {
+	expect(prismicT.WebhookType).toMatchObject({
 		APIUpdate: "api-update",
 		TestTrigger: "test-trigger",
 	});
