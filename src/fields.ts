@@ -781,23 +781,14 @@ export type GroupField<
 /**
  * Integration Fields for Custom APIs
  *
- * @typeParam Blob - Data from the integrated API.
+ * @typeParam Data - Data from the integrated API.
  * @typeParam State - State of the field which determines its shape.
  * @see More details: {@link https://prismic.io/docs/core-concepts/integration-fields-setup}
  */
 export type IntegrationFields<
-	Blob = unknown,
+	Data extends Record<string, unknown> = Record<string, unknown>,
 	State extends FieldState = FieldState,
-> = State extends "empty"
-	? null
-	: {
-			id: string;
-			title?: string;
-			description?: string;
-			image_url?: string;
-			last_update: number;
-			blob: Blob;
-	  };
+> = State extends "empty" ? null : Data;
 
 /**
  * Slice - Sections of your website
