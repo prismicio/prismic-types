@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/prismicio/prismic-types/compare/v0.1.27...v0.1.28) (2022-06-09)
+
+
+### Bug Fixes
+
+* add `[@deprecated](https://github.com/deprecated)` tag to `slugs` document property ([#36](https://github.com/prismicio/prismic-types/issues/36)) ([d5951ca](https://github.com/prismicio/prismic-types/commit/d5951ca299d6c56dad9f0eb62ac83f5f4935be28))
+* correct `IntegrationFields` to not use the Integration Fields API shape ([#40](https://github.com/prismicio/prismic-types/issues/40)) ([33b8e24](https://github.com/prismicio/prismic-types/commit/33b8e2414de5f56b09b5dbe95ef28d17468c1104))
+
+
+### Chore
+
+* **deps:** upgrade dependencies ([c44af72](https://github.com/prismicio/prismic-types/commit/c44af7237c7e309e00210c31ee3d7da721429cef))
+* upgrade to latest Prismic package standards ([#37](https://github.com/prismicio/prismic-types/issues/37)) ([97714c3](https://github.com/prismicio/prismic-types/commit/97714c350076dac4a77ff1be0d426ccc07f4bc91))
+
 ### [0.1.27](https://github.com/prismicio/prismic-types/compare/v0.1.26...v0.1.27) (2022-03-03)
 
 
