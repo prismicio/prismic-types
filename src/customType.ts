@@ -557,4 +557,5 @@ export interface SharedSliceModelVariation<
 	description: string;
 	primary: PrimaryFields;
 	items: ItemFields;
+	imageUrl: string;
 }
