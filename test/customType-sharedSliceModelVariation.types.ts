@@ -40,6 +40,7 @@ expectType<prismicT.SharedSliceModelVariation>({
 			},
 		},
 	},
+	imageUrl: "string",
 });
 
 /**
@@ -53,6 +54,7 @@ expectType<prismicT.SharedSliceModelVariation<"foo">>({
 	description: "string",
 	primary: {},
 	items: {},
+	imageUrl: "string",
 });
 expectType<prismicT.SharedSliceModelVariation<"foo">>({
 	// @ts-expect-error - Slice ID must match the given ID.
@@ -63,6 +65,7 @@ expectType<prismicT.SharedSliceModelVariation<"foo">>({
 	description: "string",
 	primary: {},
 	items: {},
+	imageUrl: "string",
 });
 
 /**
@@ -95,6 +98,7 @@ expectType<
 		},
 	},
 	items: {},
+	imageUrl: "string",
 });
 
 /**
@@ -128,4 +132,5 @@ expectType<
 			},
 		},
 	},
+	imageUrl: "string",
 });

@@ -46,6 +46,7 @@ expectType<prismicT.SharedSliceModel>({
 					},
 				},
 			},
+			imageUrl: "string",
 		},
 	],
 });
@@ -88,6 +89,7 @@ expectType<
 			description: "string",
 			primary: {},
 			items: {},
+			imageUrl: "string",
 		},
 		{
 			// @ts-expect-error - Slice must match the given type.
@@ -98,6 +100,7 @@ expectType<
 			description: "string",
 			primary: {},
 			items: {},
+			imageUrl: "string",
 		},
 	],
 });
