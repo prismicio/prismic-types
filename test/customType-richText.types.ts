@@ -1,5 +1,7 @@
 import { expectType, expectNever, TypeOf } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelRichTextField): true => {
@@ -75,12 +77,20 @@ expectType<prismicT.CustomTypeModelRichTextField>({
 		allowTargetBlank: true,
 	},
 });
-expectType<prismicT.CustomTypeModelRichTextField>({
-	type: prismicT.CustomTypeModelFieldType.StructuredText,
-	config: {
-		label: "string",
-		multi: "string",
-		// @ts-expect-error - Property must be `true` or `undefined`.
-		allowTargetBlank: false,
-	},
-});
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelRichTextField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.RichText,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.RichText, "type">>(
+	{} as prismicT.CustomTypeModelRichTextField,
+);

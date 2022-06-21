@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelContentRelationshipField): true => {
@@ -93,3 +95,22 @@ expectType<prismicT.CustomTypeModelContentRelationshipField<string, "foo">>({
 		],
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<
+	| prismicT.CustomTypeModelContentRelationshipField
+	| prismicT.CustomTypeModelLinkField
+	| prismicT.CustomTypeModelLinkToMediaField
+>({} as prismicTI.CustomTypes.Widgets.Nestable.Link);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Link, "type">>(
+	{} as prismicT.CustomTypeModelContentRelationshipField,
+);

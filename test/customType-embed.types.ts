@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelEmbedField): true => {
@@ -35,3 +37,20 @@ expectType<prismicT.CustomTypeModelEmbedField>({
 		placeholder: "string",
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelEmbedField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.Embed,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Embed, "type">>(
+	{} as prismicT.CustomTypeModelEmbedField,
+);

@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelSlice): true => {
@@ -102,3 +104,32 @@ expectType<
 		},
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelSlice>(
+	{} as prismicTI.CustomTypes.Widgets.Slices.CompositeSlice,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<
+		prismicTI.CustomTypes.Widgets.Slices.CompositeSlice,
+		"type" | "non-repeat" | "repeat"
+	> & {
+		"non-repeat"?: Record<
+			string,
+			Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
+		>;
+		repeat?: Record<
+			string,
+			Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
+		>;
+	}
+>({} as prismicT.CustomTypeModelSlice);

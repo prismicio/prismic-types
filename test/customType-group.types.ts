@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelGroupField): true => {
@@ -74,3 +76,27 @@ expectType<
 		},
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelGroupField>(
+	{} as prismicTI.CustomTypes.Widgets.Group,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<prismicTI.CustomTypes.Widgets.Group, "type" | "config"> & {
+		config?: Omit<prismicTI.CustomTypes.Widgets.Group["config"], "fields"> & {
+			fields?: Omit<
+				Required<prismicTI.CustomTypes.Widgets.Group>["config"]["fields"],
+				"type"
+			>;
+		};
+	}
+>({} as prismicT.CustomTypeModelGroupField);

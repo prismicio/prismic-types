@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelBooleanField): true => {
@@ -36,3 +38,20 @@ expectType<prismicT.CustomTypeModelBooleanField>({
 		placeholder: "string",
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelBooleanField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.BooleanField,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.BooleanField, "type">>(
+	{} as prismicT.CustomTypeModelBooleanField,
+);

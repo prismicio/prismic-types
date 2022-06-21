@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelSliceZoneField): true => {
@@ -87,3 +89,30 @@ expectType<
 		},
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<prismicT.CustomTypeModelSliceZoneField, "type" | "config"> & {
+		config?: Omit<prismicT.CustomTypeModelSliceZoneField["config"], "choices">;
+	}
+>({} as prismicTI.CustomTypes.Widgets.Slices.SliceZone.StaticSlices);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<
+		prismicTI.CustomTypes.Widgets.Slices.SliceZone.StaticSlices,
+		"type" | "config"
+	> & {
+		config?: Omit<prismicT.CustomTypeModelSliceZoneField["config"], "choices">;
+	}
+>({} as prismicT.CustomTypeModelSliceZoneField);

@@ -1,5 +1,7 @@
 import { expectNever, expectType, TypeOf } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 /**
@@ -327,3 +329,41 @@ expectType<
 expectType<
 	TypeOf<prismicT.CustomTypeModelField, prismicT.CustomTypeModelSliceZoneField>
 >(true);
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<prismicT.CustomTypeModel, "json"> & {
+		json: {
+			[Tab in keyof prismicT.CustomTypeModel["json"]]: {
+				[ID in keyof prismicT.CustomTypeModel["json"][Tab]]: Omit<
+					prismicT.CustomTypeModel["json"][Tab][ID],
+					"type"
+				>;
+			};
+		};
+	}
+>({} as prismicTI.CustomTypes.CustomType);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ *
+ * @remarks
+ * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
+ */
+expectType<
+	Omit<prismicTI.CustomTypes.CustomType, "json"> & {
+		json: {
+			[Tab in keyof prismicTI.CustomTypes.CustomType["json"]]: {
+				[ID in keyof prismicTI.CustomTypes.CustomType["json"][Tab]]: Omit<
+					prismicTI.CustomTypes.CustomType["json"][Tab][ID],
+					"type" | "config"
+				>;
+			};
+		};
+	}
+>({} as prismicT.CustomTypeModel);

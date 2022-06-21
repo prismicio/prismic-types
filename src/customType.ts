@@ -16,7 +16,7 @@ export interface CustomTypeModel<
 	/**
 	 * The human readable name of the Custom Type Model.
 	 */
-	label?: string | null;
+	label: string | null | undefined;
 
 	/**
 	 * Determines if more than one document for the Custom Type can be created.
@@ -85,7 +85,8 @@ export type CustomTypeModelFieldForGroup =
 	| CustomTypeModelRichTextField
 	| CustomTypeModelTitleField
 	| CustomTypeModelKeyTextField
-	| CustomTypeModelTimestampField;
+	| CustomTypeModelTimestampField
+	| CustomTypeModelSeparatorField;
 
 /**
  * Type identifier for a Custom Type field.
@@ -107,6 +108,14 @@ export const CustomTypeModelFieldType = {
 	Text: "Text",
 	Timestamp: "Timestamp",
 	UID: "UID",
+	/**
+	 * @deprecated - Legacy
+	 */
+	Separator: "Separator",
+	/**
+	 * @deprecated - Legacy
+	 */
+	LegacySlices: "LegacySlices",
 } as const;
 
 /**
@@ -161,6 +170,9 @@ export interface CustomTypeModelEmbedField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
+		/**
+		 * @deprecated - Legacy
+		 */
 		useAsTitle?: boolean;
 	};
 }
@@ -207,9 +219,12 @@ export interface CustomTypeModelImageField<
 	type: typeof CustomTypeModelFieldType.Image;
 	config?: {
 		label?: string | null;
+		/**
+		 * @deprecated - Legacy
+		 */
 		placeholder?: string;
-		constraint?: CustomTypeModelImageConstraint | Record<string, never>;
-		thumbnails?: readonly CustomTypeModelImageThumbnail<ThumbnailNames>[];
+		constraint?: CustomTypeModelImageConstraint;
+		thumbnails?: CustomTypeModelImageThumbnail<ThumbnailNames>[];
 	};
 }
 
@@ -219,8 +234,8 @@ export interface CustomTypeModelImageField<
  * More details: {@link https://prismic.io/docs/core-concepts/image}
  */
 export interface CustomTypeModelImageConstraint {
-	width: number | null;
-	height: number | null;
+	width?: number | null;
+	height?: number | null;
 }
 
 /**
@@ -241,7 +256,7 @@ export interface CustomTypeModelImageThumbnail<Name extends string = string>
 export interface CustomTypeModelIntegrationFieldsField {
 	type: typeof CustomTypeModelFieldType.IntegrationFields;
 	config?: {
-		label: string | null;
+		label?: string | null;
 		placeholder?: string;
 		catalog?: string;
 	};
@@ -255,6 +270,7 @@ export interface CustomTypeModelIntegrationFieldsField {
 export const CustomTypeModelLinkSelectType = {
 	Document: "document",
 	Media: "media",
+	Web: "web",
 } as const;
 
 /**
@@ -267,12 +283,16 @@ export interface CustomTypeModelContentRelationshipField<
 	Tags extends string = string,
 > {
 	type: typeof CustomTypeModelFieldType.Link;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		/**
+		 * @deprecated - Legacy
+		 */
+		useAsTitle?: boolean;
 		select: typeof CustomTypeModelLinkSelectType.Document;
-		customtypes?: readonly CustomTypeIDs[];
-		tags?: readonly Tags[];
+		customtypes?: CustomTypeIDs[];
+		tags?: Tags[];
 	};
 }
 
@@ -283,11 +303,17 @@ export interface CustomTypeModelContentRelationshipField<
  */
 export interface CustomTypeModelLinkField {
 	type: typeof CustomTypeModelFieldType.Link;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
-		select?: null;
-		allowTargetBlank?: true;
+		/**
+		 * @deprecated - Legacy
+		 */
+		useAsTitle?: boolean;
+		select?:
+			| null
+			| typeof CustomTypeModelLinkSelectType[keyof typeof CustomTypeModelLinkSelectType];
+		allowTargetBlank?: boolean;
 	};
 }
 
@@ -298,9 +324,13 @@ export interface CustomTypeModelLinkField {
  */
 export interface CustomTypeModelLinkToMediaField {
 	type: typeof CustomTypeModelFieldType.Link;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		/**
+		 * @deprecated - Legacy
+		 */
+		useAsTitle?: boolean;
 		select: typeof CustomTypeModelLinkSelectType.Media;
 	};
 }
@@ -361,9 +391,12 @@ export interface CustomTypeModelRichTextMultiField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
+		/**
+		 * @deprecated - Legacy
+		 */
 		useAsTitle?: boolean;
-		allowTargetBlank?: true;
-		multi: string;
+		allowTargetBlank?: boolean;
+		multi?: string;
 	};
 }
 
@@ -377,9 +410,12 @@ export interface CustomTypeModelRichTextSingleField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
+		/**
+		 * @deprecated - Legacy
+		 */
 		useAsTitle?: boolean;
-		allowTargetBlank?: true;
-		single: string;
+		allowTargetBlank?: boolean;
+		single?: string;
 	};
 }
 
@@ -397,8 +433,8 @@ export type CustomTypeModelTitleField = CustomTypeModelRichTextSingleField;
  */
 export interface CustomTypeModelKeyTextField {
 	type: typeof CustomTypeModelFieldType.Text;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
 	};
 }
@@ -424,9 +460,23 @@ export interface CustomTypeModelTimestampField {
  */
 export interface CustomTypeModelUIDField {
 	type: typeof CustomTypeModelFieldType.UID;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
+		/**
+		 * @deprecated - Legacy
+		 */
+		useAsTitle?: boolean;
 		placeholder?: string;
+	};
+}
+
+/**
+ * @deprecated - Legacy
+ */
+export interface CustomTypeModelSeparatorField {
+	type: typeof CustomTypeModelFieldType.Separator;
+	config?: {
+		label?: string | null;
 	};
 }
 
@@ -441,11 +491,13 @@ export interface CustomTypeModelSliceZoneField<
 		CustomTypeModelSlice | CustomTypeModelSharedSlice
 	> = Record<string, CustomTypeModelSlice | CustomTypeModelSharedSlice>,
 > {
-	type: typeof CustomTypeModelFieldType.Slices;
-	fieldset: "Slice zone";
-	config: {
-		labels: Record<string, readonly CustomTypeModelSliceLabel[]>;
-		choices: Slices;
+	type:
+		| typeof CustomTypeModelFieldType.Slices
+		| typeof CustomTypeModelFieldType.LegacySlices;
+	fieldset?: string | null;
+	config?: {
+		labels?: Record<string, CustomTypeModelSliceLabel[]> | null;
+		choices?: Slices;
 	};
 }
 
@@ -456,7 +508,7 @@ export interface CustomTypeModelSliceZoneField<
  */
 export interface CustomTypeModelSliceLabel {
 	name: string;
-	display: string;
+	display?: string;
 }
 
 /**
@@ -498,12 +550,14 @@ export interface CustomTypeModelSlice<
 	>,
 > {
 	type: typeof CustomTypeModelSliceType.Slice;
-	fieldset: string;
-	description: string;
-	icon: string;
-	display: typeof CustomTypeModelSliceDisplay[keyof typeof CustomTypeModelSliceDisplay];
-	"non-repeat": NonRepeatFields;
-	repeat: RepeatFields;
+	fieldset?: string | null;
+	description?: string;
+	icon?: string;
+	display?:
+		| typeof CustomTypeModelSliceDisplay[keyof typeof CustomTypeModelSliceDisplay]
+		| string;
+	"non-repeat"?: NonRepeatFields;
+	repeat?: RepeatFields;
 }
 
 /**
@@ -536,7 +590,7 @@ export interface SharedSliceModel<
 	id: ID;
 	name: string;
 	description?: string;
-	variations: readonly Variation[];
+	variations: Variation[];
 }
 
 /**
