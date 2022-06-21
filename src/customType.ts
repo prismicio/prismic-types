@@ -16,7 +16,7 @@ export interface CustomTypeModel<
 	/**
 	 * The human readable name of the Custom Type Model.
 	 */
-	label: string;
+	label?: string | null;
 
 	/**
 	 * Determines if more than one document for the Custom Type can be created.
@@ -116,8 +116,11 @@ export const CustomTypeModelFieldType = {
  */
 export interface CustomTypeModelBooleanField {
 	type: typeof CustomTypeModelFieldType.Boolean;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
+		default_value?: boolean;
+		placeholder_true?: string;
+		placeholder_false?: string;
 	};
 }
 
@@ -128,8 +131,8 @@ export interface CustomTypeModelBooleanField {
  */
 export interface CustomTypeModelColorField {
 	type: typeof CustomTypeModelFieldType.Color;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
 	};
 }
@@ -141,9 +144,10 @@ export interface CustomTypeModelColorField {
  */
 export interface CustomTypeModelDateField {
 	type: typeof CustomTypeModelFieldType.Date;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		default?: string;
 	};
 }
 
@@ -154,9 +158,10 @@ export interface CustomTypeModelDateField {
  */
 export interface CustomTypeModelEmbedField {
 	type: typeof CustomTypeModelFieldType.Embed;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		useAsTitle?: boolean;
 	};
 }
 
@@ -167,9 +172,7 @@ export interface CustomTypeModelEmbedField {
  */
 export interface CustomTypeModelGeoPointField {
 	type: typeof CustomTypeModelFieldType.GeoPoint;
-	config: {
-		label: string;
-	};
+	config?: { label?: string | null };
 }
 
 /**
@@ -186,9 +189,10 @@ export interface CustomTypeModelGroupField<
 	>,
 > {
 	type: typeof CustomTypeModelFieldType.Group;
-	config: {
-		label: string;
-		fields: Fields;
+	config?: {
+		label?: string | null;
+		repeat?: boolean;
+		fields?: Fields;
 	};
 }
 
@@ -201,10 +205,11 @@ export interface CustomTypeModelImageField<
 	ThumbnailNames extends string = string,
 > {
 	type: typeof CustomTypeModelFieldType.Image;
-	config: {
-		label: string;
-		constraint: CustomTypeModelImageConstraint | Record<string, never>;
-		thumbnails: readonly CustomTypeModelImageThumbnail<ThumbnailNames>[];
+	config?: {
+		label?: string | null;
+		placeholder?: string;
+		constraint?: CustomTypeModelImageConstraint | Record<string, never>;
+		thumbnails?: readonly CustomTypeModelImageThumbnail<ThumbnailNames>[];
 	};
 }
 
@@ -235,10 +240,10 @@ export interface CustomTypeModelImageThumbnail<Name extends string = string>
  */
 export interface CustomTypeModelIntegrationFieldsField {
 	type: typeof CustomTypeModelFieldType.IntegrationFields;
-	config: {
-		label: string;
+	config?: {
+		label: string | null;
 		placeholder?: string;
-		catalog: string;
+		catalog?: string;
 	};
 }
 
@@ -306,10 +311,13 @@ export interface CustomTypeModelLinkToMediaField {
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export interface CustomTypeModelNumberField {
-	type: typeof CustomTypeModelFieldType.Number;
-	config: {
-		label: string;
+	type: typeof CustomTypeModelFieldType.Number | "Range";
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		min?: number;
+		max?: number;
+		step?: number;
 	};
 }
 
@@ -326,10 +334,10 @@ export interface CustomTypeModelSelectField<
 	DefaultValue extends Option = Option,
 > {
 	type: typeof CustomTypeModelFieldType.Select;
-	config: {
-		label: string;
+	config?: {
+		label: string | null;
 		placeholder?: string;
-		options: Option[];
+		options?: Option[];
 		default_value?: DefaultValue;
 	};
 }
@@ -350,9 +358,10 @@ export type CustomTypeModelRichTextField =
  */
 export interface CustomTypeModelRichTextMultiField {
 	type: typeof CustomTypeModelFieldType.StructuredText;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		useAsTitle?: boolean;
 		allowTargetBlank?: true;
 		multi: string;
 	};
@@ -365,9 +374,10 @@ export interface CustomTypeModelRichTextMultiField {
  */
 export interface CustomTypeModelRichTextSingleField {
 	type: typeof CustomTypeModelFieldType.StructuredText;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		useAsTitle?: boolean;
 		allowTargetBlank?: true;
 		single: string;
 	};
@@ -400,9 +410,10 @@ export interface CustomTypeModelKeyTextField {
  */
 export interface CustomTypeModelTimestampField {
 	type: typeof CustomTypeModelFieldType.Timestamp;
-	config: {
-		label: string;
+	config?: {
+		label?: string | null;
 		placeholder?: string;
+		default?: string;
 	};
 }
 
@@ -524,7 +535,7 @@ export interface SharedSliceModel<
 	type: typeof CustomTypeModelSliceType.SharedSlice;
 	id: ID;
 	name: string;
-	description: string;
+	description?: string;
 	variations: readonly Variation[];
 }
 
@@ -555,7 +566,7 @@ export interface SharedSliceModelVariation<
 	docURL: string;
 	version: string;
 	description: string;
-	primary: PrimaryFields;
-	items: ItemFields;
+	primary?: PrimaryFields;
+	items?: ItemFields;
 	imageUrl: string;
 }
