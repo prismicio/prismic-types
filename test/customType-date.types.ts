@@ -44,13 +44,3 @@ expectType<prismicT.CustomTypeModelDateField>({
 expectType<prismicT.CustomTypeModelDateField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Date,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Date, "type">>(
-	{} as prismicT.CustomTypeModelDateField,
-);

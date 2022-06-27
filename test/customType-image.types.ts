@@ -36,12 +36,13 @@ expectType<prismicT.CustomTypeModelImageField>({
 });
 
 /**
- * Supports optional placeholder.
+ * Does not support a placeholder.
  */
 expectType<prismicT.CustomTypeModelImageField>({
 	type: prismicT.CustomTypeModelFieldType.Image,
 	config: {
 		label: "string",
+		// @ts-expect-error - Does not support a placeholder.
 		placeholder: "string",
 		constraint: {
 			width: 1,
@@ -132,14 +133,4 @@ expectType<prismicT.CustomTypeModelImageThumbnail<"Foo">>({
  */
 expectType<prismicT.CustomTypeModelImageField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Image,
-);
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Image, "type">>(
-	{} as prismicT.CustomTypeModelImageField,
 );

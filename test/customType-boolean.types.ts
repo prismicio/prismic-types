@@ -45,13 +45,3 @@ expectType<prismicT.CustomTypeModelBooleanField>({
 expectType<prismicT.CustomTypeModelBooleanField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.BooleanField,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.BooleanField, "type">>(
-	{} as prismicT.CustomTypeModelBooleanField,
-);

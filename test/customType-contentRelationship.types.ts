@@ -104,13 +104,3 @@ expectType<
 	| prismicT.CustomTypeModelLinkField
 	| prismicT.CustomTypeModelLinkToMediaField
 >({} as prismicTI.CustomTypes.Widgets.Nestable.Link);
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Link, "type">>(
-	{} as prismicT.CustomTypeModelContentRelationshipField,
-);

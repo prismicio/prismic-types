@@ -16,7 +16,7 @@ export interface CustomTypeModel<
 	/**
 	 * The human readable name of the Custom Type Model.
 	 */
-	label: string | null | undefined;
+	label?: string | null;
 
 	/**
 	 * Determines if more than one document for the Custom Type can be created.
@@ -109,13 +109,17 @@ export const CustomTypeModelFieldType = {
 	Timestamp: "Timestamp",
 	UID: "UID",
 	/**
-	 * @deprecated - Legacy
+	 * @deprecated - Legacy field type, use `Number` instead.
+	 */
+	Range: "Range",
+	/**
+	 * @deprecated - Legacy field type, do not use.
 	 */
 	Separator: "Separator",
 	/**
-	 * @deprecated - Legacy
+	 * @deprecated - Legacy field type, use `Slices` instead.
 	 */
-	LegacySlices: "LegacySlices",
+	LegacySlices: "Choice",
 } as const;
 
 /**
@@ -170,10 +174,6 @@ export interface CustomTypeModelEmbedField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 	};
 }
 
@@ -203,7 +203,6 @@ export interface CustomTypeModelGroupField<
 	type: typeof CustomTypeModelFieldType.Group;
 	config?: {
 		label?: string | null;
-		repeat?: boolean;
 		fields?: Fields;
 	};
 }
@@ -219,10 +218,6 @@ export interface CustomTypeModelImageField<
 	type: typeof CustomTypeModelFieldType.Image;
 	config?: {
 		label?: string | null;
-		/**
-		 * @deprecated - Legacy
-		 */
-		placeholder?: string;
 		constraint?: CustomTypeModelImageConstraint;
 		thumbnails?: CustomTypeModelImageThumbnail<ThumbnailNames>[];
 	};
@@ -286,10 +281,6 @@ export interface CustomTypeModelContentRelationshipField<
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		select: typeof CustomTypeModelLinkSelectType.Document;
 		customtypes?: CustomTypeIDs[];
 		tags?: Tags[];
@@ -306,10 +297,6 @@ export interface CustomTypeModelLinkField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		select?:
 			| null
 			| typeof CustomTypeModelLinkSelectType[keyof typeof CustomTypeModelLinkSelectType];
@@ -327,10 +314,6 @@ export interface CustomTypeModelLinkToMediaField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		select: typeof CustomTypeModelLinkSelectType.Media;
 	};
 }
@@ -341,13 +324,14 @@ export interface CustomTypeModelLinkToMediaField {
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export interface CustomTypeModelNumberField {
-	type: typeof CustomTypeModelFieldType.Number | "Range";
+	type:
+		| typeof CustomTypeModelFieldType.Number
+		| typeof CustomTypeModelFieldType.Range;
 	config?: {
 		label?: string | null;
 		placeholder?: string;
 		min?: number;
 		max?: number;
-		step?: number;
 	};
 }
 
@@ -365,7 +349,7 @@ export interface CustomTypeModelSelectField<
 > {
 	type: typeof CustomTypeModelFieldType.Select;
 	config?: {
-		label: string | null;
+		label?: string | null;
 		placeholder?: string;
 		options?: Option[];
 		default_value?: DefaultValue;
@@ -391,10 +375,6 @@ export interface CustomTypeModelRichTextMultiField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		allowTargetBlank?: boolean;
 		multi?: string;
 	};
@@ -410,10 +390,6 @@ export interface CustomTypeModelRichTextSingleField {
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		allowTargetBlank?: boolean;
 		single?: string;
 	};
@@ -462,10 +438,6 @@ export interface CustomTypeModelUIDField {
 	type: typeof CustomTypeModelFieldType.UID;
 	config?: {
 		label?: string | null;
-		/**
-		 * @deprecated - Legacy
-		 */
-		useAsTitle?: boolean;
 		placeholder?: string;
 	};
 }
@@ -473,7 +445,7 @@ export interface CustomTypeModelUIDField {
 /**
  * @deprecated - Legacy
  */
-export interface CustomTypeModelSeparatorField {
+interface CustomTypeModelSeparatorField {
 	type: typeof CustomTypeModelFieldType.Separator;
 	config?: {
 		label?: string | null;
@@ -488,8 +460,15 @@ export interface CustomTypeModelSeparatorField {
 export interface CustomTypeModelSliceZoneField<
 	Slices extends Record<
 		string,
-		CustomTypeModelSlice | CustomTypeModelSharedSlice
-	> = Record<string, CustomTypeModelSlice | CustomTypeModelSharedSlice>,
+		| CustomTypeModelSlice
+		| CustomTypeModelSharedSlice
+		| CustomTypeModelLegacySlice
+	> = Record<
+		string,
+		| CustomTypeModelSlice
+		| CustomTypeModelSharedSlice
+		| CustomTypeModelLegacySlice
+	>,
 > {
 	type:
 		| typeof CustomTypeModelFieldType.Slices
@@ -624,3 +603,10 @@ export interface SharedSliceModelVariation<
 	items?: ItemFields;
 	imageUrl: string;
 }
+
+/**
+ * @deprecated - Legacy slice type, do not use.
+ */
+type CustomTypeModelLegacySlice =
+	| CustomTypeModelField
+	| CustomTypeModelFieldForGroup;

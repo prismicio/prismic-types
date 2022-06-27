@@ -46,13 +46,3 @@ expectType<prismicT.CustomTypeModelTitleField>({
 expectType<prismicT.CustomTypeModelTitleField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.RichText,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.RichText, "type">>(
-	{} as prismicT.CustomTypeModelTitleField,
-);

@@ -46,13 +46,3 @@ expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
 expectType<prismicT.CustomTypeModelIntegrationFieldsField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.IntegrationField,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<
-	Omit<prismicTI.CustomTypes.Widgets.Nestable.IntegrationField, "type">
->({} as prismicT.CustomTypeModelIntegrationFieldsField);

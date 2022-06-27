@@ -44,13 +44,3 @@ expectType<prismicT.CustomTypeModelKeyTextField>({
 expectType<prismicT.CustomTypeModelKeyTextField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Text,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Text, "type">>(
-	{} as prismicT.CustomTypeModelKeyTextField,
-);

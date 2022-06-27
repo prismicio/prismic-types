@@ -143,22 +143,3 @@ expectType<
 expectType<prismicT.SharedSliceModelVariation>(
 	{} as prismicTI.CustomTypes.Widgets.Slices.Variation,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<
-	Omit<prismicTI.CustomTypes.Widgets.Slices.Variation, "primary" | "items"> & {
-		primary?: Record<
-			string,
-			Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
-		>;
-		items?: Record<
-			string,
-			Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
-		>;
-	}
->({} as prismicT.SharedSliceModelVariation);

@@ -113,30 +113,3 @@ expectType<
 expectType<prismicT.SharedSliceModel>(
 	{} as prismicTI.CustomTypes.Widgets.Slices.SharedSlice,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<
-	Omit<
-		prismicTI.CustomTypes.Widgets.Slices.SharedSlice,
-		"type" | "variations"
-	> & {
-		variations: (Omit<
-			prismicTI.CustomTypes.Widgets.Slices.SharedSlice["variations"][number],
-			"primary" | "items"
-		> & {
-			primary?: Record<
-				string,
-				Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
-			>;
-			items?: Record<
-				string,
-				Omit<prismicTI.CustomTypes.Widgets.Nestable.NestableWidget, "type">
-			>;
-		})[];
-	}
->({} as prismicT.SharedSliceModel);

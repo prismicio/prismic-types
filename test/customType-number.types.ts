@@ -44,13 +44,3 @@ expectType<prismicT.CustomTypeModelNumberField>({
 expectType<prismicT.CustomTypeModelNumberField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Number,
 );
-
-/**
- * `@prismicio/types-internal` extends `@prismicio/types`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
- */
-expectType<Omit<prismicTI.CustomTypes.Widgets.Nestable.Number, "type">>(
-	{} as prismicT.CustomTypeModelNumberField,
-);
