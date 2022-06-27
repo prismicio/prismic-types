@@ -332,8 +332,5 @@ expectType<
 
 /**
  * `@prismicio/types` extends `@prismicio/types-internal`
- *
- * @remarks
- * `type` is omitted because implemented as an enum on `@prismicio/types-internal`.
  */
 expectType<prismicT.CustomTypeModel>({} as prismicTI.CustomTypes.CustomType);
