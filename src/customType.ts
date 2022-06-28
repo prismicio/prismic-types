@@ -81,6 +81,7 @@ export type CustomTypeModelFieldForGroup =
 	| CustomTypeModelLinkField
 	| CustomTypeModelLinkToMediaField
 	| CustomTypeModelNumberField
+	| CustomTypeModelRangeField
 	| CustomTypeModelSelectField
 	| CustomTypeModelRichTextField
 	| CustomTypeModelTitleField
@@ -109,15 +110,15 @@ export const CustomTypeModelFieldType = {
 	Timestamp: "Timestamp",
 	UID: "UID",
 	/**
-	 * @deprecated - Legacy field type, use `Number` instead.
+	 * @deprecated - Legacy field type. Use `Number` instead.
 	 */
 	Range: "Range",
 	/**
-	 * @deprecated - Legacy field type, do not use.
+	 * @deprecated - Legacy field type. Do not use.
 	 */
 	Separator: "Separator",
 	/**
-	 * @deprecated - Legacy field type, use `Slices` instead.
+	 * @deprecated - Legacy field type. Use `Slices` instead.
 	 */
 	LegacySlices: "Choice",
 } as const;
@@ -184,7 +185,9 @@ export interface CustomTypeModelEmbedField {
  */
 export interface CustomTypeModelGeoPointField {
 	type: typeof CustomTypeModelFieldType.GeoPoint;
-	config?: { label?: string | null };
+	config?: {
+		label?: string | null;
+	};
 }
 
 /**
@@ -324,14 +327,26 @@ export interface CustomTypeModelLinkToMediaField {
  * More details: {@link https://prismic.io/docs/core-concepts/number}
  */
 export interface CustomTypeModelNumberField {
-	type:
-		| typeof CustomTypeModelFieldType.Number
-		| typeof CustomTypeModelFieldType.Range;
+	type: typeof CustomTypeModelFieldType.Number;
 	config?: {
 		label?: string | null;
 		placeholder?: string;
 		min?: number;
 		max?: number;
+	};
+}
+
+/**
+ * @deprecated - Legacy field. Use `CustomTypeModelNumberField` instead.
+ */
+interface CustomTypeModelRangeField {
+	type: typeof CustomTypeModelFieldType.Range;
+	config?: {
+		label?: string | null;
+		placeholder?: string;
+		min?: number;
+		max?: number;
+		step?: number;
 	};
 }
 
@@ -443,7 +458,7 @@ export interface CustomTypeModelUIDField {
 }
 
 /**
- * @deprecated - Legacy
+ * @deprecated - Legacy field. Do not use.
  */
 interface CustomTypeModelSeparatorField {
 	type: typeof CustomTypeModelFieldType.Separator;
@@ -605,7 +620,7 @@ export interface SharedSliceModelVariation<
 }
 
 /**
- * @deprecated - Legacy slice type, do not use.
+ * @deprecated - Legacy slice type. Do not use.
  */
 type CustomTypeModelLegacySlice =
 	| CustomTypeModelField
