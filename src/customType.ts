@@ -366,7 +366,7 @@ export interface CustomTypeModelSelectField<
 	config?: {
 		label?: string | null;
 		placeholder?: string;
-		options?: Option[];
+		options?: readonly Option[];
 		default_value?: DefaultValue;
 	};
 }
