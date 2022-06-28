@@ -222,7 +222,7 @@ export interface CustomTypeModelImageField<
 	config?: {
 		label?: string | null;
 		constraint?: CustomTypeModelImageConstraint;
-		thumbnails?: CustomTypeModelImageThumbnail<ThumbnailNames>[];
+		thumbnails?: readonly CustomTypeModelImageThumbnail<ThumbnailNames>[];
 	};
 }
 
@@ -285,8 +285,8 @@ export interface CustomTypeModelContentRelationshipField<
 		label?: string | null;
 		placeholder?: string;
 		select: typeof CustomTypeModelLinkSelectType.Document;
-		customtypes?: CustomTypeIDs[];
-		tags?: Tags[];
+		customtypes?: readonly CustomTypeIDs[];
+		tags?: readonly Tags[];
 	};
 }
 
@@ -490,7 +490,7 @@ export interface CustomTypeModelSliceZoneField<
 		| typeof CustomTypeModelFieldType.LegacySlices;
 	fieldset?: string | null;
 	config?: {
-		labels?: Record<string, CustomTypeModelSliceLabel[]> | null;
+		labels?: Record<string, readonly CustomTypeModelSliceLabel[]> | null;
 		choices?: Slices;
 	};
 }
@@ -584,7 +584,7 @@ export interface SharedSliceModel<
 	id: ID;
 	name: string;
 	description?: string;
-	variations: Variation[];
+	variations: readonly Variation[];
 }
 
 /**
