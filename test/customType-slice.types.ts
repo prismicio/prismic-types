@@ -111,3 +111,10 @@ expectType<
 expectType<prismicT.CustomTypeModelSlice>(
 	{} as prismicTI.CustomTypes.Widgets.Slices.CompositeSlice,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Slices.CompositeSlice>(
+	{} as prismicT.CustomTypeModelSlice,
+);

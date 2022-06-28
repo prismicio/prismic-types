@@ -111,3 +111,10 @@ expectType<prismicT.CustomTypeModelSelectField<"foo">>({
 expectType<prismicT.CustomTypeModelNumberField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Number,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Number>(
+	{} as prismicT.CustomTypeModelNumberField,
+);

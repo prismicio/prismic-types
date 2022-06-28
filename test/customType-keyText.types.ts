@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelKeyTextField>({
 expectType<prismicT.CustomTypeModelKeyTextField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Text,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Text>(
+	{} as prismicT.CustomTypeModelKeyTextField,
+);

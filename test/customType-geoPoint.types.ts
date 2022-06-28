@@ -45,3 +45,10 @@ expectType<prismicT.CustomTypeModelGeoPointField>({
 expectType<prismicT.CustomTypeModelGeoPointField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.GeoPoint,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.GeoPoint>(
+	{} as prismicT.CustomTypeModelGeoPointField,
+);

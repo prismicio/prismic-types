@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelDateField>({
 expectType<prismicT.CustomTypeModelDateField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Date,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Date>(
+	{} as prismicT.CustomTypeModelDateField,
+);

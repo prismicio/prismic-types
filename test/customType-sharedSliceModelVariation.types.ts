@@ -143,3 +143,10 @@ expectType<
 expectType<prismicT.SharedSliceModelVariation>(
 	{} as prismicTI.CustomTypes.Widgets.Slices.Variation,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Slices.Variation>(
+	{} as prismicT.SharedSliceModelVariation,
+);

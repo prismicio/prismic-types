@@ -83,3 +83,10 @@ expectType<
 expectType<prismicT.CustomTypeModelGroupField>(
 	{} as prismicTI.CustomTypes.Widgets.Group,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Group>(
+	{} as prismicT.CustomTypeModelGroupField,
+);

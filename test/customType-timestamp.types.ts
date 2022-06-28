@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelTimestampField>({
 expectType<prismicT.CustomTypeModelTimestampField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Timestamp,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Timestamp>(
+	{} as prismicT.CustomTypeModelTimestampField,
+);

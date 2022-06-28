@@ -134,3 +134,10 @@ expectType<prismicT.CustomTypeModelImageThumbnail<"Foo">>({
 expectType<prismicT.CustomTypeModelImageField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Image,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Image>(
+	{} as prismicT.CustomTypeModelImageField,
+);

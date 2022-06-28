@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelUIDField>({
 expectType<prismicT.CustomTypeModelUIDField>(
 	{} as prismicTI.CustomTypes.Widgets.UID,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.UID>(
+	{} as prismicT.CustomTypeModelUIDField,
+);

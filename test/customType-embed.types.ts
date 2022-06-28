@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelEmbedField>({
 expectType<prismicT.CustomTypeModelEmbedField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Embed,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Embed>(
+	{} as prismicT.CustomTypeModelEmbedField,
+);

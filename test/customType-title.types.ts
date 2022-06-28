@@ -46,3 +46,10 @@ expectType<prismicT.CustomTypeModelTitleField>({
 expectType<prismicT.CustomTypeModelTitleField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.RichText,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.RichText>(
+	{} as prismicT.CustomTypeModelTitleField,
+);

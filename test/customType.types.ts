@@ -334,3 +334,8 @@ expectType<
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModel>({} as prismicTI.CustomTypes.CustomType);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.CustomType>({} as prismicT.CustomTypeModel);

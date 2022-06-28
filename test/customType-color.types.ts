@@ -44,3 +44,10 @@ expectType<prismicT.CustomTypeModelColorField>({
 expectType<prismicT.CustomTypeModelColorField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.Color,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Color>(
+	{} as prismicT.CustomTypeModelColorField,
+);

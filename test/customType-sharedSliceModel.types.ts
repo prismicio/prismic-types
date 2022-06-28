@@ -113,3 +113,10 @@ expectType<
 expectType<prismicT.SharedSliceModel>(
 	{} as prismicTI.CustomTypes.Widgets.Slices.SharedSlice,
 );
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Slices.SharedSlice>(
+	{} as prismicT.SharedSliceModel,
+);

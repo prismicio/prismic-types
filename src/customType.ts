@@ -16,7 +16,8 @@ export interface CustomTypeModel<
 	/**
 	 * The human readable name of the Custom Type Model.
 	 */
-	label?: string | null;
+	// TODO: Revert to `label?: string | null` if `label` can be partial in: https://github.com/prismicio/prismic-types-internal/blob/HEAD/src/customtypes/CustomType.ts#L39
+	label: string | null | undefined;
 
 	/**
 	 * Determines if more than one document for the Custom Type can be created.
@@ -623,5 +624,5 @@ export interface SharedSliceModelVariation<
  * @deprecated - Legacy slice type. Do not use.
  */
 export type CustomTypeModelLegacySlice =
-	| CustomTypeModelField
+	| CustomTypeModelGroupField
 	| CustomTypeModelFieldForGroup;

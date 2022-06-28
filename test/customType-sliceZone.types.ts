@@ -94,5 +94,12 @@ expectType<
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelSliceZoneField>(
-	{} as prismicTI.CustomTypes.Widgets.Slices.SliceZone.StaticSlices,
+	{} as prismicTI.CustomTypes.Widgets.Slices.SliceZone.DynamicSlices,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Slices.SliceZone.DynamicSlices>(
+	{} as prismicT.CustomTypeModelSliceZoneField,
 );

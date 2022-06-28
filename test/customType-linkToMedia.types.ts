@@ -48,3 +48,10 @@ expectType<
 	| prismicT.CustomTypeModelLinkField
 	| prismicT.CustomTypeModelLinkToMediaField
 >({} as prismicTI.CustomTypes.Widgets.Nestable.Link);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Link>(
+	{} as prismicT.CustomTypeModelLinkToMediaField,
+);
