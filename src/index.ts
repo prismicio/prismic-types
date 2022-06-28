@@ -143,6 +143,7 @@ export type {
 	CustomTypeModelLinkField,
 	CustomTypeModelLinkToMediaField,
 	CustomTypeModelNumberField,
+	CustomTypeModelRangeField,
 	CustomTypeModelRichTextField,
 	CustomTypeModelRichTextMultiField,
 	CustomTypeModelRichTextSingleField,
@@ -150,11 +151,13 @@ export type {
 	CustomTypeModelTimestampField,
 	CustomTypeModelTitleField,
 	CustomTypeModelUIDField,
+	CustomTypeModelSeparatorField,
 	// Slices
 	CustomTypeModelSliceZoneField,
 	CustomTypeModelSlice,
 	CustomTypeModelSliceLabel,
 	CustomTypeModelSharedSlice,
+	CustomTypeModelLegacySlice,
 	// SharedSlices
 	SharedSliceModel,
 	SharedSliceModelVariation,

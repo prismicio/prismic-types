@@ -339,7 +339,7 @@ export interface CustomTypeModelNumberField {
 /**
  * @deprecated - Legacy field. Use `CustomTypeModelNumberField` instead.
  */
-interface CustomTypeModelRangeField {
+export interface CustomTypeModelRangeField {
 	type: typeof CustomTypeModelFieldType.Range;
 	config?: {
 		label?: string | null;
@@ -460,7 +460,7 @@ export interface CustomTypeModelUIDField {
 /**
  * @deprecated - Legacy field. Do not use.
  */
-interface CustomTypeModelSeparatorField {
+export interface CustomTypeModelSeparatorField {
 	type: typeof CustomTypeModelFieldType.Separator;
 	config?: {
 		label?: string | null;
@@ -622,6 +622,6 @@ export interface SharedSliceModelVariation<
 /**
  * @deprecated - Legacy slice type. Do not use.
  */
-type CustomTypeModelLegacySlice =
+export type CustomTypeModelLegacySlice =
 	| CustomTypeModelField
 	| CustomTypeModelFieldForGroup;
