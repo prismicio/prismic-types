@@ -99,11 +99,15 @@ expectType<prismicT.CustomTypeModelContentRelationshipField<string, "foo">>({
 /**
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
-expectType<
-	| prismicT.CustomTypeModelContentRelationshipField
-	| prismicT.CustomTypeModelLinkField
-	| prismicT.CustomTypeModelLinkToMediaField
->({} as prismicTI.CustomTypes.Widgets.Nestable.Link);
+expectType<prismicT.CustomTypeModelContentRelationshipField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.Link & {
+		// We must manually narrow `@prismicio/types-internal`'s type
+		// to match a Content Relationship field;
+		// `@prismicio/types-internal` does not contain a Content
+		// Relationship-specific type.
+		config?: { select: "document" };
+	},
+);
 
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
