@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelKeyTextField): true => {
@@ -35,3 +37,17 @@ expectType<prismicT.CustomTypeModelKeyTextField>({
 		placeholder: "string",
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelKeyTextField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.Text,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.Text>(
+	{} as prismicT.CustomTypeModelKeyTextField,
+);

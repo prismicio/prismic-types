@@ -1,5 +1,7 @@
 import { expectType, expectNever } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 (value: prismicT.CustomTypeModelIntegrationFieldsField): true => {
@@ -37,3 +39,17 @@ expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
 		catalog: "string",
 	},
 });
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModelIntegrationFieldsField>(
+	{} as prismicTI.CustomTypes.Widgets.Nestable.IntegrationField,
+);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.Widgets.Nestable.IntegrationField>(
+	{} as prismicT.CustomTypeModelIntegrationFieldsField,
+);

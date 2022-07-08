@@ -1,5 +1,7 @@
 import { expectNever, expectType, TypeOf } from "ts-expect";
 
+import * as prismicTI from "@prismicio/types-internal";
+
 import * as prismicT from "../src";
 
 /**
@@ -327,3 +329,13 @@ expectType<
 expectType<
 	TypeOf<prismicT.CustomTypeModelField, prismicT.CustomTypeModelSliceZoneField>
 >(true);
+
+/**
+ * `@prismicio/types` extends `@prismicio/types-internal`
+ */
+expectType<prismicT.CustomTypeModel>({} as prismicTI.CustomTypes.CustomType);
+
+/**
+ * `@prismicio/types-internal` extends `@prismicio/types`
+ */
+expectType<prismicTI.CustomTypes.CustomType>({} as prismicT.CustomTypeModel);
