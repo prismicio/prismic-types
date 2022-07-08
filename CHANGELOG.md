@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/prismicio/prismic-types/compare/v0.1.29...v0.2.0) (2022-07-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* update model type definitions to match `@prismicio/types-internal` (#43)
+
+### Features
+
+* update model type definitions to match `@prismicio/types-internal` ([#43](https://github.com/prismicio/prismic-types/issues/43)) ([e283d99](https://github.com/prismicio/prismic-types/commit/e283d9994d34ba50b1c05bc4996dcff887168a30))
+
+
+### Bug Fixes
+
+* add `imageUrl` to `SharedSliceModelVariation` ([#42](https://github.com/prismicio/prismic-types/issues/42)) ([f7c39e3](https://github.com/prismicio/prismic-types/commit/f7c39e38ead6aae8527dd07259359f6fab610c9f))
+
 ### [0.1.29](https://github.com/prismicio/prismic-types/compare/v0.1.28...v0.1.29) (2022-06-13)
 
 ### [0.1.28](https://github.com/prismicio/prismic-types/compare/v0.1.27...v0.1.28) (2022-06-09)
