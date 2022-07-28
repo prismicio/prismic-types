@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1-alpha.0](https://github.com/prismicio/prismic-types/compare/v0.2.0...v0.2.1-alpha.0) (2022-07-28)
+
+
+### Features
+
+* support slice ID ([090f67f](https://github.com/prismicio/prismic-types/commit/090f67faee8e515e6d38d03880d47fdd3b615705))
+
+
+### Chore
+
+* update release script ([0724440](https://github.com/prismicio/prismic-types/commit/0724440c7f041f0bab8e170b8e57c39e5a6d9345))
+
 ## [0.2.0](https://github.com/prismicio/prismic-types/compare/v0.1.29...v0.2.0) (2022-07-08)
 
 
