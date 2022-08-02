@@ -808,7 +808,7 @@ export interface Slice<
 > {
 	slice_type: SliceType;
 	slice_label: string | null;
-	slice_id?: string;
+	id?: string;
 	primary: PrimaryFields;
 	items: ItemsFields[];
 }
@@ -824,7 +824,7 @@ export type SharedSlice<
 > = {
 	slice_type: SliceType;
 	slice_label: null;
-	slice_id?: string;
+	id?: string;
 } & Variations;
 
 export interface SharedSliceVariation<
