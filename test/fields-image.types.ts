@@ -139,6 +139,30 @@ withoutThumbnails.Foo;
 // @ts-expect-error - No thumbnails should be included when set to `never`.
 withoutThumbnails.Bar;
 
+// TODO: Remove this group of tests when support for `null` ThumbnailNames is
+// removed.
+/**
+ * Thumbnails can be disabled with `null` ThumbnailNames.
+ */
+expectType<prismicT.ImageField<null>>({
+	url: "url",
+	dimensions: { width: 1, height: 1 },
+	alt: null,
+	copyright: null,
+	// @ts-expect-error - No thumbnails should be included when set to `null`.
+	Foo: {
+		url: "url",
+		dimensions: { width: 1, height: 1 },
+		alt: "alt",
+		copyright: "copyright",
+	},
+});
+const withoutThumbnailsNull = {} as prismicT.ImageField<null>;
+// @ts-expect-error - No thumbnails should be included when set to `null`.
+withoutThumbnailsNull.Foo;
+// @ts-expect-error - No thumbnails should be included when set to `null`.
+withoutThumbnailsNull.Bar;
+
 /**
  * Thumbnail name can be `"length"` (edge case, see: #31)
  */
