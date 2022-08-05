@@ -118,14 +118,14 @@ withThumbnails.Foo;
 withThumbnails.Bar;
 
 /**
- * Thumbnails can be disabled with `null` ThumbnailNames.
+ * Thumbnails can be disabled with `never` ThumbnailNames.
  */
 expectType<prismicT.ImageField<never>>({
 	url: "url",
 	dimensions: { width: 1, height: 1 },
 	alt: null,
 	copyright: null,
-	// @ts-expect-error - No thumbnails should be included when set to `null`.
+	// @ts-expect-error - No thumbnails should be included when set to `never`.
 	Foo: {
 		url: "url",
 		dimensions: { width: 1, height: 1 },
@@ -134,9 +134,9 @@ expectType<prismicT.ImageField<never>>({
 	},
 });
 const withoutThumbnails = {} as prismicT.ImageField<never>;
-// @ts-expect-error - No thumbnails should be included when set to `null`.
+// @ts-expect-error - No thumbnails should be included when set to `never`.
 withoutThumbnails.Foo;
-// @ts-expect-error - No thumbnails should be included when set to `null`.
+// @ts-expect-error - No thumbnails should be included when set to `never`.
 withoutThumbnails.Bar;
 
 /**
