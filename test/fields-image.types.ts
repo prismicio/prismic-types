@@ -27,13 +27,13 @@ expectType<prismicT.ImageField>({
 	alt: "alt",
 	copyright: "copyright",
 });
-expectType<prismicT.ImageField<null, "filled">>({
+expectType<prismicT.ImageField<never, "filled">>({
 	url: "url",
 	dimensions: { width: 1, height: 1 },
 	alt: "alt",
 	copyright: "copyright",
 });
-expectType<prismicT.ImageField<null, "empty">>({
+expectType<prismicT.ImageField<never, "empty">>({
 	// @ts-expect-error - Empty fields cannot contain a filled value.
 	url: "url",
 	// @ts-expect-error - Empty fields cannot contain a filled value.
@@ -54,13 +54,13 @@ expectType<prismicT.ImageField>({
 	copyright: null,
 });
 expectType<prismicT.ImageField>({});
-expectType<prismicT.ImageField<null, "empty">>({
+expectType<prismicT.ImageField<never, "empty">>({
 	url: null,
 	dimensions: null,
 	alt: null,
 	copyright: null,
 });
-expectType<prismicT.ImageField<null, "filled">>({
+expectType<prismicT.ImageField<never, "filled">>({
 	// @ts-expect-error - Filled fields cannot contain an empty value.
 	url: null,
 	// @ts-expect-error - Filled fields cannot contain an empty value.
@@ -120,7 +120,7 @@ withThumbnails.Bar;
 /**
  * Thumbnails can be disabled with `null` ThumbnailNames.
  */
-expectType<prismicT.ImageField<null>>({
+expectType<prismicT.ImageField<never>>({
 	url: "url",
 	dimensions: { width: 1, height: 1 },
 	alt: null,
@@ -133,7 +133,7 @@ expectType<prismicT.ImageField<null>>({
 		copyright: "copyright",
 	},
 });
-const withoutThumbnails = {} as prismicT.ImageField<null>;
+const withoutThumbnails = {} as prismicT.ImageField<never>;
 // @ts-expect-error - No thumbnails should be included when set to `null`.
 withoutThumbnails.Foo;
 // @ts-expect-error - No thumbnails should be included when set to `null`.
@@ -172,7 +172,7 @@ expectType<prismicT.ImageField<"length">>({
  * ImageFields are valid ImageFieldImage extends.
  */
 expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField>>(true);
-expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<null>>>(true);
+expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<never>>>(true);
 expectType<TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<"Foo">>>(true);
 expectType<
 	TypeOf<prismicT.ImageFieldImage, prismicT.ImageField<"Foo" | "Bar">>
@@ -184,7 +184,7 @@ const _ImageFieldIsValidImageFieldImageExtendDebug: prismicT.ImageFieldImage =
  * ImageFieldImages are valid ImageField extends with no thumbnails.
  */
 expectType<TypeOf<prismicT.ImageField, prismicT.ImageFieldImage>>(true);
-expectType<TypeOf<prismicT.ImageField<null>, prismicT.ImageFieldImage>>(true);
+expectType<TypeOf<prismicT.ImageField<never>, prismicT.ImageFieldImage>>(true);
 expectType<TypeOf<prismicT.ImageField<"Foo">, prismicT.ImageFieldImage>>(false);
 expectType<
 	TypeOf<prismicT.ImageField<"Foo" | "Bar">, prismicT.ImageFieldImage>
