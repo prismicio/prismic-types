@@ -67,16 +67,14 @@ export type {
 	EmbedField,
 } from "./embed";
 
-export type {
-	DateField,
-	TimestampField,
-	ColorField,
-	NumberField,
-	KeyTextField,
-	SelectField,
-	BooleanField,
-	GeoPointField,
-} from "./simple";
+export type { BooleanField } from "./boolean";
+export type { ColorField } from "./color";
+export type { DateField } from "./date";
+export type { KeyTextField } from "./keyText";
+export type { NumberField } from "./number";
+export type { SelectField } from "./select";
+export type { TimestampField } from "./timestamp";
+export type { GeoPointField } from "./geoPoint";
 
 export type { IntegrationFields } from "./integrationFields";
 

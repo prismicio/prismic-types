@@ -16,10 +16,10 @@ import { OEmbedType } from "./fields";
 export const EmbedType = OEmbedType;
 
 export type {
-	// RichText & Title
+	// Rich Text & Title
 	TitleField,
 	RichTextField,
-	// RichText & Title (block nodes)
+	// Rich Text & Title (block nodes)
 	RTTextNodeBase,
 	RTHeading1Node,
 	RTHeading2Node,
@@ -31,21 +31,21 @@ export type {
 	RTPreformattedNode,
 	RTListItemNode,
 	RTOListItemNode,
-	// RichText & Title (span nodes)
+	// Rich Text & Title (span nodes)
 	RTSpanNodeBase,
 	RTStrongNode,
 	RTEmNode,
 	RTLabelNode,
-	// RichText & Title (media nodes)
+	// Rich Text & Title (media nodes)
 	RTImageNode,
 	RTEmbedNode,
-	// RichText & Title (link nodes)
+	// Rich Text & Title (link nodes)
 	RTLinkNode,
-	// RichText & Title (serialization related nodes)
+	// Rich Text & Title (serialization related nodes)
 	RTListNode,
 	RTOListNode,
 	RTSpanNode,
-	// RichText & Title (helpers)
+	// Rich Text & Title (helpers)
 	RTNode,
 	RTTextNode,
 	RTBlockNode,
@@ -82,8 +82,8 @@ export type {
 	BooleanField,
 	GeoPointField,
 	// Complex
-	GroupField,
 	IntegrationFields,
+	GroupField,
 	Slice,
 	SharedSlice,
 	SharedSliceVariation,
@@ -113,45 +113,47 @@ import type {
  */
 export type CommonEmbedData = AnyOEmbed & OEmbedExtra;
 
+export type {
+	CustomTypeModel,
+	CustomTypeModelDefinition,
+	CustomTypeModelTab,
+} from "./customType";
+
 export {
 	CustomTypeModelFieldType,
 	CustomTypeModelLinkSelectType,
 	CustomTypeModelSliceDisplay,
 	CustomTypeModelSliceType,
-} from "./customType";
+} from "./customTypeModelFields";
 
 export type {
-	CustomTypeModel,
-	CustomTypeModelDefinition,
-	CustomTypeModelTab,
-	// Fields
-	CustomTypeModelField,
-	CustomTypeModelFieldForGroup,
-	// Individual Fields
-	CustomTypeModelBooleanField,
-	CustomTypeModelColorField,
-	CustomTypeModelContentRelationshipField,
-	CustomTypeModelDateField,
-	CustomTypeModelEmbedField,
-	CustomTypeModelGeoPointField,
-	CustomTypeModelGroupField,
-	CustomTypeModelImageConstraint,
-	CustomTypeModelImageField,
-	CustomTypeModelImageThumbnail,
-	CustomTypeModelIntegrationFieldsField,
-	CustomTypeModelKeyTextField,
-	CustomTypeModelLinkField,
-	CustomTypeModelLinkToMediaField,
-	CustomTypeModelNumberField,
-	CustomTypeModelRangeField,
+	// Rich Text & Title
 	CustomTypeModelRichTextField,
+	CustomTypeModelTitleField,
 	CustomTypeModelRichTextMultiField,
 	CustomTypeModelRichTextSingleField,
+	// Image
+	CustomTypeModelImageField,
+	CustomTypeModelImageConstraint,
+	CustomTypeModelImageThumbnail,
+	// Links
+	CustomTypeModelContentRelationshipField,
+	CustomTypeModelLinkField,
+	CustomTypeModelLinkToMediaField,
+	// Embed
+	CustomTypeModelEmbedField,
+	// Simple
+	CustomTypeModelBooleanField,
+	CustomTypeModelColorField,
+	CustomTypeModelDateField,
+	CustomTypeModelKeyTextField,
+	CustomTypeModelNumberField,
 	CustomTypeModelSelectField,
 	CustomTypeModelTimestampField,
-	CustomTypeModelTitleField,
-	CustomTypeModelUIDField,
-	CustomTypeModelSeparatorField,
+	CustomTypeModelGeoPointField,
+	// Complex
+	CustomTypeModelGroupField,
+	CustomTypeModelIntegrationFieldsField,
 	// Slices
 	CustomTypeModelSliceZoneField,
 	CustomTypeModelSlice,
@@ -161,7 +163,14 @@ export type {
 	// SharedSlices
 	SharedSliceModel,
 	SharedSliceModelVariation,
-} from "./customType";
+	// Depracated
+	CustomTypeModelRangeField,
+	CustomTypeModelSeparatorField,
+	// Misc
+	CustomTypeModelUIDField,
+	CustomTypeModelField,
+	CustomTypeModelFieldForGroup,
+} from "./customTypeModelFields";
 
 export type {
 	Repository,
