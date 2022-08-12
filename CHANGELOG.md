@@ -9,6 +9,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * fix changelog ([3bbf6dd](https://github.com/prismicio/prismic-types/commit/3bbf6dd4e9212daacd65bae643594d0dd799fabb))
 
+### [0.2.1](https://github.com/prismicio/prismic-types/compare/v0.2.0...v0.2.1) (2022-08-05)
+
+
+### Features
+
+* simplify `ImageField` ([#46](https://github.com/prismicio/prismic-types/issues/46)) ([d3c7369](https://github.com/prismicio/prismic-types/commit/d3c7369aff7c709c04ac2046a16b2385d5c064be))
+
 ### [0.2.1-alpha.1](https://github.com/prismicio/prismic-types/compare/v0.2.1-alpha.0...v0.2.1-alpha.1) (2022-08-02)
 
 
@@ -33,13 +40,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **release:** 0.2.1-alpha.0 ([973d4b9](https://github.com/prismicio/prismic-types/commit/973d4b975b34fb4016010e888ac4ab29cd42b9e3))
 * update release script ([0724440](https://github.com/prismicio/prismic-types/commit/0724440c7f041f0bab8e170b8e57c39e5a6d9345))
-
-### [0.2.1](https://github.com/prismicio/prismic-types/compare/v0.2.0...v0.2.1) (2022-08-05)
-
-
-### Features
-
-* simplify `ImageField` ([#46](https://github.com/prismicio/prismic-types/issues/46)) ([d3c7369](https://github.com/prismicio/prismic-types/commit/d3c7369aff7c709c04ac2046a16b2385d5c064be))
 
 ## [0.2.0](https://github.com/prismicio/prismic-types/compare/v0.1.29...v0.2.0) (2022-07-08)
 
