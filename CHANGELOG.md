@@ -2,8 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.2.1-alpha.1](https://github.com/prismicio/prismic-types/compare/v0.2.1-alpha.0...v0.2.1-alpha.1) (2022-08-02)
+### [0.2.1](https://github.com/prismicio/prismic-types/compare/v0.2.0...v0.2.1) (2022-08-05)
 
+### Chore
+
+* simplify `ImageField` ([#46](https://github.com/prismicio/prismic-types/issues/46)) ([d3c7369](https://github.com/prismicio/prismic-types/commit/d3c7369aff7c709c04ac2046a16b2385d5c064be))
+
+### [0.2.1-alpha.1](https://github.com/prismicio/prismic-types/compare/v0.2.1-alpha.0...v0.2.1-alpha.1) (2022-08-02)
 
 ### Refactor
 
@@ -11,15 +16,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.2.1-alpha.0](https://github.com/prismicio/prismic-types/compare/v0.2.0...v0.2.1-alpha.0) (2022-07-28)
 
-
 ### Features
 
 * support slice ID ([090f67f](https://github.com/prismicio/prismic-types/commit/090f67faee8e515e6d38d03880d47fdd3b615705))
 
-
 ### Chore
 
 * update release script ([0724440](https://github.com/prismicio/prismic-types/commit/0724440c7f041f0bab8e170b8e57c39e5a6d9345))
+
 
 ## [0.2.0](https://github.com/prismicio/prismic-types/compare/v0.1.29...v0.2.0) (2022-07-08)
 
