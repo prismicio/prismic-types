@@ -3,8 +3,15 @@ export { LinkType } from "./link";
 export { OEmbedType } from "./embed";
 
 export type {
+	PrismicDocument,
+	PrismicDocumentWithUID,
+	PrismicDocumentWithoutUID,
+	PrismicDocumentHeader,
+	AlternateLanguage,
+} from "./document";
+
+export type {
 	// RichText & Title
-	TitleField,
 	RichTextField,
 	// RichText & Title (block nodes)
 	RTTextNodeBase,
@@ -39,6 +46,7 @@ export type {
 	RTInlineNode,
 	RTAnyNode,
 } from "./richText";
+export type { TitleField } from "./title";
 
 export type {
 	ImageField,
@@ -47,15 +55,16 @@ export type {
 	EmptyImageFieldImage,
 } from "./image";
 
+export type { EmptyLinkField, LinkField, FilledLinkToWebField } from "./link";
 export type {
-	EmptyLinkField,
-	FilledLinkToDocumentField,
-	FilledLinkToWebField,
-	FilledLinkToMediaField,
-	RelationField,
-	LinkField,
-	LinkToMediaField,
-} from "./link";
+	ContentRelationshipField,
+	// TODO: Remove in v1
+	ContentRelationshipField as RelationField,
+	FilledContentRelationshipField,
+	// TODO: Remove in v1
+	FilledContentRelationshipField as FilledLinkToDocumentField,
+} from "./contentRelationship";
+export type { LinkToMediaField, FilledLinkToMediaField } from "./linkToMedia";
 
 export type {
 	OEmbedExtra,
@@ -80,11 +89,9 @@ export type { IntegrationFields } from "./integrationFields";
 
 export type { GroupField } from "./group";
 
-export type {
-	Slice,
-	SharedSlice,
-	SharedSliceVariation,
-	SliceZone,
-} from "./sliceZone";
+export type { SliceZone } from "./sliceZone";
+export type { Slice } from "./slice";
+export type { SharedSlice } from "./sharedSlice";
+export type { SharedSliceVariation } from "./sharedSliceVariation";
 
 export type { FieldState, AnyRegularField } from "./types";

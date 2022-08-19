@@ -1,10 +1,8 @@
+import type { EmbedField } from "./embed";
 import type { FieldState } from "./types";
-import {
-	FilledLinkToDocumentField,
-	FilledLinkToMediaField,
-	FilledLinkToWebField,
-} from "./link";
-import { EmbedField } from "./embed";
+import type { FilledContentRelationshipField } from "./contentRelationship";
+import type { FilledLinkToMediaField } from "./linkToMedia";
+import type { FilledLinkToWebField } from "./link";
 
 /**
  * Types for RichTextNodes
@@ -162,7 +160,7 @@ export type RTImageNode = {
 		height: number;
 	};
 	linkTo?:
-		| FilledLinkToDocumentField
+		| FilledContentRelationshipField
 		| FilledLinkToWebField
 		| FilledLinkToMediaField;
 };
@@ -185,7 +183,7 @@ export type RTEmbedNode = {
 export interface RTLinkNode extends RTSpanNodeBase {
 	type: typeof RichTextNodeType.hyperlink;
 	data:
-		| FilledLinkToDocumentField
+		| FilledContentRelationshipField
 		| FilledLinkToWebField
 		| FilledLinkToMediaField;
 }
@@ -278,28 +276,6 @@ export type RTInlineNode = RTStrongNode | RTEmNode | RTLabelNode | RTLinkNode;
  * All Rich Text nodes
  */
 export type RTAnyNode = RTBlockNode | RTInlineNode | RTSpanNode;
-
-/**
- * Title Field
- *
- * @see Title field documentation: {@link https://prismic.io/docs/core-concepts/rich-text-title}
- */
-export type TitleField<State extends FieldState = FieldState> =
-	State extends "empty"
-		? []
-		: [
-				Omit<
-					| RTHeading1Node
-					| RTHeading2Node
-					| RTHeading3Node
-					| RTHeading4Node
-					| RTHeading5Node
-					| RTHeading6Node,
-					"spans"
-				> & {
-					spans: [];
-				},
-		  ];
 
 /**
  * Rich Text Field

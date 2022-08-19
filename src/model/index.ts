@@ -1,16 +1,20 @@
 export { CustomTypeModelFieldType } from "./types";
 export { CustomTypeModelLinkSelectType } from "./link";
-export {
-	CustomTypeModelSliceDisplay,
-	CustomTypeModelSliceType,
-} from "./sliceZone";
+export { CustomTypeModelSliceType } from "./sliceZone";
+export { CustomTypeModelSliceDisplay } from "./slice";
+
+export type {
+	CustomTypeModel,
+	CustomTypeModelDefinition,
+	CustomTypeModelTab,
+} from "./customType";
 
 export type {
 	CustomTypeModelRichTextField,
-	CustomTypeModelTitleField,
 	CustomTypeModelRichTextMultiField,
 	CustomTypeModelRichTextSingleField,
 } from "./richText";
+export type { CustomTypeModelTitleField } from "./title";
 
 export type {
 	CustomTypeModelImageField,
@@ -18,11 +22,9 @@ export type {
 	CustomTypeModelImageThumbnail,
 } from "./image";
 
-export {
-	CustomTypeModelContentRelationshipField,
-	CustomTypeModelLinkField,
-	CustomTypeModelLinkToMediaField,
-} from "./link";
+export type { CustomTypeModelContentRelationshipField } from "./contentRelationship";
+export type { CustomTypeModelLinkField } from "./link";
+export type { CustomTypeModelLinkToMediaField } from "./linkToMedia";
 
 export type { CustomTypeModelEmbedField } from "./embed";
 
@@ -39,15 +41,12 @@ export type { CustomTypeModelIntegrationFieldsField } from "./integrationFields"
 export type { CustomTypeModelGroupField } from "./group";
 export type {
 	CustomTypeModelSliceZoneField,
-	// Slices
-	CustomTypeModelSlice,
 	CustomTypeModelSliceLabel,
 	CustomTypeModelSharedSlice,
-	CustomTypeModelLegacySlice,
-	// SharedSlices
-	SharedSliceModel,
-	SharedSliceModelVariation,
 } from "./sliceZone";
+export type { CustomTypeModelSlice, CustomTypeModelLegacySlice } from "./slice";
+export type { SharedSliceModel } from "./sharedSlice";
+export type { SharedSliceModelVariation } from "./sharedSliceVariation";
 
 export type { CustomTypeModelUIDField } from "./uid";
 
