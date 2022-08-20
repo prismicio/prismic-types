@@ -1,9 +1,9 @@
 // NOTE: The GraphQL exports are purposely not included in the root-level API.
 // Instead, they are provided under their own `/graphql` entry.
 
-// ============================================================================
+//=============================================================================
 // Value - Types representing Prismic document and field values.
-// ============================================================================
+//=============================================================================
 
 export { RichTextNodeType } from "./value/richText";
 export { LinkType } from "./value/link";
@@ -110,9 +110,9 @@ export type { SharedSliceVariation } from "./value/sharedSliceVariation";
 
 export type { FieldState, AnyRegularField } from "./value/types";
 
-// ============================================================================
+//=============================================================================
 // Model - Types representing Prismic Custom Type and Shared Slice models.
-// ============================================================================
+//=============================================================================
 
 export { CustomTypeModelFieldType } from "./model/types";
 export { CustomTypeModelLinkSelectType } from "./model/link";
@@ -177,9 +177,9 @@ export type {
 	CustomTypeModelFieldForGroup,
 } from "./model/types";
 
-// ============================================================================
+//=============================================================================
 // API - Types representing Prismic Rest API V2 responses.
-// ============================================================================
+//=============================================================================
 
 export type { Query } from "./api/query";
 
@@ -191,9 +191,9 @@ export type { Repository, Language, Form, FormField } from "./api/repository";
 
 export type { Tags } from "./api/tags";
 
-// ============================================================================
+//=============================================================================
 // Webhook - Types representing Prismic webhooks.
-// ============================================================================
+//=============================================================================
 
 export { WebhookType } from "./webhook/types";
 
