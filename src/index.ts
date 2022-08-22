@@ -1,23 +1,24 @@
+// NOTE: The GraphQL exports are purposely not included in the root-level API.
+// Instead, they are provided under their own `/graphql` entry.
+
+//=============================================================================
+// Value - Types representing Prismic document and field values.
+//=============================================================================
+
+export { RichTextNodeType } from "./value/richText";
+export { LinkType } from "./value/link";
+export { OEmbedType } from "./value/embed";
+
 export type {
-	PrismicDocumentHeader,
 	PrismicDocument,
 	PrismicDocumentWithUID,
 	PrismicDocumentWithoutUID,
+	PrismicDocumentHeader,
 	AlternateLanguage,
-} from "./document";
-
-export { RichTextNodeType, LinkType, OEmbedType } from "./fields";
-
-// Deprecations
-import { OEmbedType } from "./fields";
-/**
- * @deprecated Use {@link OEmbedType} instead.
- */
-export const EmbedType = OEmbedType;
+} from "./value/document";
 
 export type {
 	// RichText & Title
-	TitleField,
 	RichTextField,
 	// RichText & Title (block nodes)
 	RTTextNodeBase,
@@ -51,20 +52,35 @@ export type {
 	RTBlockNode,
 	RTInlineNode,
 	RTAnyNode,
-	// Image
+} from "./value/richText";
+export type { TitleField } from "./value/title";
+
+export type {
 	ImageField,
 	ImageFieldImage,
 	FilledImageFieldImage,
 	EmptyImageFieldImage,
-	// Links
+} from "./value/image";
+
+export type {
 	EmptyLinkField,
-	FilledLinkToDocumentField,
-	FilledLinkToWebField,
-	FilledLinkToMediaField,
-	RelationField,
 	LinkField,
+	FilledLinkToWebField,
+} from "./value/link";
+export type {
+	ContentRelationshipField,
+	// TODO: Remove in v1
+	ContentRelationshipField as RelationField,
+	FilledContentRelationshipField,
+	// TODO: Remove in v1
+	FilledContentRelationshipField as FilledLinkToDocumentField,
+} from "./value/contentRelationship";
+export type {
 	LinkToMediaField,
-	// Embed
+	FilledLinkToMediaField,
+} from "./value/linkToMedia";
+
+export type {
 	OEmbedExtra,
 	PhotoOEmbed,
 	VideoOEmbed,
@@ -72,112 +88,117 @@ export type {
 	RichOEmbed,
 	AnyOEmbed,
 	EmbedField,
-	// Simple
-	DateField,
-	TimestampField,
-	ColorField,
-	NumberField,
-	KeyTextField,
-	SelectField,
-	BooleanField,
-	GeoPointField,
-	// Complex
-	GroupField,
-	IntegrationFields,
-	Slice,
-	SharedSlice,
-	SharedSliceVariation,
-	SliceZone,
-	// Misc
-	AnyRegularField,
-	// Meta
-	FieldState,
-} from "./fields";
+} from "./value/embed";
 
-// Deprecations (unused import for @link references)
-import type {
-	OEmbedExtra,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	PhotoOEmbed,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	VideoOEmbed,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	LinkOEmbed,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RichOEmbed,
-	AnyOEmbed,
-} from "./fields";
-/**
- * @deprecated Use {@link PhotoOEmbed}, {@link VideoOEmbed}, {@link LinkOEmbed},
- *   {@link RichOEmbed}, or {@link AnyOEmbed} instead.
- */
-export type CommonEmbedData = AnyOEmbed & OEmbedExtra;
+export type { BooleanField } from "./value/boolean";
+export type { ColorField } from "./value/color";
+export type { DateField } from "./value/date";
+export type { KeyTextField } from "./value/keyText";
+export type { NumberField } from "./value/number";
+export type { SelectField } from "./value/select";
+export type { TimestampField } from "./value/timestamp";
+export type { GeoPointField } from "./value/geoPoint";
 
-export {
-	CustomTypeModelFieldType,
-	CustomTypeModelLinkSelectType,
-	CustomTypeModelSliceDisplay,
-	CustomTypeModelSliceType,
-} from "./customType";
+export type { IntegrationFields } from "./value/integrationFields";
+
+export type { GroupField } from "./value/group";
+
+export type { SliceZone } from "./value/sliceZone";
+export type { Slice } from "./value/slice";
+export type { SharedSlice } from "./value/sharedSlice";
+export type { SharedSliceVariation } from "./value/sharedSliceVariation";
+
+export type { FieldState, AnyRegularField } from "./value/types";
+
+//=============================================================================
+// Model - Types representing Prismic Custom Type and Shared Slice models.
+//=============================================================================
+
+export { CustomTypeModelFieldType } from "./model/types";
+export { CustomTypeModelLinkSelectType } from "./model/link";
+export { CustomTypeModelSliceType } from "./model/sliceZone";
+export { CustomTypeModelSliceDisplay } from "./model/slice";
 
 export type {
 	CustomTypeModel,
 	CustomTypeModelDefinition,
 	CustomTypeModelTab,
-	// Fields
-	CustomTypeModelField,
-	CustomTypeModelFieldForGroup,
-	// Individual Fields
-	CustomTypeModelBooleanField,
-	CustomTypeModelColorField,
-	CustomTypeModelContentRelationshipField,
-	CustomTypeModelDateField,
-	CustomTypeModelEmbedField,
-	CustomTypeModelGeoPointField,
-	CustomTypeModelGroupField,
-	CustomTypeModelImageConstraint,
-	CustomTypeModelImageField,
-	CustomTypeModelImageThumbnail,
-	CustomTypeModelIntegrationFieldsField,
-	CustomTypeModelKeyTextField,
-	CustomTypeModelLinkField,
-	CustomTypeModelLinkToMediaField,
-	CustomTypeModelNumberField,
-	CustomTypeModelRangeField,
+} from "./model/customType";
+
+export type {
 	CustomTypeModelRichTextField,
 	CustomTypeModelRichTextMultiField,
 	CustomTypeModelRichTextSingleField,
-	CustomTypeModelSelectField,
-	CustomTypeModelTimestampField,
-	CustomTypeModelTitleField,
-	CustomTypeModelUIDField,
-	CustomTypeModelSeparatorField,
-	// Slices
+} from "./model/richText";
+export type { CustomTypeModelTitleField } from "./model/title";
+
+export type {
+	CustomTypeModelImageField,
+	CustomTypeModelImageConstraint,
+	CustomTypeModelImageThumbnail,
+} from "./model/image";
+
+export type { CustomTypeModelContentRelationshipField } from "./model/contentRelationship";
+export type { CustomTypeModelLinkField } from "./model/link";
+export type { CustomTypeModelLinkToMediaField } from "./model/linkToMedia";
+
+export type { CustomTypeModelEmbedField } from "./model/embed";
+
+export type { CustomTypeModelBooleanField } from "./model/boolean";
+export type { CustomTypeModelColorField } from "./model/color";
+export type { CustomTypeModelDateField } from "./model/date";
+export type { CustomTypeModelKeyTextField } from "./model/keyText";
+export type { CustomTypeModelNumberField } from "./model/number";
+export type { CustomTypeModelSelectField } from "./model/select";
+export type { CustomTypeModelTimestampField } from "./model/timestamp";
+export type { CustomTypeModelGeoPointField } from "./model/geoPoint";
+
+export type { CustomTypeModelIntegrationFieldsField } from "./model/integrationFields";
+export type { CustomTypeModelGroupField } from "./model/group";
+export type {
 	CustomTypeModelSliceZoneField,
-	CustomTypeModelSlice,
 	CustomTypeModelSliceLabel,
 	CustomTypeModelSharedSlice,
+} from "./model/sliceZone";
+export type {
+	CustomTypeModelSlice,
 	CustomTypeModelLegacySlice,
-	// SharedSlices
-	SharedSliceModel,
-	SharedSliceModelVariation,
-} from "./customType";
+} from "./model/slice";
+export type { SharedSliceModel } from "./model/sharedSlice";
+export type { SharedSliceModelVariation } from "./model/sharedSliceVariation";
+
+export type { CustomTypeModelUIDField } from "./model/uid";
+
+export type { CustomTypeModelRangeField } from "./model/range";
+export type { CustomTypeModelSeparatorField } from "./model/separator";
 
 export type {
-	Repository,
-	Ref,
-	Release,
-	Language,
-	Query,
-	Form,
-	FormField,
-	Tags,
-} from "./api";
+	CustomTypeModelField,
+	CustomTypeModelFieldForGroup,
+} from "./model/types";
 
-export { WebhookType } from "./webhook";
+//=============================================================================
+// API - Types representing Prismic Rest API V2 responses.
+//=============================================================================
 
-export type {
-	WebhookBody,
-	WebhookBodyAPIUpdate,
-	WebhookBodyTestTrigger,
-} from "./webhook";
+export type { Query } from "./api/query";
+
+export type { Ref } from "./api/ref";
+
+export type { Release } from "./api/release";
+
+export type { Repository, Language, Form, FormField } from "./api/repository";
+
+export type { Tags } from "./api/tags";
+
+//=============================================================================
+// Webhook - Types representing Prismic webhooks.
+//=============================================================================
+
+export { WebhookType } from "./webhook/types";
+
+export type { WebhookBody } from "./webhook/types";
+
+export type { WebhookBodyAPIUpdate } from "./webhook/apiUpdate";
+
+export type { WebhookBodyTestTrigger } from "./webhook/testTrigger";

@@ -1,21 +1,4 @@
-export type WebhookBody = WebhookBodyAPIUpdate | WebhookBodyTestTrigger;
-
-/**
- * Types of Prismic Webhooks.
- *
- * @see More details: {@link https://prismic.io/docs/core-concepts/webhooks}
- */
-export const WebhookType = {
-	APIUpdate: "api-update",
-	TestTrigger: "test-trigger",
-} as const;
-
-interface WebhookBodyBase {
-	type: typeof WebhookType[keyof typeof WebhookType];
-	domain: string;
-	apiUrl: string;
-	secret: string | null;
-}
+import { WebhookBodyBase, WebhookType } from "./types";
 
 /**
  * Webhook payload sent when a Prismic repository content is updated.
@@ -33,15 +16,6 @@ export interface WebhookBodyAPIUpdate extends WebhookBodyBase {
 	 * @deprecated Experiments are no longer supported by Prismic.
 	 */
 	experiments?: WebhookBodyAPIUpdateOperations<unknown>;
-}
-
-/**
- * Webhook payload sent when a test webhook action is triggered.
- *
- * @see More details: {@link https://prismic.io/docs/core-concepts/webhooks}
- */
-export interface WebhookBodyTestTrigger extends WebhookBodyBase {
-	type: typeof WebhookType.TestTrigger;
 }
 
 interface WebhookBodyAPIUpdateOperations<T> {

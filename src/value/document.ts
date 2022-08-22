@@ -1,4 +1,6 @@
-import { AnyRegularField, GroupField, SliceZone } from "./fields";
+import { AnyRegularField } from "./types";
+import { GroupField } from "./group";
+import { SliceZone } from "./sliceZone";
 
 /**
  * Document metadata for a translation of a Prismic document.
