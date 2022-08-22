@@ -1,6 +1,8 @@
 import type { RichTextField, TitleField } from "./richText";
 import type { ImageField } from "./image";
-import type { LinkField, LinkToMediaField, RelationField } from "./link";
+import type { ContentRelationshipField } from "./contentRelationship";
+import type { LinkField } from "./link";
+import type { LinkToMediaField } from "./linkToMedia";
 import type { EmbedField } from "./embed";
 
 import type { BooleanField } from "./boolean";
@@ -31,7 +33,7 @@ export type AnyRegularField =
 	| TitleField
 	| RichTextField
 	| ImageField
-	| RelationField
+	| ContentRelationshipField
 	| LinkField
 	| LinkToMediaField
 	| EmbedField

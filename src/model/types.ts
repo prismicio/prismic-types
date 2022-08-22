@@ -1,14 +1,12 @@
+import type { CustomTypeModelContentRelationshipField } from "./contentRelationship";
+import type { CustomTypeModelEmbedField } from "./embed";
+import type { CustomTypeModelImageField } from "./image";
+import type { CustomTypeModelLinkField } from "./link";
+import type { CustomTypeModelLinkToMediaField } from "./linkToMedia";
 import type {
 	CustomTypeModelRichTextField,
 	CustomTypeModelTitleField,
 } from "./richText";
-import type { CustomTypeModelImageField } from "./image";
-import {
-	CustomTypeModelContentRelationshipField,
-	CustomTypeModelLinkField,
-	CustomTypeModelLinkToMediaField,
-} from "./link";
-import type { CustomTypeModelEmbedField } from "./embed";
 
 import type { CustomTypeModelBooleanField } from "./boolean";
 import type { CustomTypeModelColorField } from "./color";
