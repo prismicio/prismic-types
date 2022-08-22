@@ -3,10 +3,8 @@ import type { CustomTypeModelEmbedField } from "./embed";
 import type { CustomTypeModelImageField } from "./image";
 import type { CustomTypeModelLinkField } from "./link";
 import type { CustomTypeModelLinkToMediaField } from "./linkToMedia";
-import type {
-	CustomTypeModelRichTextField,
-	CustomTypeModelTitleField,
-} from "./richText";
+import type { CustomTypeModelRichTextField } from "./richText";
+import type { CustomTypeModelTitleField } from "./title";
 
 import type { CustomTypeModelBooleanField } from "./boolean";
 import type { CustomTypeModelColorField } from "./color";

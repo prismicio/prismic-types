@@ -1,4 +1,5 @@
-import type { RichTextField, TitleField } from "./richText";
+import type { RichTextField } from "./richText";
+import type { TitleField } from "./title";
 import type { ImageField } from "./image";
 import type { ContentRelationshipField } from "./contentRelationship";
 import type { LinkField } from "./link";
