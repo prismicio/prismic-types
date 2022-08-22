@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/prismicio/prismic-types/compare/v0.2.2...v0.2.3) (2022-08-22)
+
+
+### Documentation
+
+* fix changelog ([bb88ccd](https://github.com/prismicio/prismic-types/commit/bb88ccd4b244fde86dde909a7cdf166650102f1f))
+
+
+### Refactor
+
+* organize types by kind ([#47](https://github.com/prismicio/prismic-types/issues/47)) ([ce6519c](https://github.com/prismicio/prismic-types/commit/ce6519c383bf2941613b0a792386085efaf88dab))
+
+
+### Chore
+
+* **deps:** upgrade dependencies ([#49](https://github.com/prismicio/prismic-types/issues/49)) ([dd1eb2d](https://github.com/prismicio/prismic-types/commit/dd1eb2dfb9c0bb3319f9f1e64f91e3872f6739a5))
+
 ### [0.2.2](https://github.com/prismicio/prismic-types/compare/v0.2.1...v0.2.2) (2022-08-12)
 
 
