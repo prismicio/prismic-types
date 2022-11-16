@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/prismicio/prismic-types/compare/v0.2.3...v0.2.4) (2022-11-16)
+
+
+### Bug Fixes
+
+* allow `ContentRelationshipField`'s `data` property to be overrided ([#51](https://github.com/prismicio/prismic-types/issues/51)) ([fd7bb34](https://github.com/prismicio/prismic-types/commit/fd7bb34dbdb24ac80dc1fc4ae4e97e54919322e2))
+
+
+### Chore
+
+* **deps:** update all dependencies ([#52](https://github.com/prismicio/prismic-types/issues/52)) ([c4d9805](https://github.com/prismicio/prismic-types/commit/c4d980539e72006fc648f450dbcf58b5c7e12528))
+
 ### [0.2.3](https://github.com/prismicio/prismic-types/compare/v0.2.2...v0.2.3) (2022-08-22)
 
 
