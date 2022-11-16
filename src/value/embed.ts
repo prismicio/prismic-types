@@ -85,7 +85,8 @@ export type OEmbedExtra = {
 	/**
 	 * Providers may optionally include any parameters not specified in this
 	 * document (so long as they use the same key-value format) and consumers may
-	 * choose to ignore these. Consumers must ignore parameters they do not understand.
+	 * choose to ignore these. Consumers must ignore parameters they do not
+	 * understand.
 	 *
 	 * @see oEmbed specification: {@link https://oembed.com}
 	 */

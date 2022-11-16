@@ -15,7 +15,8 @@ export interface Repository {
 	refs: Ref[];
 
 	/**
-	 * An identifier used to query content with the latest Integration Fields data.
+	 * An identifier used to query content with the latest Integration Fields
+	 * data.
 	 */
 	integrationFieldsRef: string | null;
 
@@ -27,7 +28,8 @@ export interface Repository {
 	languages: Language[];
 
 	/**
-	 * A list of the repository's Custom Type API IDs mapped to their human-readable name.
+	 * A list of the repository's Custom Type API IDs mapped to their
+	 * human-readable name.
 	 */
 	types: Record<string, string>;
 

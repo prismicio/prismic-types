@@ -10,7 +10,8 @@ export interface Ref {
 	id: string;
 
 	/**
-	 * The identifier that should be provided to the API to select a content version.
+	 * The identifier that should be provided to the API to select a content
+	 * version.
 	 */
 	ref: string;
 
