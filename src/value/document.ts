@@ -109,7 +109,8 @@ export interface PrismicDocumentWithoutUID<
 	LangEnum = string,
 > extends PrismicDocument<DataInterface, TypeEnum, LangEnum> {
 	/**
-	 * This document does not have a UID field. This property will always be `null`.
+	 * This document does not have a UID field. This property will always be
+	 * `null`.
 	 *
 	 * The unique identifier for the document. Guaranteed to be unique among all
 	 * Prismic documents of the same type.
@@ -118,7 +119,8 @@ export interface PrismicDocumentWithoutUID<
 }
 
 /**
- * A Prismic document served through REST API v2. Contains a UID (a unique identifier).
+ * A Prismic document served through REST API v2. Contains a UID (a unique
+ * identifier).
  *
  * @see More details on Custom Types: {@link https://prismic.io/docs/technologies/introduction-to-the-content-query-api}
  * @see More details on the UID field: {@link https://prismic.io/docs/core-concepts/uid}
