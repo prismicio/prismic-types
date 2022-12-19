@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/prismicio/prismic-types/compare/v0.2.4...v0.2.5) (2022-12-19)
+
+
+### Chore
+
+* **deps:** maintain dependencies ([f5cbcd2](https://github.com/prismicio/prismic-types/commit/f5cbcd270a2f6c9ce6438bff1f1e59add38adaed))
+
 ### [0.2.4](https://github.com/prismicio/prismic-types/compare/v0.2.3...v0.2.4) (2022-11-16)
 
 
