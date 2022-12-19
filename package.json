@@ -23,12 +23,12 @@
 			"import": "./dist/index.js"
 		},
 		"./graphql": {
-			"require": "./dist/graphql/index.cjs",
-			"import": "./dist/graphql/index.js"
+			"require": "./dist/graphql.cjs",
+			"import": "./dist/graphql.js"
 		},
 		"./dist/graphql": {
-			"require": "./dist/graphql/index.cjs",
-			"import": "./dist/graphql/index.js"
+			"require": "./dist/graphql.cjs",
+			"import": "./dist/graphql.js"
 		},
 		"./package.json": "./package.json"
 	},
