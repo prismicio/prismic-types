@@ -57,7 +57,7 @@
 		"unit:watch": "vitest watch"
 	},
 	"devDependencies": {
-		"@prismicio/types-internal": "^1.5.3",
+		"@prismicio/types-internal": "^2.0.0-alpha.9",
 		"@size-limit/preset-small-lib": "^8.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",

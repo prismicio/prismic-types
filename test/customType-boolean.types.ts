@@ -1,6 +1,6 @@
 import { expectType, expectNever } from "ts-expect";
 
-import * as prismicTI from "@prismicio/types-internal";
+import * as prismicTICustomTypes from "@prismicio/types-internal/lib/customtypes";
 
 import * as prismicT from "../src";
 
@@ -43,12 +43,12 @@ expectType<prismicT.CustomTypeModelBooleanField>({
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelBooleanField>(
-	{} as prismicTI.CustomTypes.Widgets.Nestable.BooleanField,
+	{} as prismicTICustomTypes.BooleanField,
 );
 
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
-expectType<prismicTI.CustomTypes.Widgets.Nestable.BooleanField>(
+expectType<prismicTICustomTypes.BooleanField>(
 	{} as prismicT.CustomTypeModelBooleanField,
 );

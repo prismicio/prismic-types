@@ -1,6 +1,6 @@
 import { expectType, expectNever } from "ts-expect";
 
-import * as prismicTI from "@prismicio/types-internal";
+import * as prismicTICustomTypes from "@prismicio/types-internal/lib/customtypes";
 
 import * as prismicT from "../src";
 
@@ -132,12 +132,12 @@ expectType<prismicT.CustomTypeModelImageThumbnail<"Foo">>({
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelImageField>(
-	{} as prismicTI.CustomTypes.Widgets.Nestable.Image,
+	{} as prismicTICustomTypes.Image,
 );
 
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
-expectType<prismicTI.CustomTypes.Widgets.Nestable.Image>(
+expectType<prismicTICustomTypes.Image>(
 	{} as prismicT.CustomTypeModelImageField,
 );

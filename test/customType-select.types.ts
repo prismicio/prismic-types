@@ -1,6 +1,6 @@
 import { expectType, expectNever } from "ts-expect";
 
-import * as prismicTI from "@prismicio/types-internal";
+import * as prismicTICustomTypes from "@prismicio/types-internal/lib/customtypes";
 
 import * as prismicT from "../src";
 
@@ -109,12 +109,12 @@ expectType<prismicT.CustomTypeModelSelectField<"foo">>({
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelSelectField>(
-	{} as prismicTI.CustomTypes.Widgets.Nestable.Select,
+	{} as prismicTICustomTypes.Select,
 );
 
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
-expectType<prismicTI.CustomTypes.Widgets.Nestable.Select>(
+expectType<prismicTICustomTypes.Select>(
 	{} as prismicT.CustomTypeModelSelectField,
 );

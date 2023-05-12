@@ -1,6 +1,6 @@
 import { expectType, expectNever } from "ts-expect";
 
-import * as prismicTI from "@prismicio/types-internal";
+import * as prismicTICustomTypes from "@prismicio/types-internal/lib/customtypes";
 
 import * as prismicT from "../src";
 
@@ -81,12 +81,12 @@ expectType<
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelGroupField>(
-	{} as prismicTI.CustomTypes.Widgets.Group,
+	{} as prismicTICustomTypes.Group,
 );
 
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
-expectType<prismicTI.CustomTypes.Widgets.Group>(
+expectType<prismicTICustomTypes.Group>(
 	{} as prismicT.CustomTypeModelGroupField,
 );

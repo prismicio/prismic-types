@@ -1,6 +1,6 @@
 import { expectType, expectNever } from "ts-expect";
 
-import * as prismicTI from "@prismicio/types-internal";
+import * as prismicTICustomTypes from "@prismicio/types-internal/lib/customtypes";
 
 import * as prismicT from "../src";
 
@@ -100,7 +100,7 @@ expectType<prismicT.CustomTypeModelContentRelationshipField<string, "foo">>({
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
 expectType<prismicT.CustomTypeModelContentRelationshipField>(
-	{} as prismicTI.CustomTypes.Widgets.Nestable.Link & {
+	{} as prismicTICustomTypes.Link & {
 		// We must manually narrow `@prismicio/types-internal`'s type
 		// to match a Content Relationship field;
 		// `@prismicio/types-internal` does not contain a Content
@@ -112,6 +112,6 @@ expectType<prismicT.CustomTypeModelContentRelationshipField>(
 /**
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
-expectType<prismicTI.CustomTypes.Widgets.Nestable.Link>(
+expectType<prismicTICustomTypes.Link>(
 	{} as prismicT.CustomTypeModelContentRelationshipField,
 );
