@@ -15,7 +15,7 @@ import type { SelectField } from "./select";
 import type { TimestampField } from "./timestamp";
 import type { GeoPointField } from "./geoPoint";
 
-import type { IntegrationFields } from "./integrationFields";
+import type { IntegrationField } from "./integration";
 
 /**
  * Empty state for object-shaped fields.
@@ -46,7 +46,7 @@ export type AnyRegularField =
 	| SelectField
 	| BooleanField
 	| GeoPointField
-	| IntegrationFields;
+	| IntegrationField;
 
 /**
  * Useful to flatten the type output to improve type hints shown in editors. And

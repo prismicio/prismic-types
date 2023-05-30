@@ -4,7 +4,7 @@ import * as prismicTI from "@prismicio/types-internal";
 
 import * as prismicT from "../src";
 
-(value: prismicT.CustomTypeModelIntegrationFieldsField): true => {
+(value: prismicT.CustomTypeModelIntegrationField): true => {
 	switch (typeof value) {
 		case "object": {
 			if (value === null) {
@@ -20,8 +20,8 @@ import * as prismicT from "../src";
 	}
 };
 
-expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
-	type: prismicT.CustomTypeModelFieldType.IntegrationFields,
+expectType<prismicT.CustomTypeModelIntegrationField>({
+	type: prismicT.CustomTypeModelFieldType.Integration,
 	config: {
 		label: "string",
 		catalog: "string",
@@ -31,8 +31,8 @@ expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
 /**
  * Supports optional placeholder.
  */
-expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
-	type: prismicT.CustomTypeModelFieldType.IntegrationFields,
+expectType<prismicT.CustomTypeModelIntegrationField>({
+	type: prismicT.CustomTypeModelFieldType.Integration,
 	config: {
 		label: "string",
 		placeholder: "string",
@@ -43,7 +43,7 @@ expectType<prismicT.CustomTypeModelIntegrationFieldsField>({
 /**
  * `@prismicio/types` extends `@prismicio/types-internal`
  */
-expectType<prismicT.CustomTypeModelIntegrationFieldsField>(
+expectType<prismicT.CustomTypeModelIntegrationField>(
 	{} as prismicTI.CustomTypes.Widgets.Nestable.IntegrationField,
 );
 
@@ -51,5 +51,5 @@ expectType<prismicT.CustomTypeModelIntegrationFieldsField>(
  * `@prismicio/types-internal` extends `@prismicio/types`
  */
 expectType<prismicTI.CustomTypes.Widgets.Nestable.IntegrationField>(
-	{} as prismicT.CustomTypeModelIntegrationFieldsField,
+	{} as prismicT.CustomTypeModelIntegrationField,
 );

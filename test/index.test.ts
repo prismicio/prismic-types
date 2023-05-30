@@ -53,6 +53,7 @@ test("custom type field type mapping", () => {
 		GeoPoint: "GeoPoint",
 		Group: "Group",
 		Image: "Image",
+		Integration: "IntegrationFields",
 		IntegrationFields: "IntegrationFields",
 		Link: "Link",
 		Number: "Number",

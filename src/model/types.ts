@@ -15,7 +15,7 @@ import type { CustomTypeModelSelectField } from "./select";
 import type { CustomTypeModelTimestampField } from "./timestamp";
 import type { CustomTypeModelGeoPointField } from "./geoPoint";
 
-import type { CustomTypeModelIntegrationFieldsField } from "./integrationFields";
+import type { CustomTypeModelIntegrationField } from "./integration";
 import type { CustomTypeModelGroupField } from "./group";
 import type { CustomTypeModelSliceZoneField } from "./sliceZone";
 
@@ -35,7 +35,7 @@ export const CustomTypeModelFieldType = {
 	GeoPoint: "GeoPoint",
 	Group: "Group",
 	Image: "Image",
-	IntegrationFields: "IntegrationFields",
+	Integration: "IntegrationFields",
 	Link: "Link",
 	Number: "Number",
 	Select: "Select",
@@ -44,6 +44,10 @@ export const CustomTypeModelFieldType = {
 	Text: "Text",
 	Timestamp: "Timestamp",
 	UID: "UID",
+	/**
+	 * @deprecated - Renamed to `Integration`.
+	 */
+	IntegrationFields: "IntegrationFields",
 	/**
 	 * @deprecated - Legacy field type. Use `Number` instead.
 	 */
@@ -77,7 +81,7 @@ export type CustomTypeModelFieldForGroup =
 	| CustomTypeModelEmbedField
 	| CustomTypeModelGeoPointField
 	| CustomTypeModelImageField
-	| CustomTypeModelIntegrationFieldsField
+	| CustomTypeModelIntegrationField
 	| CustomTypeModelContentRelationshipField
 	| CustomTypeModelLinkField
 	| CustomTypeModelLinkToMediaField

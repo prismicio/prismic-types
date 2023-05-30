@@ -1,6 +1,10 @@
 // NOTE: The GraphQL exports are purposely not included in the root-level API.
 // Instead, they are provided under their own `/graphql` entry.
 
+// Imports are used for deprecations.
+import type { CustomTypeModelIntegrationField } from "./model/integration";
+import type { IntegrationField } from "./value/integration";
+
 //=============================================================================
 // Value - Types representing Prismic document and field values.
 //=============================================================================
@@ -99,7 +103,12 @@ export type { SelectField } from "./value/select";
 export type { TimestampField } from "./value/timestamp";
 export type { GeoPointField } from "./value/geoPoint";
 
-export type { IntegrationFields } from "./value/integrationFields";
+/**
+ * @deprecated Renamed to `IntegrationField`
+ */
+// TODO: Remove when we remove support for deprecated `IntegrationFields` export.
+type IntegrationFields = IntegrationField;
+export { IntegrationField, IntegrationFields };
 
 export type { GroupField } from "./value/group";
 
@@ -153,7 +162,15 @@ export type { CustomTypeModelSelectField } from "./model/select";
 export type { CustomTypeModelTimestampField } from "./model/timestamp";
 export type { CustomTypeModelGeoPointField } from "./model/geoPoint";
 
-export type { CustomTypeModelIntegrationFieldsField } from "./model/integrationFields";
+/**
+ * @deprecated Renamed to `CustomTypeModelIntegrationField`.
+ */
+// TODO: Remove when we remove support for deprecated `CustomTypeModelIntegrationField` export.
+type CustomTypeModelIntegrationFieldsField = CustomTypeModelIntegrationField;
+export {
+	CustomTypeModelIntegrationField,
+	CustomTypeModelIntegrationFieldsField,
+};
 export type { CustomTypeModelGroupField } from "./model/group";
 export type {
 	CustomTypeModelSliceZoneField,
