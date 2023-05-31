@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/prismicio/prismic-types/compare/v0.2.7...v0.2.8) (2023-05-31)
+
+
+### Bug Fixes
+
+* backport `IntegrationFields` to `IntegrationField` rename from `@prismicio/client` v7 ([#57](https://github.com/prismicio/prismic-types/issues/57)) ([0537151](https://github.com/prismicio/prismic-types/commit/0537151cd30f2cd34dedbdc4e85fbef590771609))
+
 ### [0.2.7](https://github.com/prismicio/prismic-types/compare/v0.2.6...v0.2.7) (2022-12-19)
 
 ### [0.2.6](https://github.com/prismicio/prismic-types/compare/v0.2.5...v0.2.6) (2022-12-19)
