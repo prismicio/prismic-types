@@ -116,6 +116,7 @@ expectType<prismicT.RichTextField>([
 	{ type: prismicT.RichTextNodeType.oListItem, text: "string", spans: [] },
 	{
 		type: prismicT.RichTextNodeType.image,
+		id: "string",
 		alt: "string",
 		url: "string",
 		copyright: "string",
@@ -123,6 +124,7 @@ expectType<prismicT.RichTextField>([
 			width: 0,
 			height: 0,
 		},
+		edit: { x: 0, y: 0, zoom: 1, background: "background" },
 		linkTo: {
 			link_type: prismicT.LinkType.Web,
 			url: "string",

@@ -23,6 +23,7 @@ import * as prismicT from "../src";
  */
 expectType<prismicT.LinkToMediaField>({
 	link_type: prismicT.LinkType.Media,
+	id: "string",
 	name: "string",
 	kind: "string",
 	url: "string",
@@ -32,6 +33,7 @@ expectType<prismicT.LinkToMediaField>({
 });
 expectType<prismicT.LinkToMediaField<"filled">>({
 	link_type: prismicT.LinkType.Media,
+	id: "string",
 	name: "string",
 	kind: "string",
 	url: "string",
@@ -42,6 +44,7 @@ expectType<prismicT.LinkToMediaField<"filled">>({
 expectType<prismicT.LinkToMediaField<"empty">>({
 	link_type: prismicT.LinkType.Media,
 	// @ts-expect-error - Empty fields cannot contain a filled value.
+	id: "string",
 	name: "string",
 	kind: "string",
 	url: "string",
