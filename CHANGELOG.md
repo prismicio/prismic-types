@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/prismicio/prismic-types/compare/v0.2.8...v0.2.9) (2024-05-24)
+
+
+### Features
+
+* backport extended media API response ([#58](https://github.com/prismicio/prismic-types/issues/58)) ([ef1d286](https://github.com/prismicio/prismic-types/commit/ef1d28681f59a689242e02734ce500fa5974b35e))
+
+
+### Documentation
+
+* link to `@prismicio/client` ([9971531](https://github.com/prismicio/prismic-types/commit/99715316cf3cdbfae48126d52d4c8923b30453e5))
+
 ### [0.2.8](https://github.com/prismicio/prismic-types/compare/v0.2.7...v0.2.8) (2023-05-31)
 
 
